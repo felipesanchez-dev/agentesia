@@ -205,6 +205,12 @@ export const SignInView = () => {
                       variant="outline"
                       type="button"
                       className="h-12 border-gray-200 hover:bg-gray-50 transition-colors"
+                      disabled={isLoading}
+                      onClick={() =>
+                        authClient.signIn.social({
+                          provider: "github",
+                        })
+                      }
                     >
                       <svg
                         className="w-5 h-5 mr-2"
