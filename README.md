@@ -48,5 +48,3 @@ npm run build
 # Iniciar servidor de producción
 npm start
 ```
-
-npm i drizzle-orm@0.43.1 @neondatabase/serverless@1.0.0 dotenv@16.5.0 --legacy-peer-deps
