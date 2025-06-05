@@ -247,10 +247,10 @@ export const SignInView = () => {
 
               <div className="text-center">
                 <h2 className="text-white text-2xl font-bold tracking-wide mb-2">
-                  COGNI MEET
+                  COGNIMEET
                 </h2>
                 <p className="text-white/80 text-sm font-medium">
-                  Conecta • Colabora • Crece
+                  Conecta • Colabora • Crea
                 </p>
               </div>
 
