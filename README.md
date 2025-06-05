@@ -42,6 +42,9 @@ npm install
 # Ejecutar en desarrollo
 npm run dev
 
+# Ejecutar Drizzle
+npm run db:studio
+
 # Construir para producción
 npm run build
 
