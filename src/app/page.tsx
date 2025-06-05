@@ -7,6 +7,8 @@ export default function Home() {
   const { data: sesion } = authClient.useSession();
 
   if (sesion) {
+    console.log("Sesión activa:", sesion);
+    console.log("Usuario:", sesion.user);
     return (
       <div className="p-4">
         <h1 className="text-2xl font-bold">Ya estás registrado</h1>
