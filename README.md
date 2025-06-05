@@ -21,6 +21,9 @@ Antes de comenzar, asegúrate de tener instalado:
 * **[Tailwind CSS](https://tailwindcss.com/)** - Framework de CSS utilitario
 * **[Shadcn/UI](https://ui.shadcn.com/)** - Biblioteca de componentes UI
 
+#### Autenticacion
+* **[BetterAuth](https://www.better-auth.com/)** - Autenticación
+
 ### Pasos de Configuración
 
 #### 1. Verificación de Next.js
