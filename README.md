@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AGENTES IA - MEET IA
 
-## Getting Started
+Un proyecto de aplicación web construido con Next.js para interacción con agentes de inteligencia artificial.
 
-First, run the development server:
+## Configuración del Proyecto
+
+### Prerequisitos del Entorno
+
+Antes de comenzar, asegúrate de tener instalado:
+
+* **[Node.js](https://nodejs.org/)** >= 18.18
+* **[npm](https://www.npmjs.com/)** (incluido con Node.js)
+
+### Tecnologías Utilizadas
+
+* **[Next.js](https://nextjs.org/)** v15.3.2 - Framework de React para aplicaciones web
+* **[TypeScript](https://www.typescriptlang.org/)** - Superset tipado de JavaScript
+* **[Tailwind CSS](https://tailwindcss.com/)** - Framework de CSS utilitario
+* **[Shadcn/UI](https://ui.shadcn.com/)** - Biblioteca de componentes UI
+
+### Pasos de Configuración
+
+#### 1. Verificación de Next.js
+- [x] Confirmar versión (v15.3.2)
+- [x] Verificar archivos de configuración (`tsconfig.json`, `next.config.js`)
+- [x] Probar modificaciones de archivos
+
+#### 2. Configuración de UI
+- [x] Instalar [Shadcn/UI](https://ui.shadcn.com/docs/installation/next)
+- [x] Configurar utilidades CSS (`src/lib/utils.ts`)
+- [x] Integrar Tailwind CSS
+
+## Comandos Útiles
 
 ```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Construir para producción
+npm run build
+
+# Iniciar servidor de producción
+npm start
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
