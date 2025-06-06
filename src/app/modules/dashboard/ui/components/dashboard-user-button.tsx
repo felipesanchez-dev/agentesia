@@ -107,7 +107,7 @@ export const DashboardUserButton = () => {
               </p>
               <div className="flex items-center gap-2 mt-1">
                 {getProviderIcon()}
-                <span className="text-xs text-muted-foreground">
+                <span className="text-xs text-muted-foreground font-bold">
                   Conectado con {getProviderName()}
                 </span>
               </div>
@@ -128,7 +128,15 @@ export const DashboardUserButton = () => {
             <span>Facturación</span>
           </DropdownMenuItem>
         </div>
-
+        <div className="p-2">
+          <DropdownMenuItem
+            onClick={onLogout}
+            className="cursor-pointer flex items-center gap-3 p-3 rounded-md text-red-600 hover:bg-red-50 hover:text-red-700"
+          >
+            <LogOutIcon className="h-4 w-4" />
+            <span>Cerrar Sesión</span>
+          </DropdownMenuItem>
+        </div>
         <DropdownMenuSeparator />
 
         <div className="p-4">
@@ -174,19 +182,6 @@ export const DashboardUserButton = () => {
             </a>
           </div>
         </div>
-
-        <DropdownMenuSeparator />
-
-        <div className="p-2">
-          <DropdownMenuItem
-            onClick={onLogout}
-            className="cursor-pointer flex items-center gap-3 p-3 rounded-md text-red-600 hover:bg-red-50 hover:text-red-700"
-          >
-            <LogOutIcon className="h-4 w-4" />
-            <span>Cerrar Sesión</span>
-          </DropdownMenuItem>
-        </div>
-
         <div className="border-t p-3 bg-gray-50/50">
           <a
             href="https://felipesanchezdev.site"
