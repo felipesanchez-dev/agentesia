@@ -13,11 +13,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
-import {
-  BotIcon,
-  StarIcon,
-  VideoIcon,
-} from "lucide-react";
+import { BotIcon, StarIcon, VideoIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -54,9 +50,11 @@ export const DashboardSidebar = () => {
           <Image
             src="/logo-simple.png"
             alt="Logo COGNIMEET - Felipe Reyes Sanchez"
-            height={50}
             width={50}
+            height={50}
+            className="rounded-md h-auto w-auto"
           />
+
           <p className="text-2xl font-bold text-white">COGNIMEET</p>
         </Link>
       </SidebarHeader>
@@ -123,7 +121,6 @@ export const DashboardSidebar = () => {
       </SidebarContent>
       <SidebarFooter className="text-white">
         <DashboardUserButton />
-        
       </SidebarFooter>
     </Sidebar>
   );
