@@ -1,10 +1,11 @@
-# 🚀 AGENTESIA - Plataforma de Colaboración IA
+# 🚀 COGNIMEET
+ - Plataforma de Colaboración IA
 
 Una aplicación web moderna construida con Next.js para la gestión y colaboración con agentes de inteligencia artificial. Conecta, colabora y crece con tecnología de vanguardia.
 
 ## 📋 Tabla de Contenidos
 
-- [🚀 AGENTESIA - Plataforma de Colaboración IA](#-agentesia---plataforma-de-colaboración-ia)
+- [🚀 COGNIMEET - Plataforma de Colaboración IA](#-cognimeet---plataforma-de-colaboración-ia)
   - [📋 Tabla de Contenidos](#-tabla-de-contenidos)
   - [🎯 Características Principales](#-características-principales)
   - [🛠️ Stack Tecnológico](#️-stack-tecnológico)
