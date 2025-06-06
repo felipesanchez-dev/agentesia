@@ -33,19 +33,7 @@ export const metadata: Metadata = {
       "Agentes de inteligencia artificial en videollamadas. Tecnología empática y futurista a tu servicio.",
     url: "https://felipesanchez.site",
     siteName: "Cognimeet",
-    images: [
-      {
-        url: "/logo.png",
-        width: 512,
-        height: 512,
-        alt: "Logo de Cognimeet",
-      },
-    ],
-    type: "website",
-  },
-  icons: {
-    icon: "/logo.png",
-  },
+  }
 };
 
 export default function RootLayout({
