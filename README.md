@@ -1,18 +1,18 @@
 # 🚀 COGNIMEET
- - Plataforma de Colaboración IA
+ - Plataforma de Agentes IA Inteligentes
 
-Una aplicación web moderna construida con Next.js para la gestión y colaboración con agentes de inteligencia artificial. Conecta, colabora y crece con tecnología de vanguardia.
+Una aplicación web moderna construida con Next.js para la gestión, interacción y colaboración con agentes de inteligencia artificial especializados. Conecta con expertos virtuales en videollamadas y experimenta el futuro de la comunicación IA.
 
 ## 📋 Tabla de Contenidos
 
-- [🚀 COGNIMEET - Plataforma de Colaboración IA](#-cognimeet---plataforma-de-colaboración-ia)
+- [🚀 COGNIMEET - Plataforma de Agentes IA Inteligentes](#-cognimeet---plataforma-de-agentes-ia-inteligentes)
   - [📋 Tabla de Contenidos](#-tabla-de-contenidos)
   - [🎯 Características Principales](#-características-principales)
   - [🛠️ Stack Tecnológico](#️-stack-tecnológico)
     - [Frontend](#frontend)
     - [Backend \& Base de Datos](#backend--base-de-datos)
     - [Autenticación](#autenticación)
-    - [Herramientas de Desarrollo](#herramientas-de-desarrollo)
+    - [UI/UX](#uiux)
   - [⚙️ Prerequisitos del Entorno](#️-prerequisitos-del-entorno)
   - [🚀 Configuración del Proyecto](#-configuración-del-proyecto)
     - [1. Clonación e Instalación](#1-clonación-e-instalación)
@@ -22,18 +22,21 @@ Una aplicación web moderna construida con Next.js para la gestión y colaboraci
   - [🎨 Sistema de Autenticación](#-sistema-de-autenticación)
     - [Características Implementadas](#características-implementadas)
     - [Componentes de Autenticación](#componentes-de-autenticación)
-    - [Manejo de Errores](#manejo-de-errores)
-    - [Estados de Carga](#estados-de-carga)
+    - [Manejo de Errores Avanzado](#manejo-de-errores-avanzado)
+  - [🖥️ Dashboard y Sidebar](#️-dashboard-y-sidebar)
+    - [Características del Dashboard](#características-del-dashboard)
+    - [Componente Sidebar](#componente-sidebar)
+    - [Botón de Usuario Avanzado](#botón-de-usuario-avanzado)
   - [🎨 Diseño y UI](#-diseño-y-ui)
     - [Paleta de Colores](#paleta-de-colores)
-    - [Componentes UI](#componentes-ui)
-    - [Características de Diseño](#características-de-diseño)
+    - [Componentes UI Avanzados](#componentes-ui-avanzados)
+    - [Efectos Visuales](#efectos-visuales)
   - [📱 Responsive Design](#-responsive-design)
   - [🔧 Comandos Útiles](#-comandos-útiles)
   - [📁 Estructura del Proyecto](#-estructura-del-proyecto)
   - [🔐 Configuración de Seguridad](#-configuración-de-seguridad)
   - [🐛 Solución de Problemas](#-solución-de-problemas)
-  - [📈 Próximas Características](#-próximas-características)
+  - [📈 Roadmap 2025](#-roadmap-2025)
   - [🤝 Contribución](#-contribución)
   - [📄 Licencia](#-licencia)
   - [👨‍💻 Desarrollador](#-desarrollador)
@@ -41,14 +44,18 @@ Una aplicación web moderna construida con Next.js para la gestión y colaboraci
 ## 🎯 Características Principales
 
 - ✅ **Sistema de Autenticación Completo** - Email/contraseña y OAuth (Google, GitHub)
+- ✅ **Dashboard Interactivo** - Panel de control moderno con sidebar navegacional
+- ✅ **Botón de Usuario Avanzado** - Dropdown con información detallada y redes sociales
+- ✅ **Detección de Proveedores** - Identificación automática del método de autenticación
 - ✅ **Diseño Responsive** - Adaptable a todos los dispositivos
-- ✅ **UI Moderna** - Componentes elegantes con Shadcn/UI
-- ✅ **Validación de Formularios** - Validación robusta con Zod
-- ✅ **Manejo de Estados** - Estados de carga y errores
-- ✅ **Seguridad** - Autenticación segura con BetterAuth
-- ✅ **Base de Datos** - PostgreSQL con Drizzle ORM
-- 🔄 **Dashboard Interactivo** (En desarrollo)
-- 🔄 **Gestión de Agentes IA** (En desarrollo)
+- ✅ **UI Moderna** - Componentes elegantes con Shadcn/UI y efectos glassmorphism
+- ✅ **Validación de Formularios** - Validación robusta con Zod y React Hook Form
+- ✅ **Manejo de Estados** - Estados de carga, errores y animaciones
+- ✅ **Seguridad Avanzada** - Autenticación segura con BetterAuth
+- ✅ **Base de Datos Escalable** - PostgreSQL con Drizzle ORM
+- ✅ **Redirección Inteligente** - Protección de rutas y redirección automática
+- 🔄 **Videollamadas con IA** (En desarrollo)
+- 🔄 **Agentes Especializados** (En desarrollo)
 
 ## 🛠️ Stack Tecnológico
 
@@ -58,6 +65,7 @@ Una aplicación web moderna construida con Next.js para la gestión y colaboraci
 - **[Tailwind CSS](https://tailwindcss.com/)** - Framework de CSS utilitario
 - **[Shadcn/UI](https://ui.shadcn.com/)** - Biblioteca de componentes modernos
 - **[Lucide React](https://lucide.dev/)** - Iconos SVG optimizados
+- **[React Hook Form](https://react-hook-form.com/)** - Manejo avanzado de formularios
 
 ### Backend & Base de Datos
 - **[PostgreSQL](https://www.postgresql.org/)** - Base de datos relacional
@@ -70,10 +78,11 @@ Una aplicación web moderna construida con Next.js para la gestión y colaboraci
 - **OAuth Providers** - Google y GitHub integrados
 - **Validación** - Zod para validación de esquemas
 
-### Herramientas de Desarrollo
-- **[ESLint](https://eslint.org/)** - Linting de código
-- **[React Hook Form](https://react-hook-form.com/)** - Manejo de formularios
-- **[Zod](https://zod.dev/)** - Validación de esquemas TypeScript
+### UI/UX
+- **Glassmorphism** - Efectos de vidrio esmerilado
+- **Animaciones CSS** - Transiciones suaves y efectos hover
+- **Componentes Modulares** - Arquitectura escalable
+- **Design System** - Paleta de colores consistente
 
 ## ⚙️ Prerequisitos del Entorno
 
@@ -82,9 +91,23 @@ Antes de comenzar, asegúrate de tener instalado:
 - **[Node.js](https://nodejs.org/)** >= 18.18
 - **[npm](https://www.npmjs.com/)** (incluido con Node.js)
 - **[Git](https://git-scm.com/)** para control de versiones
+- **[PostgreSQL](https://www.postgresql.org/)** (o cuenta en Neon)
 
 ## 🚀 Configuración del Proyecto
 
+### 1. Clonación e Instalación
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/agentesia.git
+cd agentesia
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
+```
 
 ### 2. Variables de Entorno
 
@@ -129,6 +152,7 @@ El sistema de autenticación está completamente configurado con:
 - **Email/Contraseña** - Registro e inicio de sesión tradicional
 - **Google OAuth** - Autenticación con Google
 - **GitHub OAuth** - Autenticación con GitHub
+- **Detección automática** de proveedores por imagen de usuario
 
 ## 🎨 Sistema de Autenticación
 
@@ -142,36 +166,25 @@ El sistema de autenticación está completamente configurado con:
 - ✅ **Estados de carga** con spinners animados
 - ✅ **Toggle de contraseña** para mostrar/ocultar
 - ✅ **Validación de confirmación** de contraseña
+- ✅ **Redirección inteligente** - Evita acceso a auth si ya está logueado
 
 ### Componentes de Autenticación
 
-#### SignInView (`/src/app/modules/auth/ui/views/sign-in-view.tsx`)
+#### SignInView & SignUpView
 ```tsx
-// Características:
-- Formulario de email y contraseña
-- Botones OAuth para Google y GitHub
-- Validación con Zod
-- Estados de carga independientes
-- Manejo de errores específicos
-- Toggle de contraseña
-- Diseño responsive
+// Características avanzadas:
+- Formularios con validación en tiempo real
+- Estados de carga independientes por proveedor OAuth
+- Manejo de errores específicos y contextuales
+- Diseño glassmorphism con efectos visuales
+- Redirección automática post-autenticación
+- Protección contra acceso con sesión activa
 ```
 
-#### SignUpView (`/src/app/modules/auth/ui/views/sign-up-view.tsx`)
-```tsx
-// Características:
-- Formulario completo de registro
-- Confirmación de contraseña
-- Validación de coincidencia de contraseñas
-- Botones OAuth integrados
-- Manejo de errores mejorado
-- Estados de carga por proveedor
-```
-
-### Manejo de Errores
+### Manejo de Errores Avanzado
 
 ```typescript
-// Errores OAuth manejados:
+// Sistema completo de manejo de errores OAuth:
 const errorMessages: Record<string, string> = {
   "access_denied": "Acceso denegado por el usuario",
   "invalid_request": "Solicitud inválida",
@@ -181,14 +194,59 @@ const errorMessages: Record<string, string> = {
   "invalid_client": "Cliente no válido",
   "unsupported_response_type": "Tipo de respuesta no soportado",
 };
+
+// Estados de carga granulares:
+- isGoogleLoading: boolean
+- isGithubLoading: boolean  
+- isEmailLoading: boolean
 ```
 
-### Estados de Carga
+## 🖥️ Dashboard y Sidebar
 
-- **Estados independientes** para cada proveedor OAuth
-- **Spinners animados** durante las operaciones
-- **Botones deshabilitados** durante cargas
-- **Mensajes contextuales** de estado
+### Características del Dashboard
+
+- ✅ **Layout responsive** con sidebar colapsible
+- ✅ **Navegación intuitiva** entre secciones
+- ✅ **Rutas protegidas** con verificación de sesión
+- ✅ **Estados de carga** y manejo de errores
+
+### Componente Sidebar
+
+```tsx
+// Secciones principales:
+const firstSection = [
+  { icon: VideoIcon, label: "Reuniones", href: "/meetings" },
+  { icon: BotIcon, label: "Agentes IA", href: "/agents" },
+];
+
+const secondSection = [
+  { icon: StarIcon, label: "Mejorar IA", href: "/upgrade" },
+];
+
+// Características:
+- Header con logo y branding
+- Separadores visuales entre secciones
+- Estados activos con indicadores visuales
+- Footer con información del desarrollador
+- Redes sociales integradas
+```
+
+### Botón de Usuario Avanzado
+
+```tsx
+// Características del DashboardUserButton:
+- Avatar con fallback inteligente
+- Detección automática del proveedor de autenticación
+- Dropdown con información completa del usuario
+- Enlaces a redes sociales con efectos hover
+- Opción de logout con confirmación
+- Footer con copyright y enlace al portafolio
+
+// Detección de proveedores:
+- Google: Detecta "googleusercontent.com" en imagen
+- GitHub: Detecta "github" en imagen  
+- Credenciales: Por defecto para registro email/password
+```
 
 ## 🎨 Diseño y UI
 
@@ -206,46 +264,57 @@ const errorMessages: Record<string, string> = {
 --error-bg: #fef2f2;           /* red-50 */
 --error-border: #fecaca;       /* red-200 */
 --error-text: #b91c1c;         /* red-700 */
+
+/* Sidebar y Dashboard */
+--sidebar-bg: rgba(0, 0, 0, 0.8);
+--sidebar-hover: rgba(255, 255, 255, 0.1);
+--white-translucent: rgba(255, 255, 255, 0.05);
 ```
 
-### Componentes UI
+### Componentes UI Avanzados
 
-#### Card Layout
-- **Diseño de dos columnas** en desktop
-- **Formulario izquierdo** - Interacciones del usuario
-- **Panel derecho** - Branding y elementos visuales
-- **Gradiente animado** con efectos glassmorphism
-
-#### Elementos Decorativos
+#### Card Layout Glassmorphism
 ```tsx
-// Efectos visuales implementados:
-- Círculos con blur animados
-- Puntos decorativos con animación ping
-- Gradientes de fondo dinámicos
-- Efectos hover con transiciones suaves
-- Logo SVG con animaciones
+// Efectos implementados:
+- Fondo semi-transparente con blur
+- Gradientes dinámicos animados
+- Sombras profundas multicapa
+- Bordes translúcidos
+- Efectos hover suaves
 ```
 
-### Características de Diseño
+#### Elementos Decorativos Animados
+```tsx
+// Características visuales:
+- Círculos con blur y animación flotante
+- Puntos decorativos con efecto ping
+- Gradientes de fondo en movimiento
+- Transiciones suaves (300ms)
+- Efectos de escala en hover
+```
 
-- **Glassmorphism** - Efectos de vidrio esmerilado
-- **Animaciones suaves** - Transiciones de 300ms
-- **Efectos hover** - Interacciones visuales
-- **Sombras profundas** - `shadow-2xl` para elevación
-- **Bordes redondeados** - `rounded-lg` para modernidad
+### Efectos Visuales
+
+- **Glassmorphism Avanzado** - Efectos de vidrio esmerilado con múltiples capas
+- **Animaciones Fluidas** - Transiciones de 200-300ms para todas las interacciones
+- **Micro-interacciones** - Feedback visual en botones y enlaces
+- **Estados Hover** - Cambios de color y escala contextuales
+- **Loading States** - Spinners animados y skeletons
 
 ## 📱 Responsive Design
 
 ```css
 /* Breakpoints utilizados */
-- Mobile: < 768px (Stack vertical)
-- Tablet: 768px - 1024px (Adaptación de espacios)
-- Desktop: > 1024px (Layout de dos columnas)
+- Mobile: < 768px (Stack vertical, sidebar oculto)
+- Tablet: 768px - 1024px (Sidebar adaptativo)
+- Desktop: > 1024px (Layout completo con sidebar)
 
-/* Clases responsive clave */
-- `md:grid-cols-2` - Grid de dos columnas en desktop
-- `hidden md:flex` - Panel derecho solo en desktop
-- `p-4 md:p-8` - Padding adaptativo
+/* Características responsive */
+- Sidebar colapsible en móviles
+- Grid adaptativo para cards
+- Tipografía escalable
+- Espaciado responsivo
+- Touch-friendly en móviles
 ```
 
 ## 🔧 Comandos Útiles
@@ -264,7 +333,8 @@ npm run db:generate      # Generar migraciones
 
 # Utilidades
 npm run type-check       # Verificar tipos TypeScript
-npm run format           # Formatear código
+npm run format           # Formatear código con Prettier
+npm run clean            # Limpiar cache y builds
 ```
 
 ## 📁 Estructura del Proyecto
@@ -274,30 +344,44 @@ agentesia/
 ├── src/
 │   ├── app/
 │   │   ├── modules/
-│   │   │   └── auth/
-│   │   │       └── ui/
-│   │   │           └── views/
-│   │   │               ├── sign-in-view.tsx
-│   │   │               └── sign-up-view.tsx
+│   │   │   ├── auth/
+│   │   │   │   └── ui/views/
+│   │   │   │       ├── sign-in-view.tsx
+│   │   │   │       └── sign-up-view.tsx
+│   │   │   ├── dashboard/
+│   │   │   │   └── ui/components/
+│   │   │   │       ├── dashboard-sidebar.tsx
+│   │   │   │       └── dashboard-user-button.tsx
+│   │   │   └── home/
+│   │   │       └── ui/view/
+│   │   │           └── home-view.tsx
 │   │   ├── (auth)/
-│   │   │   ├── sign-in/
-│   │   │   └── sign-up/
-│   │   └── layout.tsx
+│   │   │   ├── sign-in/page.tsx
+│   │   │   └── sign-up/page.tsx
+│   │   ├── (dashboard)/
+│   │   │   ├── layout.tsx
+│   │   │   ├── agents/
+│   │   │   ├── meetings/
+│   │   │   └── upgrade/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
 │   ├── components/
-│   │   └── ui/           # Componentes Shadcn/UI
+│   │   └── ui/              # Componentes Shadcn/UI
 │   ├── db/
-│   │   ├── index.ts      # Configuración de Drizzle
-│   │   └── schema.ts     # Esquemas de base de datos
+│   │   ├── index.ts         # Configuración de Drizzle
+│   │   └── schema.ts        # Esquemas de base de datos
 │   ├── lib/
-│   │   ├── auth.ts       # Configuración BetterAuth
-│   │   ├── auth-client.ts # Cliente de autenticación
-│   │   └── utils.ts      # Utilidades generales
+│   │   ├── auth.ts          # Configuración BetterAuth
+│   │   ├── auth-client.ts   # Cliente de autenticación
+│   │   └── utils.ts         # Utilidades generales
 │   └── styles/
-│       └── globals.css   # Estilos globales
-├── public/               # Archivos estáticos
-├── .env.local           # Variables de entorno
-├── drizzle.config.ts    # Configuración Drizzle
-├── tailwind.config.ts   # Configuración Tailwind
+├── public/
+│   ├── logo.png
+│   └── logo-simple.png
+├── .env.local
+├── drizzle.config.ts
+├── tailwind.config.ts
 └── package.json
 ```
 
@@ -309,7 +393,7 @@ agentesia/
 BETTER_AUTH_SECRET=$(openssl rand -base64 32)
 ```
 
-### Configuración OAuth
+### Configuración OAuth Actualizada
 
 #### Google OAuth
 1. Ve a [Google Cloud Console](https://console.cloud.google.com/)
@@ -326,44 +410,68 @@ BETTER_AUTH_SECRET=$(openssl rand -base64 32)
    - Homepage URL: `http://localhost:3000`
    - Callback URL: `http://localhost:3000/api/auth/callback/github`
 
+### Protección de Rutas
+```tsx
+// Implementado en páginas de autenticación:
+- Verificación de sesión existente
+- Redirección automática si ya está logueado
+- Protección de rutas privadas del dashboard
+```
+
 ## 🐛 Solución de Problemas
 
 ### Error: "postgres" no encontrado
 ```bash
-# Solución
 npm install postgres @types/pg
 ```
 
 ### Error: Variables de entorno faltantes
 ```bash
-# Verificar archivo .env.local existe
-# Verificar que todas las variables requeridas están definidas
+# Verificar archivo .env.local existe y contiene:
+- DATABASE_URL
+- BETTER_AUTH_SECRET
+- Variables OAuth (opcionales)
 ```
 
-### Error: Base de datos no conecta
+### Error: Sidebar no se muestra
 ```bash
-# Verificar URL de conexión
-# Verificar que la base de datos esté activa
-npm run db:studio  # Probar conexión
+# Verificar importaciones de componentes UI
+# Verificar que Shadcn/UI está instalado correctamente
+npx shadcn-ui@latest add sidebar
 ```
 
-### Problemas de OAuth
-- Verificar client IDs y secrets
-- Verificar URLs de callback
-- Verificar configuración de dominios permitidos
+### Problemas de autenticación
+```bash
+# Verificar configuración BetterAuth
+# Verificar URLs de callback OAuth
+# Verificar que la sesión se está manejando correctamente
+```
 
-## 📈 Próximas Características
+## 📈 Roadmap 2025
 
-- [ ] **Dashboard Principal** - Panel de control del usuario
-- [ ] **Gestión de Agentes IA** - CRUD de agentes
-- [ ] **Chat Interactivo** - Comunicación con agentes
-- [ ] **Historial de Conversaciones** - Persistencia de chats
-- [ ] **Configuración de Perfil** - Edición de datos de usuario
-- [ ] **Notificaciones** - Sistema de alertas
-- [ ] **Tema Oscuro** - Toggle de modo oscuro
+### Q1 2025
+- [ ] **Sistema de Videollamadas** - Integración con WebRTC
+- [ ] **Agentes IA Especializados** - Psicología, educación, tecnología
+- [ ] **Chat en Tiempo Real** - Comunicación previa a videollamadas
+- [ ] **Historial de Sesiones** - Registro de interacciones
+
+### Q2 2025
+- [ ] **Configuración de Perfil** - Edición completa de datos
+- [ ] **Sistema de Notificaciones** - Alertas y recordatorios
+- [ ] **Tema Oscuro/Claro** - Toggle de modo de visualización
 - [ ] **Internacionalización** - Soporte multi-idioma
-- [ ] **API REST** - Endpoints para integraciones
-- [ ] **Tests Automatizados** - Suite de pruebas completa
+
+### Q3 2025
+- [ ] **API REST Completa** - Endpoints para integraciones
+- [ ] **Dashboard Analytics** - Métricas de uso y engagement
+- [ ] **Sistema de Pagos** - Planes premium y suscripciones
+- [ ] **Aplicación Móvil** - React Native o PWA
+
+### Q4 2025
+- [ ] **IA Avanzada** - Integración con GPT-4 y Claude
+- [ ] **Tests Automatizados** - Suite completa de pruebas
+- [ ] **Optimización Performance** - Mejoras de velocidad
+- [ ] **Documentación API** - Swagger/OpenAPI
 
 ## 🤝 Contribución
 
@@ -378,6 +486,7 @@ npm run db:studio  # Probar conexión
 - **ESLint** para linting
 - **Prettier** para formateo
 - **Conventional Commits** para mensajes
+- **Components modulares** siguiendo atomic design
 
 ## 📄 Licencia
 
@@ -388,12 +497,15 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 **Felipe Reyes Sanchez**
 - 🌐 Website: [felipesanchezdev.site](https://felipesanchezdev.site)
 - 📧 Email: [felipe@felipesanchezdev.site](mailto:felipe@felipesanchezdev.site)
-- 💼 LinkedIn: [Felipe Reyes Sanchez](https://linkedin.com/in/felipesanchezdev)
-- 🐙 GitHub: [@felipesanchezdev](https://github.com/felipesanchezdev)
+- 💼 LinkedIn: [Felipe Reyes Sanchez](https://www.linkedin.com/in/felipereyessa)
+- 🐙 GitHub: [@felipesanchez-dev](https://github.com/felipesanchez-dev)
+- 📱 Instagram: [@felipesanchez_dev](https://www.instagram.com/felipesanchez_dev)
+- 💬 WhatsApp: [+57 102 452542](https://wa.me/57102452542)
 
 ---
 
 <div align="center">
   <p><strong>COGNIMEET</strong> - Conecta • Colabora • Crece</p>
-  <p>Desarrollado por: por Felipe Reyes Sanchez</p>
+  <p>Desarrollado por Felipe Reyes Sanchez</p>
+  <p><em>"El futuro de la comunicación IA está aquí"</em></p>
 </div>
