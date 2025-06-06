@@ -387,7 +387,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 **Felipe Reyes Sanchez**
 - 🌐 Website: [felipesanchezdev.site](https://felipesanchezdev.site)
-- 📧 Email: [contacto@felipesanchezdev.site](mailto:contacto@felipesanchezdev.site)
+- 📧 Email: [felipe@felipesanchezdev.site](mailto:felipe@felipesanchezdev.site)
 - 💼 LinkedIn: [Felipe Reyes Sanchez](https://linkedin.com/in/felipesanchezdev)
 - 🐙 GitHub: [@felipesanchezdev](https://github.com/felipesanchezdev)
 
