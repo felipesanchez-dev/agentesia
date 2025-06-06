@@ -21,6 +21,7 @@ import {
   ShieldIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { DashboardUserMobileMenu } from "./dashboard-user-mobile-menu";
 
 export const DashboardUserButton = () => {
   const { data, isPending } = authClient.useSession();
@@ -69,132 +70,150 @@ export const DashboardUserButton = () => {
   }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="rounded-lg border border-border/10 p-3 w-full flex items-center gap-3 bg-white/5 hover:bg-white/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20">
-        <Avatar className="h-8 w-8">
-          <AvatarImage src={data.user.image || ""} alt={data.user.name || ""} />
-          <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-sm font-semibold">
-            {data.user.name?.charAt(0)?.toUpperCase() || "U"}
-          </AvatarFallback>
-        </Avatar>
-        <div className="flex flex-col items-start text-left flex-1 min-w-0">
-          <p className="text-sm font-medium text-white truncate">
-            {data.user.name || "Usuario"}
-          </p>
-          <p className="text-xs text-gray-400 truncate">{data.user.email}</p>
-        </div>
-        <ChevronDownIcon className="size-4 shrink-0 text-gray-400" />
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent align="end" side="right" className="w-80 p-0">
-        <DropdownMenuLabel className="p-4 pb-2">
-          <div className="flex items-center gap-3">
-            <Avatar className="h-12 w-12">
+    <>
+      {/* Desktop Dropdown */}
+      <div className="hidden md:block">
+        <DropdownMenu>
+          <DropdownMenuTrigger className="rounded-lg border border-border/10 p-3 w-full flex items-center gap-3 bg-white/5 hover:bg-white/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20">
+            <Avatar className="h-8 w-8">
               <AvatarImage
                 src={data.user.image || ""}
                 alt={data.user.name || ""}
               />
-              <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-lg font-semibold">
+              <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-sm font-semibold">
                 {data.user.name?.charAt(0)?.toUpperCase() || "U"}
               </AvatarFallback>
             </Avatar>
-            <div className="flex-1 min-w-0">
-              <p className="font-semibold text-base truncate">
-                {data.user.name}
+            <div className="flex flex-col items-start text-left flex-1 min-w-0">
+              <p className="text-sm font-medium text-white truncate">
+                {data.user.name || "Usuario"}
               </p>
-              <p className="text-sm text-muted-foreground truncate">
+              <p className="text-xs text-gray-400 truncate">
                 {data.user.email}
               </p>
-              <div className="flex items-center gap-2 mt-1">
-                {getProviderIcon()}
-                <span className="text-xs text-muted-foreground font-bold">
-                  Conectado con {getProviderName()}
-                </span>
+            </div>
+            <ChevronDownIcon className="size-4 shrink-0 text-gray-400" />
+          </DropdownMenuTrigger>
+
+          <DropdownMenuContent align="end" side="right" className="w-80 p-0">
+            <DropdownMenuLabel className="p-4 pb-2">
+              <div className="flex items-center gap-3">
+                <Avatar className="h-12 w-12">
+                  <AvatarImage
+                    src={data.user.image || ""}
+                    alt={data.user.name || ""}
+                  />
+                  <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-lg font-semibold">
+                    {data.user.name?.charAt(0)?.toUpperCase() || "U"}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-base truncate">
+                    {data.user.name}
+                  </p>
+                  <p className="text-sm text-muted-foreground truncate">
+                    {data.user.email}
+                  </p>
+                  <div className="flex items-center gap-2 mt-1">
+                    {getProviderIcon()}
+                    <span className="text-xs text-muted-foreground font-bold">
+                      Conectado con {getProviderName()}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </DropdownMenuLabel>
+
+            <DropdownMenuSeparator />
+
+            <div className="p-2">
+              <DropdownMenuItem className="cursor-pointer flex items-center gap-3 p-3 rounded-md">
+                <UserIcon className="h-4 w-4" />
+                <span>Mi Perfil</span>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem className="cursor-pointer flex items-center gap-3 p-3 rounded-md">
+                <CreditCardIcon className="h-4 w-4" />
+                <span>Facturación</span>
+              </DropdownMenuItem>
+            </div>
+            <div className="p-2">
+              <DropdownMenuItem
+                onClick={onLogout}
+                className="cursor-pointer flex items-center gap-3 p-3 rounded-md text-red-600 hover:bg-red-50 hover:text-red-700"
+              >
+                <LogOutIcon className="h-4 w-4" />
+                <span>Cerrar Sesión</span>
+              </DropdownMenuItem>
+            </div>
+            <DropdownMenuSeparator />
+
+            <div className="p-4">
+              <p className="text-xs font-semibold text-muted-foreground mb-3 uppercase tracking-wider">
+                Sígueme en:
+              </p>
+              <div className="flex items-center justify-center gap-4">
+                <a
+                  href="https://www.instagram.com/felipesanchez_dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full hover:bg-pink-50 hover:text-pink-600 transition-all duration-200 group"
+                  title="Instagram"
+                >
+                  <Instagram className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a
+                  href="https://wa.me/57102452542"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full hover:bg-green-50 hover:text-green-600 transition-all duration-200 group"
+                  title="WhatsApp"
+                >
+                  <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/felipereyessa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 group"
+                  title="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a
+                  href="https://github.com/felipesanchez-dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full hover:bg-gray-50 hover:text-gray-800 transition-all duration-200 group"
+                  title="GitHub"
+                >
+                  <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                </a>
               </div>
             </div>
-          </div>
-        </DropdownMenuLabel>
+            <div className="border-t p-3 bg-gray-50/50">
+              <a
+                href="https://felipesanchezdev.site"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center group"
+              >
+                <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
+                  © {new Date().getFullYear()} Felipe Reyes Sanchez
+                </p>
+              </a>
+            </div>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
 
-        <DropdownMenuSeparator />
-
-        <div className="p-2">
-          <DropdownMenuItem className="cursor-pointer flex items-center gap-3 p-3 rounded-md">
-            <UserIcon className="h-4 w-4" />
-            <span>Mi Perfil</span>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem className="cursor-pointer flex items-center gap-3 p-3 rounded-md">
-            <CreditCardIcon className="h-4 w-4" />
-            <span>Facturación</span>
-          </DropdownMenuItem>
-        </div>
-        <div className="p-2">
-          <DropdownMenuItem
-            onClick={onLogout}
-            className="cursor-pointer flex items-center gap-3 p-3 rounded-md text-red-600 hover:bg-red-50 hover:text-red-700"
-          >
-            <LogOutIcon className="h-4 w-4" />
-            <span>Cerrar Sesión</span>
-          </DropdownMenuItem>
-        </div>
-        <DropdownMenuSeparator />
-
-        <div className="p-4">
-          <p className="text-xs font-semibold text-muted-foreground mb-3 uppercase tracking-wider">
-            Sígueme en:
-          </p>
-          <div className="flex items-center justify-center gap-4">
-            <a
-              href="https://www.instagram.com/felipesanchez_dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full hover:bg-pink-50 hover:text-pink-600 transition-all duration-200 group"
-              title="Instagram"
-            >
-              <Instagram className="h-5 w-5 group-hover:scale-110 transition-transform" />
-            </a>
-            <a
-              href="https://wa.me/57102452542"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full hover:bg-green-50 hover:text-green-600 transition-all duration-200 group"
-              title="WhatsApp"
-            >
-              <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/felipereyessa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 group"
-              title="LinkedIn"
-            >
-              <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
-            </a>
-            <a
-              href="https://github.com/felipesanchez-dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full hover:bg-gray-50 hover:text-gray-800 transition-all duration-200 group"
-              title="GitHub"
-            >
-              <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
-            </a>
-          </div>
-        </div>
-        <div className="border-t p-3 bg-gray-50/50">
-          <a
-            href="https://felipesanchezdev.site"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-center group"
-          >
-            <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
-              © {new Date().getFullYear()} Felipe Reyes Sanchez
-            </p>
-          </a>
-        </div>
-      </DropdownMenuContent>
-    </DropdownMenu>
+      {/* Mobile Menu */}
+      <DashboardUserMobileMenu
+        user={data.user}
+        onLogout={onLogout}
+        getProviderIcon={getProviderIcon}
+        getProviderName={getProviderName}
+      />
+    </>
   );
 };
