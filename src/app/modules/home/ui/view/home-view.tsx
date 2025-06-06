@@ -10,7 +10,7 @@ export const HomeView = () => {
 
   if (!session) {
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div>
         <p className="text-lg">Cargando sesión...</p>
       </div>
     );
