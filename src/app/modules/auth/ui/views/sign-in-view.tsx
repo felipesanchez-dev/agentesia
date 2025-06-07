@@ -199,7 +199,7 @@ export const SignInView = () => {
 
                 <Button
                   type="submit"
-                  className="w-full h-12 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg disabled:opacity-50"
+                  className="w-full h-12 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg disabled:opacity-50 cursor-pointer"
                   disabled={isLoading || loadingProvider !== null}
                 >
                   {isLoading ? "Iniciando sesión..." : "Iniciar Sesión"}
@@ -231,7 +231,7 @@ export const SignInView = () => {
                     <Button
                       variant="outline"
                       type="button"
-                      className="h-12 border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50"
+                      className="h-12 border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50 cursor-pointer"
                       disabled={isLoading || loadingProvider !== null}
                       onClick={() => handleSocialSignIn("google")}
                     >
@@ -246,7 +246,7 @@ export const SignInView = () => {
                     <Button
                       variant="outline"
                       type="button"
-                      className="h-12 border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50"
+                      className="h-12 border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50 cursor-pointer"
                       disabled={isLoading || loadingProvider !== null}
                       onClick={() => handleSocialSignIn("github")}
                     >

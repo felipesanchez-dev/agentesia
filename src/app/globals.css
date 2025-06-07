@@ -121,3 +121,9 @@
   }
 }
 
+@layer base {
+  bottom :not(:disabled),
+  [role = "button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}

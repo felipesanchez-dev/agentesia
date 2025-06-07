@@ -74,7 +74,7 @@ export const DashboardUserButton = () => {
       {/* Desktop Dropdown */}
       <div className="hidden md:block">
         <DropdownMenu>
-          <DropdownMenuTrigger className="rounded-lg border border-border/10 p-3 w-full flex items-center gap-3 bg-white/5 hover:bg-white/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20">
+          <DropdownMenuTrigger className="rounded-lg border border-border/10 p-3 w-full flex items-center gap-3 bg-white/5 hover:bg-white/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 cursor-pointer">
             <Avatar className="h-8 w-8">
               <AvatarImage
                 src={data.user.image || ""}

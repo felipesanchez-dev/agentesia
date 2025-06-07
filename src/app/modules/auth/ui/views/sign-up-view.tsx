@@ -278,7 +278,7 @@ export const SignUpView = () => {
 
                 <Button
                   type="submit"
-                  className="w-full h-12 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg disabled:opacity-50"
+                  className="w-full h-12 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg disabled:opacity-50 cursor-pointer"
                   disabled={isLoading || loadingProvider !== null}
                 >
                   {isLoading ? "Creando cuenta..." : "Crear Cuenta"}
@@ -310,7 +310,7 @@ export const SignUpView = () => {
                     <Button
                       variant="outline"
                       type="button"
-                      className="h-12 border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50"
+                      className="h-12 border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50 cursor-pointer"
                       disabled={isLoading || loadingProvider !== null}
                       onClick={() => handleSocialSignIn("google")}
                     >
@@ -325,7 +325,7 @@ export const SignUpView = () => {
                     <Button
                       variant="outline"
                       type="button"
-                      className="h-12 border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50"
+                      className="h-12 border-gray-200 hover:bg-gray-50 transition-colors disabled:opacity-50 cursor-pointer"
                       disabled={isLoading || loadingProvider !== null}
                       onClick={() => handleSocialSignIn("github")}
                     >

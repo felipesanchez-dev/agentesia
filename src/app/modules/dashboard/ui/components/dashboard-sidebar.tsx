@@ -88,7 +88,6 @@ export const DashboardSidebar = () => {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        {/* Second Section */}
         <div className="px-4 py-2">
           <Separator className="opacity-100 text-[#000]" />
         </div>
