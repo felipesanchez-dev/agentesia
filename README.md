@@ -1210,8 +1210,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software...
 ```
 
-## 👨‍💻 Desarrollador
-
+---
 <div align="center">
   <img src="https://github.com/felipesanchez-dev.png" width="120" height="120" style="border-radius: 50%; border: 3px solid #16a34a;" alt="Felipe Reyes Sanchez" />
   
@@ -1227,9 +1226,11 @@ copies of the Software...
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Felipe_Reyes_Sanchez-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/felipereyessa)
 [![GitHub](https://img.shields.io/badge/GitHub-@felipesanchez--dev-black?style=for-the-badge&logo=github)](https://github.com/felipesanchez-dev)
 [![Instagram](https://img.shields.io/badge/Instagram-@felipesanchez__dev-purple?style=for-the-badge&logo=instagram)](https://www.instagram.com/felipesanchez_dev)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-+57_3102_452542-green?style=for-the-badge&logo=whatsapp)](https://wa.me/573102452542)
+
 
 </div>
+
+---
 
 ### 🛠️ Tecnologías y Expertise v1.2
 
