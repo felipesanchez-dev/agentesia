@@ -28,6 +28,9 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
   - [🔧 Comandos Útiles](#-comandos-útiles)
   - [📁 Estructura del Proyecto](#-estructura-del-proyecto)
   - [🔐 Configuración de Seguridad](#-configuración-de-seguridad)
+  - [🎯 Metodología de Desarrollo](#-metodología-de-desarrollo)
+  - [🔄 Estados de la Aplicación](#-estados-de-la-aplicación)
+  - [🎨 Sistema de Componentes](#-sistema-de-componentes)
   - [🐛 Solución de Problemas](#-solución-de-problemas)
   - [📈 Roadmap 2025](#-roadmap-2025)
   - [🤝 Contribución](#-contribución)
@@ -59,6 +62,7 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
 - **Server-Side Prefetching** - Optimización de performance
 - **React Query Integration** - Cache inteligente y sincronización
 - **TypeScript Full Coverage** - 100% tipado estático
+- **Shadcn Sidebar System** - Sidebar moderno con detección móvil
 
 ### 🔄 **En Desarrollo**
 - **Videollamadas con IA** (Q1 2025)
@@ -346,7 +350,6 @@ graph LR
     style L fill:#047857
     style N fill:#ff9800
 ```
-
 ### Configuración tRPC
 
 ```typescript
@@ -417,7 +420,7 @@ const Page = async () => {
   );
 };
 ```
-
+ 
 ## 🎨 Sistema de Loading y Estados
 
 ### Componente LoadingState Avanzado
@@ -454,36 +457,6 @@ graph TB
     style E fill:#2196f3
     style F fill:#9c27b0
     style G fill:#4caf50
-```
-
-### Estados de Error y Loading
-
-```tsx
-// Sistema completo de estados:
-
-// Loading States
-<LoadingState 
-  title="Cargando agentes"
-  description="Estamos preparando tus agentes IA especializados..."
-/>
-
-// Error States  
-<ErrorState
-  title="Error al cargar agentes"
-  description="No pudimos cargar los agentes. Verifica tu conexión."
-  action={() => window.location.reload()}
-  actionLabel="Reintentar"
-/>
-
-// Características implementadas:
-✅ Animación espacial inmersiva
-✅ Textos contextuales dinámicos
-✅ Progress indicators animados
-✅ Glassmorphism effects
-✅ Responsive design
-✅ Hardware accelerated animations
-✅ Smooth transitions
-✅ Corporate color scheme integration
 ```
 
 ### Optimizaciones de Performance
@@ -693,104 +666,6 @@ graph TB
     style T fill:#398CCB
 ```
 
-### DashboardSidebar con Sidebar UI
-
-```tsx
-// Nueva implementación con Shadcn Sidebar:
-export const DashboardSidebar = () => {
-  const pathname = usePathname();
-
-  return (
-    <Sidebar>
-      <SidebarHeader className="text-sidebar-accent-foreground">
-        <div className="flex items-center gap-3 px-3 py-2">
-          <Image src="/logo.png" alt="Logo" width={32} height={32} />
-          <span className="font-bold text-lg">COGNIMEET</span>
-        </div>
-      </SidebarHeader>
-      
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {firstSection.map((item) => (
-                <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton asChild isActive={pathname === item.href}>
-                    <Link href={item.href}>
-                      <item.icon className="size-4" />
-                      <span>{item.label}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
-      
-      <SidebarFooter>
-        <DashboardUserButton />
-      </SidebarFooter>
-    </Sidebar>
-  );
-};
-
-// Características implementadas:
-✅ Shadcn/UI Sidebar components
-✅ Responsive behavior
-✅ Active state indicators
-✅ Collapsible functionality
-✅ User button integration
-✅ Modern design system
-```
-
-### DashboardNavbar Mejorado
-
-```tsx
-// Navbar con Command palette:
-export const DashboardNavbar = () => {
-  const { state, toggleSidebar, isMobile } = useSidebar();
-  const [commandOpen, setCommandOpen] = useState(false);
-
-  return (
-    <>
-      <DashboardCommand open={commandOpen} setOpen={setCommandOpen} />
-      <nav className="flex px-4 gap-x-2 items-center py-3 border-b bg-background w-full">
-        <Button 
-          variant="outline" 
-          size="icon"
-          onClick={toggleSidebar}
-          className="md:hidden"
-        >
-          <MenuIcon className="size-4" />
-        </Button>
-        
-        <div className="flex-1" />
-        
-        <Button
-          variant="outline"
-          onClick={() => setCommandOpen(true)}
-          className="gap-2"
-        >
-          <SearchIcon className="size-4" />
-          <span className="hidden sm:inline">Buscar...</span>
-          <kbd className="pointer-events-none hidden sm:inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
-            <span className="text-xs">⌘</span>K
-          </kbd>
-        </Button>
-      </nav>
-    </>
-  );
-};
-
-// Características implementadas:
-✅ Command palette integration
-✅ Keyboard shortcuts (⌘K)
-✅ Responsive toggle button
-✅ Search functionality
-✅ Modern design
-```
-
 ## 📱 Sistema Responsive Avanzado
 
 ### Breakpoints y Comportamiento
@@ -851,8 +726,6 @@ const { state, toggleSidebar, isMobile } = useSidebar();
   --sidebar-foreground: var(--foreground);
 }
 ```
-
-### Componentes UI Avanzados v1.2
 
 #### Loading Components
 ```tsx
@@ -921,7 +794,6 @@ npx shadcn-ui@latest add command
 npx shadcn-ui@latest add separator
 npx shadcn-ui@latest add scroll-area
 ```
-
 ## 📁 Estructura del Proyecto
 
 ```
@@ -1009,37 +881,140 @@ BETTER_AUTH_SECRET=$(openssl rand -base64 32)
 node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 ```
 
-### Configuración tRPC Segura
+## 🎯 Metodología de Desarrollo
 
-```typescript
-// Procedimientos protegidos implementados:
-export const protectedProcedure = publicProcedure.use(({ ctx, next }) => {
-  if (!ctx.session || !ctx.session.user) {
-    throw new TRPCError({ code: 'UNAUTHORIZED' });
-  }
-  
-  return next({
-    ctx: {
-      ...ctx,
-      session: { ...ctx.session, user: ctx.session.user },
-    },
-  });
-});
+### Arquitectura de Desarrollo v1.2
 
-// Validación de entrada con Zod:
-export const agentCreateSchema = z.object({
-  name: z.string().min(1).max(100),
-  type: z.enum(['psychology', 'education', 'technology']),
-  description: z.string().min(10).max(500),
-});
+```mermaid
+graph TB
+    subgraph "Development Workflow"
+        A[Local Development] --> B[Type Checking]
+        B --> C[Testing]
+        C --> D[Build Process]
+        D --> E[Deployment]
+        
+        A --> F[Hot Reload]
+        A --> G[tRPC Dev Mode]
+        A --> H[DB Studio]
+    end
+    
+    subgraph "Quality Assurance"
+        I[TypeScript] --> J[ESLint]
+        J --> K[Prettier]
+        K --> L[Zod Validation]
+        L --> M[Error Boundaries]
+    end
+    
+    subgraph "Performance Monitoring"
+        N[React Query DevTools]
+        O[Bundle Analyzer]
+        P[Lighthouse Metrics]
+        Q[Core Web Vitals]
+    end
+    
+    style A fill:#059669
+    style I fill:#398CCB
+    style N fill:#ff9800
+```
 
-// Características de seguridad:
-✅ Input validation con Zod
-✅ Protected procedures para autenticación
-✅ Type-safe database queries
-✅ SQL injection prevention
-✅ XSS protection automática
-✅ CSRF protection integrada
+### Principios de Desarrollo
+
+- **🔒 Type Safety First** - TypeScript en toda la aplicación
+- **⚡ Performance Oriented** - Optimización constante de rendimiento  
+- **🎨 User Experience Focus** - Diseño centrado en el usuario
+- **🔄 API Type Safety** - tRPC para comunicación cliente-servidor
+- **📱 Mobile First** - Desarrollo responsive desde el inicio
+- **🧪 Testing Culture** - Pruebas como parte del desarrollo
+
+## 🔄 Estados de la Aplicación
+
+### Manejo de Estados Avanzado
+
+```mermaid
+stateDiagram-v2
+    [*] --> Loading
+    Loading --> Authenticated: Login Success
+    Loading --> Unauthenticated: No Session
+    
+    state Authenticated {
+        [*] --> Dashboard
+        Dashboard --> Agents
+        Dashboard --> Meetings
+        Dashboard --> Upgrade
+        Dashboard --> Settings
+        
+        state Agents {
+            [*] --> AgentsLoading
+            AgentsLoading --> AgentsSuccess: Data Loaded
+            AgentsLoading --> AgentsError: Error Occurred
+            AgentsError --> AgentsLoading: Retry
+        }
+    }
+    
+    state Unauthenticated {
+        [*] --> Home
+        Home --> SignIn
+        Home --> SignUp
+        SignIn --> Authenticated: Success
+        SignUp --> Authenticated: Success
+    }
+    
+    Authenticated --> Unauthenticated: Logout
+```
+
+### Estados de Datos con React Query
+
+- **🔄 Loading** - Datos siendo cargados por primera vez
+- **✅ Success** - Datos cargados exitosamente  
+- **❌ Error** - Error en la carga de datos
+- **🔄 Refetching** - Recarga en segundo plano
+- **⏳ Stale** - Datos obsoletos pero mostrados
+- **🚫 Paused** - Query pausada (sin conexión)
+
+## 🎨 Sistema de Componentes
+
+### Jerarquía de Componentes
+
+```mermaid
+graph TB
+    subgraph "Layout Components"
+        A[RootLayout] --> B[AuthLayout]
+        A --> C[DashboardLayout]
+        
+        C --> D[Sidebar]
+        C --> E[Navbar]
+        C --> F[Main Content]
+        
+        D --> G[Navigation Links]
+        D --> H[User Section]
+        
+        F --> I[Page Wrapper]
+        I --> J[Suspense Boundary]
+        I --> K[Error Boundary]
+    end
+    
+    subgraph "Feature Components"
+        L[AgentsView] --> M[AgentCard]
+        L --> N[AgentsFilter]
+        L --> O[AgentsGrid]
+        
+        P[MeetingsView] --> Q[MeetingCard]
+        P --> R[Calendar View]
+        
+        S[ProfileView] --> T[ProfileForm]
+        S --> U[ProfileImage]
+    end
+    
+    subgraph "UI Components"
+        V[Button] --> W[LoadingButton]
+        X[Modal] --> Y[MobileModal]
+        Z[Form] --> AA[FormField]
+        BB[LoadingState] --> CC[SpaceLoader]
+    end
+    
+    style A fill:#059669
+    style L fill:#4caf50
+    style V fill:#398CCB
 ```
 
 ## 🐛 Solución de Problemas
@@ -1091,6 +1066,52 @@ void queryClient.prefetchQuery(trpc.agents.getMany.queryOptions());
 will-change: transform;
 animation: float 3s ease-in-out infinite;
 ```
+
+
+### Principios de Componentes
+
+- **🔧 Modularidad** - Componentes reutilizables y específicos
+- **📱 Responsive** - Adaptación automática a dispositivos
+- **♿ Accesibilidad** - ARIA labels y navegación por teclado
+- **🎨 Consistencia** - Diseño uniforme con Shadcn/UI
+- **⚡ Performance** - Lazy loading y memoización
+- **🔍 Type Safety** - Props tipadas estrictamente
+
+## 🐛 Solución de Problemas
+
+### Problemas Comunes y Soluciones
+
+```mermaid
+graph TD
+    A[Error de Inicio] --> B{Tipo de Error}
+    
+    B -->|Database Connection| C[Verificar DATABASE_URL]
+    B -->|Auth Issues| D[Verificar BETTER_AUTH_SECRET]
+    B -->|tRPC Errors| E[Verificar API Routes]
+    B -->|Build Errors| F[Limpiar Cache]
+    
+    C --> G[Comandos de Solución]
+    D --> G
+    E --> G
+    F --> G
+    
+    G --> H[npm run db:push]
+    G --> I[npm run clean]
+    G --> J[npm install]
+    G --> K[Reiniciar servidor]
+    
+    style B fill:#f59e0b
+    style G fill:#10b981
+```
+
+### Checklist de Problemas Frecuentes
+
+- ✅ **Variables de entorno configuradas** - Verificar `.env.local`
+- ✅ **Base de datos conectada** - Probar conexión con `npm run db:studio`
+- ✅ **Dependencias instaladas** - Ejecutar `npm install`
+- ✅ **Puerto disponible** - Cambiar puerto si 3000 está ocupado
+- ✅ **Node.js versión correcta** - Verificar versión >= 18.18
+- ✅ **tRPC funcionando** - Verificar endpoints en `/api/trpc`
 
 ## 📈 Roadmap 2025
 
@@ -1210,14 +1231,14 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software...
 ```
 
----
+## 👨‍💻 Desarrollador
+
 <div align="center">
   <img src="https://github.com/felipesanchez-dev.png" width="120" height="120" style="border-radius: 50%; border: 3px solid #16a34a;" alt="Felipe Reyes Sanchez" />
   
   **Felipe Reyes Sanchez**  
   *Full Stack Developer & UI/UX Enthusiast*
 </div>
-
 
 <div align="center">
   
@@ -1231,18 +1252,6 @@ copies of the Software...
 </div>
 
 ---
-
-### 🛠️ Tecnologías y Expertise v1.2
-
-```
-Frontend:    React, Next.js, TypeScript, Tailwind CSS, Shadcn/UI
-Backend:     tRPC, React Query, Zod, Node.js, PostgreSQL
-Database:    Drizzle ORM, Neon, SQL
-Auth:        BetterAuth, OAuth (Google, GitHub), JWT
-Tools:       Git, Docker, Vercel, VS Code, Drizzle Studio
-Design:      Figma, Glassmorphism, Responsive Design, CSS Animations
-API:         Type-safe APIs, Server-side prefetching, Real-time updates
-```
 
 ### 📊 Estadísticas del Proyecto
 
@@ -1274,7 +1283,7 @@ API:         Type-safe APIs, Server-side prefetching, Real-time updates
 <div align="center">
   <h3>🚀 COGNIMEET v1.2.0 - Conecta • Colabora • Crece</h3>
   <p><strong>Desarrollado por Felipe Reyes Sanchez</strong></p>
-  <p><em>"El futuro de la comunicación IA está aquí - Ahora con tRPC & Type Safety"</em></p>
+  <p><em>"El futuro de la comunicación IA está aquí"</em></p>
   
   <br>
   
