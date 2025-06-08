@@ -1,17 +1,17 @@
-# 🚀 COGNIMEET
+# 🤖 Agentesia
 *Plataforma de Agentes IA Inteligentes*
 
-Una aplicación web moderna construida con Next.js para la gestión, interacción y colaboración con agentes de inteligencia artificial especializados. Conecta con expertos virtuales en videollamadas y experimenta el futuro de la comunicación IA.
+Una aplicación web moderna construida con Next.js para la gestión, interacción y colaboración con agentes de inteligencia artificial especializados. Conecta con expertos virtuales y experimenta el futuro de la comunicación IA.
 
-![COGNIMEET Banner](https://img.shields.io/badge/COGNIMEET-v1.2.0-green?style=for-the-badge&logo=react)
+![Agentesia Banner](https://img.shields.io/badge/Agentesia-v0.1.0-green?style=for-the-badge&logo=react)
 [![Next.js](https://img.shields.io/badge/Next.js-15.3.2-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4+-06B6D4?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0+-06B6D4?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
 [![tRPC](https://img.shields.io/badge/tRPC-11.0+-398CCB?style=flat&logo=trpc)](https://trpc.io/)
 
 ## 📋 Tabla de Contenidos
 
-- [🚀 COGNIMEET](#-cognimeet)
+- [🤖 Agentesia](#-agentesia)
   - [📋 Tabla de Contenidos](#-tabla-de-contenidos)
   - [🎯 Características Principales](#-características-principales)
   - [🏗️ Arquitectura del Sistema](#️-arquitectura-del-sistema)
@@ -42,6 +42,7 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
 ### ✅ **Sistema Completo Implementado**
 - **Sistema de Autenticación Completo** - Email/contraseña y OAuth (Google, GitHub)
 - **Dashboard Interactivo** - Panel de control moderno con sidebar navegacional
+- **Gestión de Agentes IA** - CRUD completo con sistema de avatares dinámicos
 - **Botón de Usuario Avanzado** - Dropdown y modal móvil con información detallada
 - **Detección de Proveedores** - Identificación automática del método de autenticación
 - **Diseño Responsive Completo** - Desktop y móvil con animaciones nativas
@@ -54,7 +55,7 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
 - **Redirección Inteligente** - Protección de rutas y redirección automática
 - **Componentes Modulares** - Arquitectura escalable y mantenible
 
-### 🆕 **Nuevas Características v1.2.0**
+### 🆕 **Características Avanzadas v0.1.0**
 - **tRPC Integration** - API type-safe con React Query
 - **Sistema de Loading Avanzado** - Loader espacial con astronauta animado
 - **Error Boundaries** - Manejo robusto de errores
@@ -63,11 +64,14 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
 - **React Query Integration** - Cache inteligente y sincronización
 - **TypeScript Full Coverage** - 100% tipado estático
 - **Shadcn Sidebar System** - Sidebar moderno con detección móvil
+- **Avatares Dinámicos** - Generación automática de avatares para agentes
+- **Categorización Inteligente** - Detección automática de categorías de agentes
 
-### 🔄 **En Desarrollo**
+### 🔄 **En Desarrollo - Roadmap 2025**
 - **Videollamadas con IA** (Q1 2025)
 - **Agentes Especializados** (Q1 2025)
 - **Chat en Tiempo Real** (Q2 2025)
+- **Integraciones Avanzadas** (Q3 2025)
 
 ## 🏗️ Arquitectura del Sistema
 
@@ -97,7 +101,7 @@ graph TB
         E --> H[Users Router]
         
         F --> F1[agents.getMany]
-        F --> F2[agents.getById]
+        F --> F2[agents.getOne]
         F --> F3[agents.create]
         
         I[React Query] --> J[Server State Cache]
@@ -106,7 +110,7 @@ graph TB
     end
     
     subgraph "Authentication Layer"
-        M[BetterAuth] --> N[Email/Password]
+        M[BetterAuth v1.2.8] --> N[Email/Password]
         M --> O[Google OAuth]
         M --> P[GitHub OAuth]
         M --> Q[Session Management]
@@ -124,6 +128,7 @@ graph TB
         W --> Y[Layout Components]
         W --> Z[Navigation Components]
         W --> AA[Loading Components]
+        W --> BB[Avatar Components]
     end
     
     A --> E
@@ -143,32 +148,34 @@ graph TB
 
 ### Frontend
 - **[Next.js](https://nextjs.org/)** v15.3.2 - Framework de React con App Router
-- **[TypeScript](https://www.typescriptlang.org/)** - Tipado estático para JavaScript
-- **[Tailwind CSS](https://tailwindcss.com/)** - Framework de CSS utilitario
+- **[TypeScript](https://www.typescriptlang.org/)** v5+ - Tipado estático para JavaScript
+- **[Tailwind CSS](https://tailwindcss.com/)** v4+ - Framework de CSS utilitario
 - **[Shadcn/UI](https://ui.shadcn.com/)** - Biblioteca de componentes modernos
 - **[Lucide React](https://lucide.dev/)** - Iconos SVG optimizados
 - **[React Hook Form](https://react-hook-form.com/)** - Manejo avanzado de formularios
+- **[React Error Boundary](https://github.com/bvaughn/react-error-boundary)** - Manejo de errores
 
 ### Backend & API
-- **[tRPC](https://trpc.io/)** v11.0+ - Type-safe API con TypeScript
-- **[React Query](https://tanstack.com/query)** - Server state management
+- **[tRPC](https://trpc.io/)** v11+ - Type-safe API con TypeScript
+- **[React Query](https://tanstack.com/query)** v5+ - Server state management
 - **[Zod](https://zod.dev/)** - Validación de esquemas TypeScript-first
 - **[PostgreSQL](https://www.postgresql.org/)** - Base de datos relacional
 - **[Neon](https://neon.com)** - Hosting de PostgreSQL serverless
 - **[Drizzle ORM](https://orm.drizzle.team/)** - ORM TypeScript-first
 
 ### Autenticación
-- **[BetterAuth](https://www.better-auth.com/)** - Sistema de autenticación moderno
+- **[BetterAuth](https://www.better-auth.com/)** v1.2.8 - Sistema de autenticación moderno
 - **OAuth Providers** - Google y GitHub integrados
 - **Session Management** - Manejo seguro de sesiones
 
 ### UI/UX & Performance
 - **Glassmorphism** - Efectos de vidrio esmerilado
 - **Animaciones CSS Avanzadas** - Keyframes personalizados y transiciones
-- **Loading States** - Componentes de carga inmersivos
+- **Loading States** - Componentes de carga inmersivos con astronauta espacial
 - **Error Boundaries** - Manejo robusto de errores
 - **Responsive Design** - Desktop-first con adaptación móvil
 - **Performance Optimization** - Server-side prefetching y caching
+- **Avatar Generation** - Sistema de generación automática de avatares
 
 ## 📱 Diagramas de Flujo
 
@@ -259,44 +266,38 @@ flowchart LR
     style M fill:#ff9800
 ```
 
-### Arquitectura de Páginas y Estados
+### Flujo de Gestión de Agentes
 
 ```mermaid
 flowchart TD
-    A[Page.tsx] --> B[HydrationBoundary]
-    B --> C[Suspense]
-    C --> D[ErrorBoundary]
-    D --> E[View Component]
+    A[Agents Page] --> B[Server Prefetch]
+    B --> C[tRPC agents.getMany]
+    C --> D[Database Query]
+    D --> E[Return Agents Data]
     
-    A --> F[Server Prefetch]
-    F --> G[queryClient.prefetchQuery]
-    G --> H[tRPC.agents.getMany]
+    E --> F[Render Agents Grid]
+    F --> G[Generate Dynamic Avatars]
+    G --> H[Category Detection]
+    H --> I[Icon Selection]
+    I --> J[Color Assignment]
     
-    C --> I[Loading Fallback]
-    I --> J[AgentsViewLoading]
-    J --> K[LoadingState]
-    K --> L[Space Loader]
+    F --> K[Agent Form]
+    K --> L[Validation with Zod]
+    L --> M{Valid?}
+    M -->|No| N[Show Errors]
+    M -->|Yes| O[tRPC agents.create]
     
-    D --> M[Error Fallback]
-    M --> N[AgentsViewError]
-    N --> O[ErrorState]
+    O --> P[Database Insert]
+    P --> Q[Update Cache]
+    Q --> R[Refresh UI]
     
-    E --> P[useSuspenseQuery]
-    P --> Q[Cached Data]
-    Q --> R[Render Content]
-    
-    subgraph "Loading Animation"
-        L --> L1[Astronaut Animation]
-        L --> L2[Space Environment]
-        L --> L3[Progress Bar]
-        L --> L4[Loading Text]
-    end
+    N --> K
     
     style A fill:#059669
-    style H fill:#398CCB
-    style L fill:#ff9800
-    style O fill:#f44336
-    style R fill:#4caf50
+    style C fill:#398CCB
+    style G fill:#ff9800
+    style O fill:#4caf50
+    style P fill:#047857
 ```
 
 ## 🔄 Sistema tRPC y API
@@ -350,29 +351,38 @@ graph LR
     style L fill:#047857
     style N fill:#ff9800
 ```
-### Configuración tRPC
+
+### Configuración tRPC Actual
 
 ```typescript
 // Router de Agentes implementado:
-export const agentsRouter = router({
-  getMany: publicProcedure
-    .query(async () => {
-      // Lógica para obtener agentes
-      return await db.select().from(agents);
-    }),
-    
-  getById: publicProcedure
+export const agentsRouter = createTRPCRouter({
+  getOne: baseProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ input }) => {
-      // Lógica para obtener agente por ID
-      return await db.select().from(agents).where(eq(agents.id, input.id));
+      const [existingAgent] = await db
+        .select()
+        .from(agents)
+        .where(eq(agents.id, input.id));
+      return existingAgent;
     }),
-    
+
+  getMany: baseProcedure.query(async () => {
+    const data = await db.select().from(agents);
+    return data;
+  }),
+
   create: protectedProcedure
-    .input(agentCreateSchema)
+    .input(agentsInsertSchema)
     .mutation(async ({ input, ctx }) => {
-      // Lógica para crear agente
-      return await db.insert(agents).values(input);
+      const [createdAgent] = await db
+        .insert(agents)
+        .values({
+          ...input,
+          userId: ctx.auth.user.id,
+        })
+        .returning();
+      return createdAgent;
     }),
 });
 
@@ -385,6 +395,7 @@ export const agentsRouter = router({
 ✅ Optimistic updates
 ✅ Error handling
 ✅ Loading states
+✅ Protected procedures
 ```
 
 ### Uso en Componentes
@@ -420,7 +431,7 @@ const Page = async () => {
   );
 };
 ```
- 
+
 ## 🎨 Sistema de Loading y Estados
 
 ### Componente LoadingState Avanzado
@@ -457,6 +468,39 @@ graph TB
     style E fill:#2196f3
     style F fill:#9c27b0
     style G fill:#4caf50
+```
+
+### Sistema de Avatares Dinámicos
+
+```mermaid
+graph TB
+    A[Agent Creation] --> B[Avatar Generator]
+    B --> C[Name Analysis]
+    C --> D[Category Detection]
+    D --> E[Hash Generation]
+    
+    E --> F[Icon Selection]
+    E --> G[Color Assignment]
+    E --> H[Initials Generation]
+    
+    F --> I[Technology Icons]
+    F --> J[General Icons]
+    
+    G --> K[Gradient Colors]
+    
+    H --> L[Single Word Logic]
+    H --> M[Multiple Words Logic]
+    
+    I --> N[Final Avatar]
+    J --> N
+    K --> N
+    L --> N
+    M --> N
+    
+    style A fill:#059669
+    style B fill:#398CCB
+    style D fill:#ff9800
+    style N fill:#4caf50
 ```
 
 ### Optimizaciones de Performance
@@ -510,7 +554,7 @@ cd agentesia
 # Instalar dependencias
 npm install
 
-# Iniciar servidor de desarrollo
+# Iniciar servidor de desarrollo con Turbopack
 npm run dev
 ```
 
@@ -543,9 +587,6 @@ NEXT_PUBLIC_APP_URL="http://localhost:3000"
 ### 3. Configuración de Base de Datos
 
 ```bash
-# Instalar dependencias de base de datos
-npm install postgres drizzle-orm drizzle-kit
-
 # Ejecutar migraciones
 npm run db:push
 
@@ -556,10 +597,6 @@ npm run db:studio
 ### 4. Configuración tRPC
 
 ```bash
-# Instalar dependencias tRPC
-npm install @trpc/server @trpc/client @trpc/next @trpc/react-query
-npm install @tanstack/react-query
-
 # tRPC está pre-configurado con:
 ✅ Type-safe API routes
 ✅ React Query integration
@@ -567,6 +604,7 @@ npm install @tanstack/react-query
 ✅ Error boundaries
 ✅ Loading states
 ✅ Zod validation
+✅ Protected procedures
 ```
 
 ## 🎨 Sistema de Autenticación
@@ -608,8 +646,8 @@ graph LR
 
 ### Características Implementadas
 
-- ✅ **Registro de usuarios** (`/sign-up`)
-- ✅ **Inicio de sesión** (`/sign-in`)
+- ✅ **Registro de usuarios** (`/sign-in`)
+- ✅ **Inicio de sesión** (`/sign-up`)
 - ✅ **Autenticación OAuth** (Google, GitHub)
 - ✅ **Validación de formularios** con Zod
 - ✅ **Manejo de errores** amigable al usuario
@@ -621,7 +659,7 @@ graph LR
 
 ## 🖥️ Dashboard y Componentes
 
-### Arquitectura del Dashboard Actualizada
+### Arquitectura del Dashboard
 
 ```mermaid
 graph TB
@@ -671,10 +709,10 @@ graph TB
 ### Breakpoints y Comportamiento
 
 ```css
-/* Sistema de breakpoints actualizado */
-Mobile:     < 768px   - Sidebar colapsado, navbar simplificado
-Tablet:     768px - 1024px - Sidebar adaptativo, command palette
-Desktop:    > 1024px  - Layout completo, todas las características
+/* Sistema de breakpoints implementado */
+Mobile:     < 768px   - Sidebar colapsado, modal móvil
+Tablet:     768px - 1024px - Sidebar adaptativo
+Desktop:    > 1024px  - Layout completo
 
 /* Implementación con Tailwind y Shadcn Sidebar */
 .md:hidden        /* Oculto en desktop, visible en móvil */
@@ -699,10 +737,10 @@ const { state, toggleSidebar, isMobile } = useSidebar();
 
 ## 🎨 Diseño y UI
 
-### Paleta de Colores Actualizada
+### Paleta de Colores
 
 ```css
-/* Colores principales de la marca v1.2 */
+/* Colores principales de la marca */
 :root {
   --primary-green: #16a34a;      /* green-600 - Color principal */
   --primary-green-hover: #15803d; /* green-700 - Hover states */
@@ -719,15 +757,11 @@ const { state, toggleSidebar, isMobile } = useSidebar();
   --space-stars: #ffffff;        /* Star colors */
   --astronaut-suit: #e5e7eb;     /* Astronaut suit */
   --helmet-glass: rgba(0, 255, 255, 0.2); /* Helmet glass */
-  
-  /* Sidebar colors */
-  --sidebar-bg: var(--background);
-  --sidebar-border: var(--border);
-  --sidebar-foreground: var(--foreground);
 }
 ```
 
-#### Loading Components
+### Loading Components
+
 ```tsx
 // Space Loader con animaciones CSS optimizadas:
 ✅ Astronauta animado con movimientos realistas
@@ -738,11 +772,12 @@ const { state, toggleSidebar, isMobile } = useSidebar();
 ✅ Texto de carga contextual
 ✅ Efectos de reflexión en el casco
 ✅ Indicadores LED parpadeantes
-✅ Responsive design (150px en móvil, 200px en desktop)
+✅ Responsive design (ajuste automático de tamaño)
 ✅ Hardware acceleration (will-change: transform)
 ```
 
-#### Error Components
+### Error Components
+
 ```tsx
 // Sistema de error mejorado:
 ✅ Error boundaries con React 18
@@ -753,9 +788,10 @@ const { state, toggleSidebar, isMobile } = useSidebar();
 ✅ User-friendly error states
 ```
 
-#### Glassmorphism Effects v2
+### Glassmorphism Effects
+
 ```tsx
-// Efectos glassmorphism mejorados:
+// Efectos glassmorphism implementados:
 ✅ backdrop-blur-sm para loading containers
 ✅ bg-background/80 para semi-transparencia
 ✅ border-white/10 para bordes sutiles
@@ -768,7 +804,7 @@ const { state, toggleSidebar, isMobile } = useSidebar();
 
 ```bash
 # Desarrollo
-npm run dev              # Iniciar servidor de desarrollo
+npm run dev              # Iniciar servidor de desarrollo (con Turbopack)
 npm run build            # Construir para producción
 npm run start            # Iniciar servidor de producción
 npm run lint             # Ejecutar linting
@@ -776,12 +812,6 @@ npm run lint             # Ejecutar linting
 # Base de Datos
 npm run db:push          # Aplicar cambios de esquema
 npm run db:studio        # Abrir Drizzle Studio
-npm run db:generate      # Generar migraciones
-
-# tRPC
-npm run type-check       # Verificar tipos TypeScript
-npm run build:trpc       # Build tRPC types
-npm run dev:trpc         # Desarrollo con tRPC watch mode
 
 # Utilidades
 npm run format           # Formatear código con Prettier
@@ -794,6 +824,7 @@ npx shadcn-ui@latest add command
 npx shadcn-ui@latest add separator
 npx shadcn-ui@latest add scroll-area
 ```
+
 ## 📁 Estructura del Proyecto
 
 ```
@@ -806,15 +837,23 @@ agentesia/
 │   │   │   │       ├── sign-in-view.tsx    # Vista de inicio de sesión
 │   │   │   │       └── sign-up-view.tsx    # Vista de registro
 │   │   │   ├── agents/                     # Módulo de agentes IA
-│   │   │   │   └── ui/views/
-│   │   │   │       └── agents-view.tsx     # Vista principal de agentes
+│   │   │   │   ├── ui/
+│   │   │   │   │   ├── views/
+│   │   │   │   │   │   └── agents-view.tsx     # Vista principal de agentes
+│   │   │   │   │   └── components/
+│   │   │   │   │       ├── agent-form.tsx         # Formulario de agentes
+│   │   │   │   │       ├── agent-avatar.tsx       # Avatar dinámico
+│   │   │   │   │       └── agent-avatar-generator.ts # Generador de avatares
+│   │   │   │   ├── server/
+│   │   │   │   │   └── procedures.ts           # Procedimientos tRPC
+│   │   │   │   ├── schemas/
+│   │   │   │   └── types/
 │   │   │   ├── dashboard/
 │   │   │   │   └── ui/components/
 │   │   │   │       ├── dashboard-sidebar.tsx           # Sidebar con Shadcn
-│   │   │   │       ├── dashboard-navbar.tsx            # Navbar con command
-│   │   │   │       ├── dashboard-command.tsx           # Command palette
-│   │   │   │       ├── dashboard-user-button.tsx       # Botón usuario principal
-│   │   │   │       └── dashboard-user-mobile-menu.tsx  # Modal móvil avanzado
+│   │   │   │       ├── dashboard-navbar.tsx            # Navbar
+│   │   │   │       ├── dashboard-user-button.tsx       # Botón usuario desktop
+│   │   │   │       └── dashboard-user-mobile-menu.tsx  # Modal móvil
 │   │   │   └── home/
 │   │   │       └── ui/view/
 │   │   │           └── home-view.tsx       # Vista de landing
@@ -832,7 +871,7 @@ agentesia/
 │   │   │   ├── auth/                   # Endpoints de BetterAuth
 │   │   │   └── trpc/[trpc]/route.ts    # tRPC handler
 │   │   ├── globals.css                 # Estilos globales
-│   │   ├── layout.tsx                  # Layout raíz con providers
+│   │   ├── layout.tsx                  #Layout raíz con providers
 │   │   └── page.tsx                    # Página de inicio
 │   ├── components/
 │   │   ├── ui/                         # Componentes Shadcn/UI
@@ -847,9 +886,10 @@ agentesia/
 │   ├── trpc/                           # tRPC configuration
 │   │   ├── client.tsx                  # Client-side tRPC
 │   │   ├── server.ts                   # Server-side tRPC
+│   │   ├── init.ts                     # tRPC initialization
 │   │   ├── routers/                    # tRPC routers
-│   │   │   ├── agents.ts               # Agents router
-│   │   │   └── index.ts                # Root router
+│   │   │   ├── _app.ts                 # Root app router
+│   │   │   └── index.ts                # Router exports
 │   │   └── providers.tsx               # React Query provider
 │   ├── db/
 │   │   ├── index.ts                    # Configuración de Drizzle
@@ -873,6 +913,7 @@ agentesia/
 ## 🔐 Configuración de Seguridad
 
 ### Variables de Entorno Seguras
+
 ```bash
 # Generar clave secreta segura (mínimo 32 caracteres)
 BETTER_AUTH_SECRET=$(openssl rand -base64 32)
@@ -881,9 +922,18 @@ BETTER_AUTH_SECRET=$(openssl rand -base64 32)
 node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 ```
 
+### Buenas Prácticas Implementadas
+
+- ✅ **Validación de entrada** con Zod en todas las rutas
+- ✅ **Procedimientos protegidos** en tRPC
+- ✅ **Sanitización de datos** antes de inserción en BD
+- ✅ **Headers de seguridad** configurados
+- ✅ **Variables de entorno** para datos sensibles
+- ✅ **Sesiones seguras** con BetterAuth
+
 ## 🎯 Metodología de Desarrollo
 
-### Arquitectura de Desarrollo v1.2
+### Arquitectura de Desarrollo
 
 ```mermaid
 graph TB
@@ -925,6 +975,7 @@ graph TB
 - **🔄 API Type Safety** - tRPC para comunicación cliente-servidor
 - **📱 Mobile First** - Desarrollo responsive desde el inicio
 - **🧪 Testing Culture** - Pruebas como parte del desarrollo
+- **♻️ Component Reusability** - Componentes modulares y reutilizables
 
 ## 🔄 Estados de la Aplicación
 
@@ -948,6 +999,8 @@ stateDiagram-v2
             AgentsLoading --> AgentsSuccess: Data Loaded
             AgentsLoading --> AgentsError: Error Occurred
             AgentsError --> AgentsLoading: Retry
+            AgentsSuccess --> AgentCreation: Create New
+            AgentCreation --> AgentsSuccess: Created
         }
     }
     
@@ -998,237 +1051,247 @@ graph TB
         L --> N[AgentsFilter]
         L --> O[AgentsGrid]
         
-        P[MeetingsView] --> Q[MeetingCard]
-        P --> R[Calendar View]
+        P[AgentForm] --> Q[AgentAvatar]
+        P --> R[Form Fields]
+        P --> S[Validation]
         
-        S[ProfileView] --> T[ProfileForm]
-        S --> U[ProfileImage]
+        Q --> T[Avatar Generator]
+        T --> U[Category Detection]
+        T --> V[Icon Selection]
+        T --> W[Color Assignment]
     end
     
     subgraph "UI Components"
-        V[Button] --> W[LoadingButton]
-        X[Modal] --> Y[MobileModal]
-        Z[Form] --> AA[FormField]
-        BB[LoadingState] --> CC[SpaceLoader]
+        X[Button] --> Y[Loading State]
+        X --> Z[Variants]
+        
+        AA[Input] --> BB[Validation]
+        AA --> CC[Error States]
+        
+        DD[Modal] --> EE[Mobile Gestures]
+        DD --> FF[Desktop Dropdown]
     end
     
     style A fill:#059669
-    style L fill:#4caf50
-    style V fill:#398CCB
+    style L fill:#398CCB
+    style X fill:#4caf50
+    style T fill:#ff9800
 ```
 
-## 🐛 Solución de Problemas
+### Componentes Reutilizables
 
-### Error: tRPC not working
-```bash
-# Verificar instalación:
-npm install @trpc/server @trpc/client @trpc/next @trpc/react-query
-npm install @tanstack/react-query
-
-# Verificar configuración en next.config.js:
-experimental: {
-  serverComponentsExternalPackages: ['@trpc/server']
-}
+```tsx
+// Componentes principales implementados:
+✅ AgentAvatar - Avatar dinámico con generación automática
+✅ LoadingState - Estado de carga con animación espacial
+✅ ErrorBoundary - Manejo de errores con retry
+✅ AgentForm - Formulario completo con validación
+✅ DashboardSidebar - Sidebar responsivo con Shadcn
+✅ UserButton - Botón de usuario con dropdown/modal
+✅ SpaceLoader - Animación de carga inmersiva
 ```
-
-### Error: React Query hydration mismatch
-```bash
-# Verificar HydrationBoundary setup:
-<HydrationBoundary state={dehydrate(queryClient)}>
-  <YourComponent />
-</HydrationBoundary>
-
-# Verificar prefetching en server:
-void queryClient.prefetchQuery(trpc.agents.getMany.queryOptions());
-```
-
-### Error: Sidebar not responsive
-```bash
-# Verificar SidebarProvider:
-<SidebarProvider>
-  <DashboardSidebar />
-  <main>...</main>
-</SidebarProvider>
-
-# Verificar breakpoints:
-.md:hidden    # Mobile-only
-.hidden.md:block  # Desktop-only
-```
-
-### Error: Space loader not animating
-```bash
-# Verificar CSS Modules:
-1. loader.module.css existe
-2. Importación correcta: import styles from './loader.module.css'
-3. Clases aplicadas: className={styles.spaceLoader}
-
-# Verificar animaciones CSS:
-will-change: transform;
-animation: float 3s ease-in-out infinite;
-```
-
-
-### Principios de Componentes
-
-- **🔧 Modularidad** - Componentes reutilizables y específicos
-- **📱 Responsive** - Adaptación automática a dispositivos
-- **♿ Accesibilidad** - ARIA labels y navegación por teclado
-- **🎨 Consistencia** - Diseño uniforme con Shadcn/UI
-- **⚡ Performance** - Lazy loading y memoización
-- **🔍 Type Safety** - Props tipadas estrictamente
 
 ## 🐛 Solución de Problemas
 
 ### Problemas Comunes y Soluciones
 
-```mermaid
-graph TD
-    A[Error de Inicio] --> B{Tipo de Error}
-    
-    B -->|Database Connection| C[Verificar DATABASE_URL]
-    B -->|Auth Issues| D[Verificar BETTER_AUTH_SECRET]
-    B -->|tRPC Errors| E[Verificar API Routes]
-    B -->|Build Errors| F[Limpiar Cache]
-    
-    C --> G[Comandos de Solución]
-    D --> G
-    E --> G
-    F --> G
-    
-    G --> H[npm run db:push]
-    G --> I[npm run clean]
-    G --> J[npm install]
-    G --> K[Reiniciar servidor]
-    
-    style B fill:#f59e0b
-    style G fill:#10b981
+#### Error de Base de Datos
+```bash
+# Verificar conexión
+npm run db:studio
+
+# Regenerar esquema
+npm run db:push
+
+# Verificar variables de entorno
+echo $DATABASE_URL
 ```
 
-### Checklist de Problemas Frecuentes
+#### Error de Autenticación
+```bash
+# Verificar BETTER_AUTH_SECRET (mínimo 32 caracteres)
+echo $BETTER_AUTH_SECRET | wc -c
 
-- ✅ **Variables de entorno configuradas** - Verificar `.env.local`
-- ✅ **Base de datos conectada** - Probar conexión con `npm run db:studio`
-- ✅ **Dependencias instaladas** - Ejecutar `npm install`
-- ✅ **Puerto disponible** - Cambiar puerto si 3000 está ocupado
-- ✅ **Node.js versión correcta** - Verificar versión >= 18.18
-- ✅ **tRPC funcionando** - Verificar endpoints en `/api/trpc`
+# Confirmar URLs de OAuth en proveedores
+# Google: https://console.cloud.google.com/
+# GitHub: https://github.com/settings/applications
+```
+
+#### Error de tRPC
+```bash
+# Verificar tipos
+npm run type-check
+
+# Limpiar cache
+rm -rf .next/
+npm run dev
+```
+
+#### Error de Componentes
+```bash
+# Verificar instalación de Shadcn
+npx shadcn-ui@latest add --help
+
+# Reinstalar dependencias
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Debug Tips
+
+```tsx
+// Activar React Query DevTools en desarrollo:
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+// Logs de tRPC en desarrollo:
+const trpc = createTRPCNext<AppRouter>({
+  config() {
+    return {
+      links: [
+        loggerLink({
+          enabled: (opts) => process.env.NODE_ENV === 'development',
+        }),
+      ],
+    }
+  },
+})
+```
 
 ## 📈 Roadmap 2025
 
-### Q1 2025 - Funcionalidades Core
-- [ ] **Sistema de Videollamadas** - Integración con WebRTC/Jitsi
-- [ ] **Agentes IA Especializados** - Psicología, educación, tecnología
-- [ ] **Chat en Tiempo Real** - Comunicación previa a videollamadas
-- [ ] **Historial de Sesiones** - Registro y replay de interacciones
-- [ ] **Configuración de Perfil** - Edición completa de datos de usuario
-- [ ] **tRPC Subscriptions** - Real-time updates con WebSockets
+### Q1 2025 - Funcionalidades Principales
+- **🎥 Sistema de Videollamadas**
+  - Integración con WebRTC
+  - Conexión con agentes IA en tiempo real
+  - Grabación de sesiones
+  - Compartir pantalla
 
-### Q2 2025 - UX y Performance
-- [ ] **Sistema de Notificaciones** - Push notifications y alertas
-- [ ] **Tema Oscuro/Claro** - Toggle completo de modo de visualización
-- [ ] **Internacionalización** - Soporte multi-idioma (ES, EN, FR)
-- [ ] **PWA Completa** - App instalable con service workers
-- [ ] **Optimización Mobile** - Mejoras adicionales para UX móvil
-- [ ] **Command Palette Avanzado** - Búsqueda global y shortcuts
+- **🤖 Agentes Especializados**
+  - Psicólogo Virtual
+  - Tutor Educativo
+  - Consultor Tecnológico
+  - Asistente Médico
 
-### Q3 2025 - Escalabilidad
-- [ ] **API REST Completa** - Endpoints para integraciones externas
-- [ ] **Dashboard Analytics** - Métricas de uso y engagement
-- [ ] **Sistema de Pagos** - Planes premium con Stripe
-- [ ] **Multi-tenancy** - Soporte para organizaciones
-- [ ] **Admin Panel** - Panel de administración completo
-- [ ] **Redis Cache** - Caching avanzado para performance
+### Q2 2025 - Comunicación Avanzada
+- **💬 Chat en Tiempo Real**
+  - WebSocket integration
+  - Mensajes multimedia
+  - Historial de conversaciones
+  - Notificaciones push
 
-### Q4 2025 - IA Avanzada
-- [ ] **IA Avanzada** - Integración con GPT-4, Claude, Gemini
-- [ ] **Voice AI** - Procesamiento de voz en tiempo real
-- [ ] **Tests Automatizados** - Suite completa E2E con Playwright
-- [ ] **Documentación API** - Swagger/OpenAPI completo
-- [ ] **Aplicación Móvil** - React Native para iOS/Android
-- [ ] **AI Analytics** - Métricas avanzadas de IA
+- **📊 Analytics Dashboard**
+  - Métricas de uso
+  - Estadísticas de agentes
+  - Reportes de actividad
 
-### Mejoras Técnicas Continuas v1.3+
-- [ ] **Micro-frontends** - Arquitectura modular avanzada
-- [ ] **Edge Functions** - Optimización con Vercel Edge
-- [ ] **CI/CD Pipeline** - GitHub Actions completo
-- [ ] **Monitoring** - Sentry + Analytics detallados
-- [ ] **Security Audit** - Auditoría de seguridad profesional
-- [ ] **Performance Optimization** - Core Web Vitals perfectos
+### Q3 2025 - Integraciones
+- **🔗 APIs Externas**
+  - OpenAI GPT-4 integration
+  - Anthropic Claude integration
+  - Google AI integration
+  - Custom model support
+
+- **📱 Mobile App**
+  - React Native application
+  - Push notifications
+  - Offline mode
+
+### Q4 2025 - Expansión
+- **🌐 Internacionalización**
+  - Soporte multiidioma
+  - Localización de contenido
+  - Agentes especializados por región
+
+- **🏢 Enterprise Features**
+  - Multi-tenant architecture
+  - SSO integration
+  - Advanced security
+  - Custom branding
 
 ## 🤝 Contribución
 
 ### Cómo Contribuir
 
 1. **Fork el proyecto**
-2. **Crea tu rama de característica**
    ```bash
-   git checkout -b feature/AmazingFeature
+   git clone https://github.com/tu-usuario/agentesia.git
    ```
-3. **Commit tus cambios**
+
+2. **Crear rama de feature**
    ```bash
-   git commit -m 'feat: add amazing feature'
+   git checkout -b feature/nueva-caracteristica
    ```
-4. **Push a la rama**
+
+3. **Realizar cambios**
+   - Seguir convenciones de código
+   - Añadir tests si es necesario
+   - Actualizar documentación
+
+4. **Commit con formato convencional**
    ```bash
-   git push origin feature/AmazingFeature
+   git commit -m "feat: añadir nueva característica"
    ```
-5. **Abre un Pull Request**
 
-### Estándares de Código v1.2
+5. **Push y Pull Request**
+   ```bash
+   git push origin feature/nueva-caracteristica
+   ```
 
-```bash
-# Herramientas utilizadas:
-✅ TypeScript estricto habilitado
-✅ ESLint para linting automático
-✅ Prettier para formateo consistente
-✅ Husky para pre-commit hooks
-✅ Conventional Commits para mensajes
-✅ tRPC para type safety
-✅ Zod para validación de schemas
+### Convenciones de Código
 
-# Estructura de commits:
-feat: nueva funcionalidad
-fix: corrección de bug
-docs: cambios en documentación
-style: cambios de formato
-refactor: refactorización de código
-test: agregar o modificar tests
-chore: cambios en build/tools
-trpc: cambios en API tRPC
-ui: cambios en componentes UI
+```typescript
+// Usar TypeScript estricto
+interface Props {
+  name: string;
+  optional?: boolean;
+}
+
+// Componentes con arrow functions
+export const Component = ({ name }: Props) => {
+  return <div>{name}</div>;
+};
+
+// Hooks personalizados con 'use' prefix
+export const useCustomHook = () => {
+  // Hook logic
+};
 ```
 
-### Guías de Desarrollo
+### Guidelines
 
-```tsx
-// Componentes deben seguir:
-✅ Tipado estricto con TypeScript
-✅ Props interface bien definida
-✅ Comentarios JSDoc para funciones complejas
-✅ Separación de lógica y presentación
-✅ Manejo de estados con hooks
-✅ Cleanup de efectos y listeners
-✅ Responsive design por defecto
-✅ Accesibilidad (ARIA labels, keyboard nav)
-✅ tRPC integration para data fetching
-✅ Error boundaries para error handling
-✅ Loading states para UX
-```
+- ✅ **TypeScript first** - Todo en TypeScript
+- ✅ **Componentes funcionales** - Usar hooks
+- ✅ **CSS-in-JS evitado** - Usar Tailwind CSS
+- ✅ **Testing encouraged** - Añadir tests cuando sea posible
+- ✅ **Documentation** - Comentar código complejo
+- ✅ **Performance** - Optimizar renders y queries
 
 ## 📄 Licencia
 
-Este proyecto está bajo la **Licencia MIT**. Ver el archivo `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
 ```
 MIT License
 
-Copyright (c) 2025 Felipe Reyes Sanchez
+Copyright (c) 2024 Felipe Reyes Sánchez
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software...
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 ## 👨‍💻 Desarrollador
@@ -1295,7 +1358,4 @@ copies of the Software...
   
   **⭐ Si te gusta este proyecto, dale una estrella en GitHub ⭐**
   
-  <br>
-  
-  **🔄 v1.2.0 - Nueva actualización con tRPC, React Query y Shadcn Sidebar**
 </div>
