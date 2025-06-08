@@ -1,191 +1,192 @@
 # Security Policy
 
-## 🛡️ Supported Versions
+## 🛡️ Versiones Soportadas
 
-We actively support the following versions of Agentesia with security updates:
+Ofrecemos soporte activo con actualizaciones de seguridad para las siguientes versiones de Agentesia:
 
-| Version | Supported          |
+| Versión | Soportada          |
 | ------- | ------------------ |
+| 1.2.x   | :white_check_mark: |
 | 0.1.x   | :white_check_mark: |
 | < 0.1   | :x:                |
 
-## 🚨 Reporting a Vulnerability
+## 🚨 Reportar una Vulnerabilidad
 
-We take the security of Agentesia seriously. If you believe you have found a security vulnerability, please report it to us as described below.
+Tomamos la seguridad de Agentesia muy en serio. Si crees que has encontrado una vulnerabilidad de seguridad, por favor repórtala siguiendo el proceso descrito a continuación.
 
-### Reporting Process
+### Proceso de Reporte
 
-**Please do NOT report security vulnerabilities through public GitHub issues.**
+**Por favor NO reportes vulnerabilidades de seguridad a través de issues públicos de GitHub.**
 
-Instead, please report them via email to: **felipe@felipesanchez.site**
+En su lugar, repórtalas por correo electrónico a: **felipe@felipesanchezdev.site**
 
-Include the following information in your report:
+Incluye la siguiente información en tu reporte:
 
-- **Type of issue** (e.g., buffer overflow, SQL injection, cross-site scripting, etc.)
-- **Full paths of source file(s)** related to the manifestation of the issue
-- **The location of the affected source code** (tag/branch/commit or direct URL)
-- **Any special configuration** required to reproduce the issue
-- **Step-by-step instructions** to reproduce the issue
-- **Proof-of-concept or exploit code** (if possible)
-- **Impact of the issue**, including how an attacker might exploit the issue
+- **Tipo de problema** (ej. desbordamiento de buffer, inyección SQL, cross-site scripting, etc.)
+- **Rutas completas de los archivos fuente** relacionados con la manifestación del problema
+- **La ubicación del código fuente afectado** (tag/branch/commit o URL directa)
+- **Cualquier configuración especial** requerida para reproducir el problema
+- **Instrucciones paso a paso** para reproducir el problema
+- **Prueba de concepto o código exploit** (si es posible)
+- **Impacto del problema**, incluyendo cómo un atacante podría explotar el problema
 
-### Response Timeline
+### Cronograma de Respuesta
 
-- **Initial Response**: Within 48 hours of receiving your report
-- **Status Update**: Within 7 days with a more detailed response
-- **Resolution**: We aim to resolve critical vulnerabilities within 30 days
+- **Respuesta Inicial**: Dentro de 48 horas de recibir tu reporte
+- **Actualización de Estado**: Dentro de 7 días con una respuesta más detallada
+- **Resolución**: Nuestro objetivo es resolver vulnerabilidades críticas dentro de 30 días
 
-### Disclosure Policy
+### Política de Divulgación
 
-- We follow a **coordinated disclosure** approach
-- We will acknowledge your contribution in our security advisories (unless you prefer to remain anonymous)
-- We will not take legal action against security researchers who follow this policy
+- Seguimos un enfoque de **divulgación coordinada**
+- Reconoceremos tu contribución en nuestros avisos de seguridad (a menos que prefieras permanecer anónimo)
+- No tomaremos acción legal contra investigadores de seguridad que sigan esta política
 
-## 🔒 Security Measures
+## 🔒 Medidas de Seguridad
 
-### Authentication & Authorization
+### Autenticación y Autorización
 
-- **BetterAuth v1.2.8** for secure authentication
-- **OAuth 2.0** integration with Google and GitHub
-- **Secure session management** with httpOnly cookies
-- **CSRF protection** enabled by default
-- **Rate limiting** on authentication endpoints
+- **BetterAuth v1.2.8** para autenticación segura
+- **OAuth 2.0** integración con Google y GitHub
+- **Gestión segura de sesiones** con cookies httpOnly
+- **Protección CSRF** habilitada por defecto
+- **Limitación de velocidad** en endpoints de autenticación
 
-### Data Protection
+### Protección de Datos
 
-- **Input validation** using Zod schemas on all endpoints
-- **SQL injection prevention** through Drizzle ORM parameterized queries
-- **XSS protection** via React's built-in escaping
-- **Secure headers** configured in production
-- **Environment variables** for sensitive data
+- **Validación de entrada** usando esquemas Zod en todos los endpoints
+- **Prevención de inyección SQL** a través de consultas parametrizadas con Drizzle ORM
+- **Protección XSS** mediante el escape integrado de React
+- **Cabeceras seguras** configuradas en producción
+- **Variables de entorno** para datos sensibles
 
-### API Security
+### Seguridad de API
 
-- **Type-safe APIs** with tRPC
-- **Request validation** on all endpoints
-- **Protected procedures** for authenticated actions
-- **CORS configuration** for cross-origin requests
-- **Error sanitization** to prevent information leakage
+- **APIs type-safe** con tRPC
+- **Validación de solicitudes** en todos los endpoints
+- **Procedimientos protegidos** para acciones autenticadas
+- **Configuración CORS** para solicitudes cross-origin
+- **Sanitización de errores** para prevenir filtración de información
 
-### Infrastructure Security
+### Seguridad de Infraestructura
 
-- **HTTPS enforcement** in production
-- **Secure cookie settings** (Secure, SameSite)
-- **Content Security Policy** (CSP) headers
-- **Database connection encryption**
-- **Regular dependency updates**
+- **Aplicación de HTTPS** en producción
+- **Configuración segura de cookies** (Secure, SameSite)
+- **Cabeceras de Política de Seguridad de Contenido** (CSP)
+- **Cifrado de conexión a base de datos**
+- **Actualizaciones regulares de dependencias**
 
-## 🔧 Security Configuration
+## 🔧 Configuración de Seguridad
 
-### Environment Variables
+### Variables de Entorno
 
-Ensure these security-related environment variables are properly configured:
+Asegúrate de que estas variables de entorno relacionadas con seguridad estén configuradas correctamente:
 
 ```env
-# Required - Must be at least 32 characters
-BETTER_AUTH_SECRET="your-secure-random-32-char-secret"
+# Requerido - Debe tener al menos 32 caracteres
+BETTER_AUTH_SECRET="tu-secreto-aleatorio-seguro-de-32-caracteres"
 
-# Database connection with SSL
+# Conexión a base de datos con SSL
 DATABASE_URL="postgresql://user:pass@host:port/db?sslmode=require"
 
-# Secure URLs in production
-BETTER_AUTH_URL="https://yourdomain.com"
-NEXT_PUBLIC_APP_URL="https://yourdomain.com"
+# URLs seguras en producción
+BETTER_AUTH_URL="https://tudominio.com"
+NEXT_PUBLIC_APP_URL="https://tudominio.com"
 ```
 
-### Production Security Checklist
+### Lista de Verificación de Seguridad en Producción
 
-- [ ] Use HTTPS/TLS encryption
-- [ ] Configure secure headers (HSTS, CSP, etc.)
-- [ ] Enable rate limiting
-- [ ] Regular security audits
-- [ ] Monitor for suspicious activity
-- [ ] Keep dependencies updated
-- [ ] Use strong, unique secrets
-- [ ] Enable database SSL connections
-- [ ] Configure proper CORS policies
-- [ ] Implement logging and monitoring
+- [ ] Usar cifrado HTTPS/TLS
+- [ ] Configurar cabeceras seguras (HSTS, CSP, etc.)
+- [ ] Habilitar limitación de velocidad
+- [ ] Auditorías de seguridad regulares
+- [ ] Monitorear actividad sospechosa
+- [ ] Mantener dependencias actualizadas
+- [ ] Usar secretos fuertes y únicos
+- [ ] Habilitar conexiones SSL de base de datos
+- [ ] Configurar políticas CORS apropiadas
+- [ ] Implementar logging y monitoreo
 
-## 🛠️ Security Best Practices for Contributors
+## 🛠️ Mejores Prácticas de Seguridad para Contribuidores
 
-### Code Security
+### Seguridad de Código
 
-- **Never commit secrets** to the repository
-- **Use environment variables** for configuration
-- **Validate all inputs** with Zod schemas
-- **Sanitize outputs** to prevent XSS
-- **Use parameterized queries** via Drizzle ORM
-- **Follow TypeScript strict mode**
+- **Nunca hacer commit de secretos** al repositorio
+- **Usar variables de entorno** para configuración
+- **Validar todas las entradas** con esquemas Zod
+- **Sanitizar salidas** para prevenir XSS
+- **Usar consultas parametrizadas** via Drizzle ORM
+- **Seguir el modo estricto de TypeScript**
 
-### Dependencies
+### Dependencias
 
-- Run `npm audit` regularly to check for vulnerabilities
-- Keep dependencies updated to latest secure versions
-- Review new dependencies for security issues
-- Use `npm ci` in production for reproducible builds
+- Ejecutar `npm audit` regularmente para verificar vulnerabilidades
+- Mantener dependencias actualizadas a las últimas versiones seguras
+- Revisar nuevas dependencias por problemas de seguridad
+- Usar `npm ci` en producción para builds reproducibles
 
-### Authentication
+### Autenticación
 
-- Never store passwords in plain text
-- Use secure session management
-- Implement proper logout functionality
-- Validate tokens on every request
-- Use HTTPS for all authentication flows
+- Nunca almacenar contraseñas en texto plano
+- Usar gestión segura de sesiones
+- Implementar funcionalidad de logout apropiada
+- Validar tokens en cada solicitud
+- Usar HTTPS para todos los flujos de autenticación
 
-## 🔍 Security Testing
+## 🔍 Pruebas de Seguridad
 
-We encourage security testing and welcome responsible disclosure. When testing:
+Alentamos las pruebas de seguridad y damos la bienvenida a la divulgación responsable. Al probar:
 
-- **Only test against your own instances**
-- **Do not access other users' data**
-- **Do not perform destructive testing**
-- **Respect rate limits and server resources**
-- **Follow responsible disclosure practices**
+- **Solo prueba contra tus propias instancias**
+- **No accedas a datos de otros usuarios**
+- **No realices pruebas destructivas**
+- **Respeta los límites de velocidad y recursos del servidor**
+- **Sigue prácticas de divulgación responsable**
 
-## 📋 Security Resources
+## 📋 Recursos de Seguridad
 
-### Internal Resources
+### Recursos Internos
 
-- [Development Setup Guide](README.md#🚀-configuración-del-proyecto)
-- [Environment Configuration](README.md#2-variables-de-entorno)
-- [API Documentation](README.md#🔄-sistema-trpc-y-api)
+- [Guía de Configuración de Desarrollo](README.md#🚀-configuración-del-proyecto)
+- [Configuración de Entorno](README.md#2-variables-de-entorno)
+- [Documentación de API](README.md#🔄-sistema-trpc-y-api)
 
-### External Resources
+### Recursos Externos
 
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [Node.js Security Best Practices](https://nodejs.org/en/docs/guides/security/)
-- [Next.js Security Headers](https://nextjs.org/docs/advanced-features/security-headers)
-- [BetterAuth Security](https://www.better-auth.com/docs/concepts/security)
+- [Mejores Prácticas de Seguridad Node.js](https://nodejs.org/en/docs/guides/security/)
+- [Cabeceras de Seguridad Next.js](https://nextjs.org/docs/advanced-features/security-headers)
+- [Seguridad BetterAuth](https://www.better-auth.com/docs/concepts/security)
 
-## 🚨 Known Security Considerations
+## 🚨 Consideraciones de Seguridad Conocidas
 
-### Current Limitations
+### Limitaciones Actuales
 
-- **Development Mode**: Additional debugging information may be exposed
-- **Error Messages**: May contain stack traces in development
-- **Rate Limiting**: Currently basic implementation
-- **Audit Logging**: Limited user action logging
+- **Modo de Desarrollo**: Información adicional de debugging puede estar expuesta
+- **Mensajes de Error**: Pueden contener stack traces en desarrollo
+- **Limitación de Velocidad**: Actualmente implementación básica
+- **Logging de Auditoría**: Logging limitado de acciones de usuario
 
-### Planned Improvements
+### Mejoras Planificadas
 
-- Enhanced rate limiting and DDoS protection
-- Comprehensive audit logging system
-- Advanced threat detection
-- Security headers optimization
-- Automated security scanning
+- Mejora de limitación de velocidad y protección DDoS
+- Sistema integral de logging de auditoría
+- Detección avanzada de amenazas
+- Optimización de cabeceras de seguridad
+- Escaneo automatizado de seguridad
 
-## 📞 Contact Information
+## 📞 Información de Contacto
 
 <div align="center">
   <img src="https://github.com/felipesanchez-dev.png" width="120" height="120" style="border-radius: 50%; border: 3px solid #16a34a;" alt="Felipe Reyes Sanchez" />
   
-  **Felipe Reyes Sanchez**  
-  *Full Stack Developer & UI/UX Enthusiast*
+  **Felipe Reyes Sánchez**  
+  *Desarrollador Full Stack & Entusiasta UI/UX*
 </div>
 
 <div align="center">
   
-[![Website](https://img.shields.io/badge/Website-felipesanchezdev.site-green?style=for-the-badge&logo=safari)](https://felipesanchezdev.site)
+[![Sitio Web](https://img.shields.io/badge/Sitio_Web-felipesanchezdev.site-green?style=for-the-badge&logo=safari)](https://felipesanchezdev.site)
 [![Email](https://img.shields.io/badge/Email-felipe@felipesanchezdev.site-red?style=for-the-badge&logo=gmail)](mailto:felipe@felipesanchezdev.site)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Felipe_Reyes_Sanchez-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/felipereyessa)
 [![GitHub](https://img.shields.io/badge/GitHub-@felipesanchez--dev-black?style=for-the-badge&logo=github)](https://github.com/felipesanchez-dev)
@@ -196,6 +197,6 @@ We encourage security testing and welcome responsible disclosure. When testing:
 
 ---
 
-**Last Updated**: June 2025  
-**Version**: 1.0  
-**Review Schedule**: Quarterly
+**Última Actualización**: Junio 2025  
+**Versión**: 1.2  
+**Cronograma de Revisión**: Trimestral
