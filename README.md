@@ -1237,6 +1237,46 @@ const trpc = createTRPCNext<AppRouter>({
    git push origin feature/nueva-caracteristica
    ```
 
+### Estándares de Código v1.2
+
+```bash
+# Herramientas utilizadas:
+✅ TypeScript estricto habilitado
+✅ ESLint para linting automático
+✅ Prettier para formateo consistente
+✅ Husky para pre-commit hooks
+✅ Conventional Commits para mensajes
+✅ tRPC para type safety
+✅ Zod para validación de schemas
+
+# Estructura de commits:
+feat: nueva funcionalidad
+fix: corrección de bug
+docs: cambios en documentación
+style: cambios de formato
+refactor: refactorización de código
+test: agregar o modificar tests
+chore: cambios en build/tools
+trpc: cambios en API tRPC
+ui: cambios en componentes UI
+```
+
+### Guías de Desarrollo
+
+```tsx
+// Componentes deben seguir:
+✅ Tipado estricto con TypeScript
+✅ Props interface bien definida
+✅ Comentarios JSDoc para funciones complejas
+✅ Separación de lógica y presentación
+✅ Manejo de estados con hooks
+✅ Cleanup de efectos y listeners
+✅ Responsive design por defecto
+✅ Accesibilidad (ARIA labels, keyboard nav)
+✅ tRPC integration para data fetching
+✅ Error boundaries para error handling
+✅ Loading states para UX
+```
 ### Convenciones de Código
 
 ```typescript
