@@ -1313,7 +1313,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 ```
 MIT License
 
-Copyright (c) 2024 Felipe Reyes Sánchez
+Copyright (c) 2025 Felipe Reyes Sánchez
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
