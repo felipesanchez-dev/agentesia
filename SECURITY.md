@@ -17,7 +17,7 @@ We take the security of Agentesia seriously. If you believe you have found a sec
 
 **Please do NOT report security vulnerabilities through public GitHub issues.**
 
-Instead, please report them via email to: **security@felipesanchez.site**
+Instead, please report them via email to: **felipe@felipesanchez.site**
 
 Include the following information in your report:
 
