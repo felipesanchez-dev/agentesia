@@ -1,6 +1,5 @@
 import { useTRPC } from "@/trpc/client";
 import { AgentGetOne } from "../../types";
-import { useRouter } from "next/navigation";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -19,6 +18,7 @@ import {
 } from "@/components/ui/form";
 import { useState } from "react";
 import { AgentAvatar } from "./agent-avatar";
+import { toast } from "sonner";
 
 interface AgentFormProps {
   onSuccess?: () => void;
@@ -32,14 +32,25 @@ export const AgentForm = ({
   initialValues,
 }: AgentFormProps) => {
   const trpc = useTRPC();
-  const router = useRouter();
   const queryClient = useQueryClient();
-  const [avatarSeed, setAvatarSeed] = useState(0);
+  const [avatarSeed] = useState(0);
 
   const createAgent = useMutation(
     trpc.agents.create.mutationOptions({
-      onSuccess: () => {},
-      onError: () => {},
+      onSuccess: async () => {
+        await queryClient.invalidateQueries(trpc.agents.getMany.queryOptions());
+
+        if (initialValues?.id) {
+          await queryClient.invalidateQueries(
+            trpc.agents.getOne.queryOptions({ id: initialValues.id })
+          );
+        }
+        onSuccess?.();
+      },
+
+      onError: (error) => {
+        toast.error(error.message);
+      },
     })
   );
   const form = useForm<z.infer<typeof agentsInsertSchema>>({
@@ -77,11 +88,43 @@ export const AgentForm = ({
             <FormItem>
               <FormLabel>Nombre</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} placeholder="ej. Tutor de Ingles" />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
+        <FormField
+          name="instructions"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Promt</FormLabel>
+              <FormControl>
+                <Textarea
+                  {...field}
+                  placeholder="Sé lo más específico y claro posible en tu prompt; cuanto más preciso, mejor será el resultado"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <div className="flex justify-between gap-x-2">
+          {onCancel && (
+            <Button
+              variant="ghost"
+              disabled={isPending}
+              type="button"
+              onClick={() => onCancel()}
+            >
+              Cancelar
+            </Button>
+          )}
+          <Button disabled={isPending} type="submit">
+            {isEdit ? "Actualizar Agente" : "Crear Agente"}
+          </Button>
+        </div>
       </form>
     </Form>
   );
