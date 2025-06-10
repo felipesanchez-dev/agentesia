@@ -6,6 +6,7 @@ import { LoadingState } from "@/components/loading-state";
 import { ErrorState } from "@/components/error-state";
 import { DataTable } from "../components/data-table";
 import { columns } from "../components/columns";
+import { EmptyState } from "@/components/empty-state";
 
 
 export const AgentsView = () => {
@@ -15,6 +16,12 @@ export const AgentsView = () => {
   return (
     <div className="flex-1 pb-4 px-4 md:px-8 flex flex-col gap-y-4">
       <DataTable columns={columns} data={data} />
+      {data.length === 0 && (
+        <EmptyState
+         title="No hay agentes"
+          description="No has creado ningún agente aún. Haz clic en el botón de abajo para crear uno nuevo."
+        />  
+      )}
     </div>
   );
 };
