@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import { BotIcon, StarIcon, VideoIcon } from "lucide-react";
+import { TiMessages } from "react-icons/ti";
+import { IoMdSettings } from "react-icons/io";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -29,6 +31,16 @@ const firstSection = [
     icon: BotIcon,
     label: "Agentes IA",
     href: "/agents",
+  },
+  {
+    icon: TiMessages,
+    label: "Automatizacion en redes",
+    href: "/",
+  },
+  {
+    icon: IoMdSettings,
+    label: "Flujos de trabajo",
+    href: "/",
   },
 ];
 
