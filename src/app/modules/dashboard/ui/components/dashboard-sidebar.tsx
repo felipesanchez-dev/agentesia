@@ -23,24 +23,24 @@ import { DashboardUserButton } from "./dashboard-user-button";
 
 const firstSection = [
   {
-    icon: VideoIcon,
-    label: "Reuniones",
-    href: "/meetings",
-  },
-  {
     icon: BotIcon,
     label: "Agentes IA",
     href: "/agents",
   },
   {
+    icon: VideoIcon,
+    label: "Reuniones",
+    href: "/meetings",
+  },
+  {
     icon: TiMessages,
     label: "Automatizacion en redes",
-    href: "/",
+    href: "/redes-ia",
   },
   {
     icon: IoMdSettings,
     label: "Flujos de trabajo",
-    href: "/",
+    href: "/automation",
   },
 ];
 
