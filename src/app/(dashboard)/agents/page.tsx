@@ -15,15 +15,17 @@ import type { SearchParams } from "nuqs";
 import { loadSearchParams } from "@/modules/agents/params";
 
 interface Props {
-  searchParams: Promise<SearchParams>
+  searchParams: Promise<SearchParams>;
 }
 
-const Page = async ({searchParams} : Props) => {
+const Page = async ({ searchParams }: Props) => {
   const filters = await loadSearchParams(searchParams);
   const queryClient = getQueryClient();
-  void queryClient.prefetchQuery(trpc.agents.getMany.queryOptions({
-    ...filters,
-  }));
+  void queryClient.prefetchQuery(
+    trpc.agents.getMany.queryOptions({
+      ...filters,
+    })
+  );
 
   const session = await auth.api.getSession({
     headers: await headers(),
