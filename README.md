@@ -1,9 +1,10 @@
 # 🤖 Agentesia
-*Plataforma de Agentes IA Inteligentes*
+
+_Plataforma de Agentes IA Inteligentes_
 
 Una aplicación web moderna construida con Next.js para la gestión, interacción y colaboración con agentes de inteligencia artificial especializados. Conecta con expertos virtuales y experimenta el futuro de la comunicación IA.
 
-![Agentesia Banner](https://img.shields.io/badge/Agentesia-v0.1.0-green?style=for-the-badge&logo=react)
+![Agentesia Banner](https://img.shields.io/badge/Agentesia-v0.2.0-green?style=for-the-badge&logo=react)
 [![Next.js](https://img.shields.io/badge/Next.js-15.3.2-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0+-06B6D4?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
@@ -39,10 +40,15 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
 
 ## 🎯 Características Principales
 
-### ✅ **Sistema Completo Implementado**
+### ✅ **Sistema Completo Implementado v0.2.0**
+
 - **Sistema de Autenticación Completo** - Email/contraseña y OAuth (Google, GitHub)
 - **Dashboard Interactivo** - Panel de control moderno con sidebar navegacional
-- **Gestión de Agentes IA** - CRUD completo con sistema de avatares dinámicos
+- **Gestión Completa de Agentes IA** - CRUD completo con sistema de avatares dinámicos
+- **Data Table Avanzada** - Tabla de datos con paginación, filtros y ordenamiento
+- **Sistema de Paginación** - Navegación eficiente con contadores y límites
+- **Filtros y Búsqueda** - Sistema de búsqueda en tiempo real por nombre de agente
+- **Conteo de Reuniones** - Tracking dinámico de reuniones por agente
 - **Botón de Usuario Avanzado** - Dropdown y modal móvil con información detallada
 - **Detección de Proveedores** - Identificación automática del método de autenticación
 - **Diseño Responsive Completo** - Desktop y móvil con animaciones nativas
@@ -55,8 +61,9 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
 - **Redirección Inteligente** - Protección de rutas y redirección automática
 - **Componentes Modulares** - Arquitectura escalable y mantenible
 
-### 🆕 **Características Avanzadas v0.1.0**
-- **tRPC Integration** - API type-safe con React Query
+### 🆕 **Características Avanzadas v0.2.0**
+
+- **tRPC Integration Completa** - API type-safe con React Query y paginación
 - **Sistema de Loading Avanzado** - Loader espacial con astronauta animado
 - **Error Boundaries** - Manejo robusto de errores
 - **Suspense Boundaries** - Loading states granulares
@@ -66,8 +73,12 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
 - **Shadcn Sidebar System** - Sidebar moderno con detección móvil
 - **Avatares Dinámicos** - Generación automática de avatares para agentes
 - **Categorización Inteligente** - Detección automática de categorías de agentes
+- **Data Table con TanStack** - Tabla avanzada con sorting, filtering y paginación
+- **Sistema de Badges** - Indicadores visuales para reuniones y estados
+- **Optimización de Queries** - Queries eficientes con offset y límites
 
 ### 🔄 **En Desarrollo - Roadmap 2025**
+
 - **Videollamadas con IA** (Q1 2025)
 - **Agentes Especializados** (Q1 2025)
 - **Chat en Tiempo Real** (Q2 2025)
@@ -81,94 +92,116 @@ graph TB
         A[Next.js App Router] --> B[Auth Pages]
         A --> C[Dashboard Layout]
         A --> D[Home Page]
-        
+
         B --> B1[SignIn View]
         B --> B2[SignUp View]
-        
+
         C --> C1[Desktop Sidebar]
         C --> C2[Desktop User Button]
         C --> C3[Mobile User Menu]
         C --> C4[Protected Routes]
-        
+
         C4 --> C5[Agents Page]
         C4 --> C6[Meetings Page]
         C4 --> C7[Upgrade Page]
+
+        C5 --> C8[Data Table]
+        C5 --> C9[Agent Form]
+        C5 --> C10[Pagination]
+        C5 --> C11[Search Filters]
     end
-    
+
     subgraph "tRPC & API Layer"
         E[tRPC Router] --> F[Agents Router]
         E --> G[Auth Router]
         E --> H[Users Router]
-        
-        F --> F1[agents.getMany]
+
+        F --> F1[agents.getMany - Paginado]
         F --> F2[agents.getOne]
         F --> F3[agents.create]
-        
+        F --> F4[agents.update]
+        F --> F5[agents.delete]
+
         I[React Query] --> J[Server State Cache]
         I --> K[Optimistic Updates]
         I --> L[Background Refetch]
+        I --> M[Pagination Cache]
     end
-    
+
     subgraph "Authentication Layer"
-        M[BetterAuth v1.2.8] --> N[Email/Password]
-        M --> O[Google OAuth]
-        M --> P[GitHub OAuth]
-        M --> Q[Session Management]
+        N[BetterAuth v1.2.8] --> O[Email/Password]
+        N --> P[Google OAuth]
+        N --> Q[GitHub OAuth]
+        N --> R[Session Management]
     end
-    
+
     subgraph "Database Layer"
-        R[PostgreSQL/Neon] --> S[Drizzle ORM]
-        S --> T[User Schema]
-        S --> U[Session Schema]
-        S --> V[Agents Schema]
+        S[PostgreSQL/Neon] --> T[Drizzle ORM]
+        T --> U[User Schema]
+        T --> V[Session Schema]
+        T --> W[Agents Schema]
+        T --> X[Meetings Schema]
+
+        W --> W1[SQL Aggregations]
+        W --> W2[Pagination Queries]
+        W --> W3[Search Filters]
     end
-    
+
     subgraph "UI Components"
-        W[Shadcn/UI] --> X[Form Components]
-        W --> Y[Layout Components]
-        W --> Z[Navigation Components]
-        W --> AA[Loading Components]
-        W --> BB[Avatar Components]
+        Y[Shadcn/UI] --> Z[Form Components]
+        Y --> AA[Layout Components]
+        Y --> BB[Navigation Components]
+        Y --> CC[Loading Components]
+        Y --> DD[Avatar Components]
+        Y --> EE[Data Table]
+        Y --> FF[Pagination]
+        Y --> GG[Badge Components]
     end
-    
+
     A --> E
-    E --> M
-    M --> R
-    A --> W
+    E --> N
+    N --> S
+    A --> Y
     E --> I
-    
+
     style A fill:#059669
     style E fill:#398CCB
-    style M fill:#16a34a
-    style R fill:#047857
-    style W fill:#15803d
+    style N fill:#16a34a
+    style S fill:#047857
+    style Y fill:#15803d
+    style EE fill:#ff9800
 ```
 
 ## 🛠️ Stack Tecnológico Completo
 
 ### Frontend
+
 - **[Next.js](https://nextjs.org/)** v15.3.2 - Framework de React con App Router
 - **[TypeScript](https://www.typescriptlang.org/)** v5+ - Tipado estático para JavaScript
 - **[Tailwind CSS](https://tailwindcss.com/)** v4+ - Framework de CSS utilitario
 - **[Shadcn/UI](https://ui.shadcn.com/)** - Biblioteca de componentes modernos
+- **[TanStack Table](https://tanstack.com/table)** - Tabla de datos avanzada
 - **[Lucide React](https://lucide.dev/)** - Iconos SVG optimizados
 - **[React Hook Form](https://react-hook-form.com/)** - Manejo avanzado de formularios
 - **[React Error Boundary](https://github.com/bvaughn/react-error-boundary)** - Manejo de errores
 
 ### Backend & API
+
 - **[tRPC](https://trpc.io/)** v11+ - Type-safe API con TypeScript
 - **[React Query](https://tanstack.com/query)** v5+ - Server state management
 - **[Zod](https://zod.dev/)** - Validación de esquemas TypeScript-first
 - **[PostgreSQL](https://www.postgresql.org/)** - Base de datos relacional
 - **[Neon](https://neon.com)** - Hosting de PostgreSQL serverless
-- **[Drizzle ORM](https://orm.drizzle.team/)** - ORM TypeScript-first
+- **[Drizzle ORM](https://orm.drizzle.team/)** - ORM TypeScript-first con SQL avanzado
 
 ### Autenticación
+
 - **[BetterAuth](https://www.better-auth.com/)** v1.2.8 - Sistema de autenticación moderno
 - **OAuth Providers** - Google y GitHub integrados
 - **Session Management** - Manejo seguro de sesiones
 
 ### UI/UX & Performance
+
 - **Glassmorphism** - Efectos de vidrio esmerilado
 - **Animaciones CSS Avanzadas** - Keyframes personalizados y transiciones
 - **Loading States** - Componentes de carga inmersivos con astronauta espacial
@@ -176,6 +209,7 @@ graph TB
 - **Responsive Design** - Desktop-first con adaptación móvil
 - **Performance Optimization** - Server-side prefetching y caching
 - **Avatar Generation** - Sistema de generación automática de avatares
+- **Data Virtualization** - Renderizado eficiente de grandes datasets
 
 ## 📱 Diagramas de Flujo
 
@@ -186,32 +220,32 @@ flowchart TD
     A[Usuario accede a la app] --> B{¿Tiene sesión activa?}
     B -->|Sí| C[Redirigir a Dashboard]
     B -->|No| D[Mostrar Home]
-    
+
     D --> E[Clic en Sign In/Sign Up]
     E --> F{¿Ya está autenticado?}
     F -->|Sí| C
     F -->|No| G[Mostrar formulario]
-    
+
     G --> H{Tipo de autenticación}
     H -->|Email/Password| I[Validar formulario]
     H -->|OAuth Google| J[Redirect a Google]
     H -->|OAuth GitHub| K[Redirect a GitHub]
-    
+
     I --> L{¿Válido?}
     L -->|No| M[Mostrar errores]
     L -->|Sí| N[Crear sesión]
-    
+
     J --> O[Callback OAuth]
     K --> O
     O --> N
-    
+
     M --> G
     N --> C
-    
+
     C --> P[Dashboard Layout]
     P --> Q[Prefetch Data]
     Q --> R[Render Content]
-    
+
     style A fill:#e1f5fe
     style C fill:#c8e6c9
     style N fill:#c8e6c9
@@ -220,84 +254,113 @@ flowchart TD
     style Q fill:#398CCB
 ```
 
-### Flujo tRPC y Data Fetching
+### Flujo tRPC y Data Fetching con Paginación
 
 ```mermaid
 flowchart LR
-    A[Page Component] --> B[tRPC Client Call]
+    A[Page Component] --> B[tRPC Client Call with Pagination]
     B --> C{Cache Hit?}
-    
+
     C -->|Yes| D[Return Cached Data]
     C -->|No| E[Make Server Request]
-    
+
     E --> F[tRPC Server Router]
-    F --> G[Database Query]
-    G --> H[Return Typed Data]
-    
-    H --> I[Update React Query Cache]
-    I --> J[Update UI]
-    
-    D --> J
-    
+    F --> G[Database Query with LIMIT/OFFSET]
+    G --> H[Count Query for Total]
+    H --> I[Return Typed Paginated Data]
+
+    I --> J[Update React Query Cache]
+    J --> K[Update UI with Pagination]
+
+    D --> K
+
     subgraph "Loading States"
-        K[Suspense Fallback]
-        L[LoadingState Component]
-        M[Space Loader Animation]
+        L[Suspense Fallback]
+        M[LoadingState Component]
+        N[Space Loader Animation]
     end
-    
+
     subgraph "Error States"
-        N[Error Boundary]
-        O[ErrorState Component]
-        P[Retry Mechanism]
+        O[Error Boundary]
+        P[ErrorState Component]
+        Q[Retry Mechanism]
     end
-    
-    B --> K
-    K --> L
+
+    subgraph "Pagination Controls"
+        R[Page Navigation]
+        S[Page Size Selector]
+        T[Total Count Display]
+    end
+
+    B --> L
     L --> M
-    
-    F --> N
-    N --> O
+    M --> N
+
+    F --> O
     O --> P
-    
+    P --> Q
+
+    K --> R
+    K --> S
+    K --> T
+
     style A fill:#059669
     style F fill:#398CCB
     style G fill:#047857
-    style J fill:#16a34a
-    style M fill:#ff9800
+    style K fill:#16a34a
+    style N fill:#ff9800
+    style R fill:#9c27b0
 ```
 
-### Flujo de Gestión de Agentes
+### Flujo de Gestión de Agentes con Data Table
 
 ```mermaid
 flowchart TD
     A[Agents Page] --> B[Server Prefetch]
-    B --> C[tRPC agents.getMany]
-    C --> D[Database Query]
-    D --> E[Return Agents Data]
-    
-    E --> F[Render Agents Grid]
+    B --> C[tRPC agents.getMany con Paginación]
+    C --> D[Database Query con LIMIT/OFFSET]
+    D --> E[Return Paginated Agents Data]
+
+    E --> F[Render Data Table]
     F --> G[Generate Dynamic Avatars]
-    G --> H[Category Detection]
-    H --> I[Icon Selection]
-    I --> J[Color Assignment]
-    
-    F --> K[Agent Form]
-    K --> L[Validation with Zod]
-    L --> M{Valid?}
-    M -->|No| N[Show Errors]
-    M -->|Yes| O[tRPC agents.create]
-    
-    O --> P[Database Insert]
-    P --> Q[Update Cache]
-    Q --> R[Refresh UI]
-    
-    N --> K
-    
+    F --> H[Display Meeting Count Badges]
+    F --> I[Render Pagination Controls]
+
+    G --> J[Category Detection]
+    J --> K[Icon Selection]
+    K --> L[Color Assignment]
+
+    H --> M[SQL Count Aggregation]
+    M --> N[Badge with Meeting Counter]
+
+    I --> O[Page Navigation]
+    I --> P[Page Size Selection]
+    I --> Q[Total Records Display]
+
+    F --> R[Search Filter]
+    R --> S[Debounced Search Input]
+    S --> T[Filter by Agent Name]
+    T --> U[Update Query with Search]
+
+    F --> V[Agent Form Modal]
+    V --> W[Validation with Zod]
+    W --> X{Valid?}
+    X -->|No| Y[Show Errors]
+    X -->|Yes| Z[tRPC agents.create]
+
+    Z --> AA[Database Insert]
+    AA --> BB[Invalidate Queries]
+    BB --> CC[Refresh Table Data]
+
+    Y --> V
+
     style A fill:#059669
     style C fill:#398CCB
     style G fill:#ff9800
-    style O fill:#4caf50
-    style P fill:#047857
+    style H fill:#9c27b0
+    style Z fill:#4caf50
+    style AA fill:#047857
+    style F fill:#e91e63
 ```
 
 ## 🔄 Sistema tRPC y API
@@ -310,52 +373,59 @@ graph LR
         A[React Component] --> B[tRPC Client]
         B --> C[React Query Hook]
         C --> D[useSuspenseQuery]
-        
-        E[TypeScript Types] --> A
-        E --> B
+        C --> E[Pagination State]
+
+        F[TypeScript Types] --> A
+        F --> B
     end
-    
+
     subgraph "Network Layer"
-        F[HTTP Request] --> G[Next.js API Route]
-        G --> H[tRPC Handler]
+        G[HTTP Request] --> H[Next.js API Route]
+        H --> I[tRPC Handler]
     end
-    
+
     subgraph "Server Side"
-        H --> I[tRPC Router]
-        I --> J[Procedure Validation]
-        J --> K[Database Query]
-        K --> L[Drizzle ORM]
-        L --> M[PostgreSQL]
+        I --> J[tRPC Router]
+        J --> K[Procedure Validation]
+        K --> L[Database Query]
+        L --> M[Drizzle ORM]
+        M --> N[PostgreSQL]
+
+        L --> L1[Count Query]
+        L --> L2[Data Query with LIMIT]
+        L --> L3[OFFSET Calculation]
     end
-    
+
     subgraph "Type Safety"
-        N[Shared Types] --> O[Client Types]
-        N --> P[Server Types]
-        N --> Q[Database Schema]
+        O[Shared Types] --> P[Client Types]
+        O --> Q[Server Types]
+        O --> R[Database Schema]
+        O --> S[Pagination Types]
     end
-    
-    B --> F
-    M --> K
+
+    B --> G
+    N --> L
+    L --> K
     K --> J
     J --> I
     I --> H
     H --> G
-    G --> F
-    F --> B
-    
-    N --> E
-    N --> I
-    
+    G --> B
+
+    O --> F
+    O --> J
+
     style B fill:#398CCB
-    style I fill:#398CCB
-    style L fill:#047857
-    style N fill:#ff9800
+    style J fill:#398CCB
+    style M fill:#047857
+    style O fill:#ff9800
+    style E fill:#9c27b0
 ```
 
-### Configuración tRPC Actual
+### Configuración tRPC Actual v0.2.0
 
 ```typescript
-// Router de Agentes implementado:
+// Router de Agentes implementado con paginación:
 export const agentsRouter = createTRPCRouter({
   getOne: baseProcedure
     .input(z.object({ id: z.string() }))
@@ -367,10 +437,51 @@ export const agentsRouter = createTRPCRouter({
       return existingAgent;
     }),
 
-  getMany: baseProcedure.query(async () => {
-    const data = await db.select().from(agents);
-    return data;
-  }),
+  getMany: baseProcedure
+    .input(z.object({
+      search: z.string().optional(),
+      page: z.number().default(DEFAULT_PAGE),
+      pageSize: z.number().default(DEFAULT_PAGE_SIZE),
+    }).optional())
+    .query(async ({ ctx, input = {} }) => {
+      const { search, page = DEFAULT_PAGE, pageSize = DEFAULT_PAGE_SIZE } = input;
+
+      // Query principal con meetingCount
+      const data = await db
+        .select({
+          meetingCount: sql<number>`1`,
+          ...getTableColumns(agents),
+        })
+        .from(agents)
+        .where(
+          and(
+            eq(agents.userId, ctx.auth.user.id),
+            search ? ilike(agents.name, `%${search}%`) : undefined
+          )
+        )
+        .orderBy(desc(agents.createdAt), desc(agents.id))
+        .limit(pageSize)
+        .offset((page - 1) * pageSize);
+
+      // Query de conteo total
+      const [total] = await db
+        .select({ count: count() })
+        .from(agents)
+        .where(
+          and(
+            eq(agents.userId, ctx.auth.user.id),
+            search ? ilike(agents.name, `%${search}%`) : undefined
+          )
+        );
+
+      const totalPages = Math.ceil(total.count / pageSize);
+
+      return {
+        items: data,
+        total: total.count,
+        totalPages,
+      };
+    }),
 
   create: protectedProcedure
     .input(agentsInsertSchema)
@@ -396,29 +507,66 @@ export const agentsRouter = createTRPCRouter({
 ✅ Error handling
 ✅ Loading states
 ✅ Protected procedures
+✅ Pagination con LIMIT/OFFSET
+✅ Search filters con SQL ILIKE
+✅ Count aggregations
+✅ Meeting counters
+
 ```
 
-### Uso en Componentes
+### Uso en Componentes con Data Table
 
 ```tsx
-// Ejemplo de uso en AgentsView:
+// Ejemplo de uso en AgentsView con Data Table:
 export const AgentsView = () => {
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
+
   const trpc = useTRPC();
-  const { data } = useSuspenseQuery(trpc.agents.getMany.queryOptions());
+  const { data } = useSuspenseQuery(
+    trpc.agents.getMany.queryOptions({
+      page,
+      pageSize: 10,
+      search,
+    })
+  );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-      {data.map((agent) => (
-        <AgentCard key={agent.id} agent={agent} />
-      ))}
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold">Agentes IA</h1>
+        <AgentForm />
+      </div>
+
+      <SearchInput
+        value={search}
+        onChange={setSearch}
+        placeholder="Buscar agentes..."
+      />
+
+      <DataTable
+        columns={columns}
+        data={data.items}
+        pagination={{
+          page,
+          totalPages: data.totalPages,
+          total: data.total,
+          onPageChange: setPage,
+        }}
+      />
     </div>
   );
 };
 
-// Server-side prefetching:
+// Server-side prefetching con paginación:
 const Page = async () => {
   const queryClient = getQueryClient();
-  void queryClient.prefetchQuery(trpc.agents.getMany.queryOptions());
+  void queryClient.prefetchQuery(
+    trpc.agents.getMany.queryOptions({
+      page: 1,
+      pageSize: 10,
+    })
+  );
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
@@ -441,28 +589,28 @@ graph TB
     A[LoadingState Component] --> B[Glass Container]
     B --> C[Space Loader]
     B --> D[Text Content]
-    
+
     C --> E[Astronaut Animation]
     C --> F[Space Environment]
     C --> G[Loading Progress]
-    
+
     E --> E1[Floating Animation]
     E --> E2[Helmet Reflection]
     E --> E3[Body Movements]
     E --> E4[LED Indicators]
-    
+
     F --> F1[Rotating Stars]
     F --> F2[Flying Meteors]
     F --> F3[Floating Planets]
     F --> F4[Space Background]
-    
+
     G --> G1[Progress Bar]
     G --> G2[Loading Text]
     G --> G3[Animated Dots]
-    
+
     D --> D1[Dynamic Title]
     D --> D2[Context Description]
-    
+
     style A fill:#059669
     style C fill:#ff9800
     style E fill:#2196f3
@@ -470,7 +618,43 @@ graph TB
     style G fill:#4caf50
 ```
 
-### Sistema de Avatares Dinámicos
+### Sistema de Data Table y Paginación
+
+```mermaid
+graph TB
+    A[Data Table Component] --> B[TanStack Table]
+    B --> C[Column Definitions]
+    B --> D[Data Processing]
+    B --> E[Pagination Logic]
+
+    C --> C1[Agent Name Column]
+    C --> C2[Meeting Count Column]
+    C --> C3[Avatar Column]
+    C --> C4[Actions Column]
+
+    C1 --> C5[Dynamic Avatar]
+    C1 --> C6[Agent Instructions]
+
+    C2 --> C7[Badge Component]
+    C7 --> C8[Meeting Counter]
+    C7 --> C9[Video Icon]
+
+    D --> D1[Type-safe Data]
+    D --> D2[Sorting Logic]
+    D --> D3[Filtering Logic]
+
+    E --> E1[Page Navigation]
+    E --> E2[Page Size Selection]
+    E --> E3[Total Count Display]
+    E --> E4[Loading States]
+
+    style A fill:#059669
+    style B fill:#398CCB
+    style C7 fill:#9c27b0
+    style E fill:#ff9800
+```
+
+### Sistema de Avatares Dinámicos Mejorado
 
 ```mermaid
 graph TB
@@ -478,32 +662,38 @@ graph TB
     B --> C[Name Analysis]
     C --> D[Category Detection]
     D --> E[Hash Generation]
-    
+
     E --> F[Icon Selection]
     E --> G[Color Assignment]
     E --> H[Initials Generation]
-    
+
     F --> I[Technology Icons]
     F --> J[General Icons]
-    
-    G --> K[Gradient Colors]
-    
-    H --> L[Single Word Logic]
-    H --> M[Multiple Words Logic]
-    
-    I --> N[Final Avatar]
-    J --> N
-    K --> N
-    L --> N
-    M --> N
-    
+    F --> K[Meeting Icons]
+
+    G --> L[Gradient Colors]
+    G --> M[Theme Colors]
+
+    H --> N[Single Word Logic]
+    H --> O[Multiple Words Logic]
+    H --> P[Special Character Handling]
+
+    I --> Q[Final Avatar]
+    J --> Q
+    K --> Q
+    L --> Q
+    M --> Q
+    N --> Q
+    O --> Q
+    P --> Q
+
     style A fill:#059669
     style B fill:#398CCB
     style D fill:#ff9800
-    style N fill:#4caf50
+    style Q fill:#4caf50
 ```
 
-### Optimizaciones de Performance
+### Optimizaciones de Performance v0.2.0
 
 ```mermaid
 sequenceDiagram
@@ -512,25 +702,32 @@ sequenceDiagram
     participant S as Server
     participant D as Database
     participant C as Cache
-    
+
     U->>P: Navigate to /agents
-    P->>S: Server-side prefetch
-    S->>D: Query agents data
-    D->>S: Return data
-    S->>C: Populate cache
+    P->>S: Server-side prefetch (page 1)
+    S->>D: Query agents with LIMIT 10 OFFSET 0
+    S->>D: Count total agents
+    D->>S: Return paginated data
+    S->>C: Populate cache with page 1
     S->>P: Hydrated state
-    P->>U: Instant render
-    
+    P->>U: Instant render with pagination
+
     Note over P,C: No loading state needed
-    Note over C: React Query cache
+    Note over C: React Query cache per page
     Note over S: tRPC type safety
-    
-    U->>P: Navigate away & back
-    P->>C: Check cache
-    C->>P: Return cached data
-    P->>U: Instant render
-    
+
+    U->>P: Navigate to page 2
+    P->>C: Check cache for page 2
+    C->>P: Cache miss
+    P->>S: Request page 2
+    S->>D: Query with LIMIT 10 OFFSET 10
+    D->>S: Return page 2 data
+    S->>C: Cache page 2
+    C->>P: Return page 2 data
+    P->>U: Render page 2
+
     Note over P,C: Background refetch if stale
+    Note over C: Individual page caching
 ```
 
 ## ⚙️ Prerequisitos del Entorno
@@ -605,6 +802,9 @@ npm run db:studio
 ✅ Loading states
 ✅ Zod validation
 ✅ Protected procedures
+✅ Pagination support
+✅ Search filtering
+✅ Count aggregations
 ```
 
 ## 🎨 Sistema de Autenticación
@@ -618,19 +818,19 @@ graph LR
         B[SignUpView] --> D
         C[Dashboard] --> D
     end
-    
+
     subgraph "BetterAuth Core"
         D --> E[Email/Password Provider]
         D --> F[Google OAuth Provider]
         D --> G[GitHub OAuth Provider]
         D --> H[Session Manager]
     end
-    
+
     subgraph "Database"
         H --> I[(Users Table)]
         H --> J[(Sessions Table)]
     end
-    
+
     subgraph "Provider Detection"
         K[getProviderIcon] --> L{Image URL Analysis}
         K --> M[getProviderName]
@@ -638,7 +838,7 @@ graph LR
         L -->|github| O[GitHub Icon]
         L -->|default| P[Shield Icon]
     end
-    
+
     style D fill:#16a34a
     style H fill:#059669
     style L fill:#047857
@@ -667,41 +867,47 @@ graph TB
         A[layout.tsx] --> B[SidebarProvider]
         B --> C[DashboardSidebar]
         B --> D[Main Content]
-        
+
         D --> E[DashboardNavbar]
         D --> F[Page Content]
-        
+
         C --> G[Navigation Links]
         C --> H[User Section]
         C --> I[Footer]
-        
+
         H --> J{Screen Size}
         J -->|Desktop ≥768px| K[DashboardUserButton]
         J -->|Mobile <768px| L[DashboardUserMobileMenu]
-        
+
         F --> M[Suspense Boundary]
         M --> N[Error Boundary]
         N --> O[View Component]
-        
+
         F --> P[Loading States]
         P --> Q[Space Loader]
-        
+
         F --> R[Error States]
         R --> S[Error Component]
+
+        O --> T[Data Table]
+        O --> U[Pagination]
+        O --> V[Search Filters]
     end
-    
+
     subgraph "Data Layer"
-        T[tRPC Prefetch] --> U[React Query Cache]
-        U --> O
-        
-        V[useSuspenseQuery] --> W[Type-safe Data]
-        W --> X[UI Components]
+        W[tRPC Prefetch] --> X[React Query Cache]
+        X --> O
+
+        Y[useSuspenseQuery] --> Z[Type-safe Data]
+        Z --> AA[UI Components]
+        Z --> BB[Paginated Results]
     end
-    
+
     style A fill:#059669
     style O fill:#4caf50
     style Q fill:#ff9800
-    style T fill:#398CCB
+    style W fill:#398CCB
+    style T fill:#e91e63
 ```
 
 ## 📱 Sistema Responsive Avanzado
@@ -710,13 +916,14 @@ graph TB
 
 ```css
 /* Sistema de breakpoints implementado */
-Mobile:     < 768px   - Sidebar colapsado, modal móvil
-Tablet:     768px - 1024px - Sidebar adaptativo
-Desktop:    > 1024px  - Layout completo
+Mobile:     < 768px   - Sidebar colapsado, modal móvil, tabla responsive
+Tablet:     768px - 1024px - Sidebar adaptativo, tabla completa
+Desktop:    > 1024px  - Layout completo, todas las funciones
 
 /* Implementación con Tailwind y Shadcn Sidebar */
 .md:hidden        /* Oculto en desktop, visible en móvil */
 .hidden.md:block  /* Oculto en móvil, visible en desktop */
+.lg:table-cell    /* Columnas que solo se muestran en desktop */
 ```
 
 ### Detección de Dispositivo con Shadcn
@@ -733,6 +940,10 @@ const { state, toggleSidebar, isMobile } = useSidebar();
 // Renderizado condicional mejorado:
 {isMobile && <MobileNavToggle />}
 {!isMobile && <DesktopSidebar />}
+
+// Data Table responsive:
+{!isMobile && <FullDataTable />}
+{isMobile && <MobileAgentCards />}
 ```
 
 ## 🎨 Diseño y UI
@@ -742,21 +953,31 @@ const { state, toggleSidebar, isMobile } = useSidebar();
 ```css
 /* Colores principales de la marca */
 :root {
-  --primary-green: #16a34a;      /* green-600 - Color principal */
+  --primary-green: #16a34a; /* green-600 - Color principal */
   --primary-green-hover: #15803d; /* green-700 - Hover states */
   --primary-green-light: #22c55e; /* green-500 - Elementos destacados */
-  
+
   /* tRPC y API colors */
-  --trpc-blue: #398CCB;          /* tRPC brand color */
-  --api-success: #10b981;        /* Success states */
-  --api-error: #ef4444;          /* Error states */
-  --api-warning: #f59e0b;        /* Warning states */
-  
+  --trpc-blue: #398ccb; /* tRPC brand color */
+  --api-success: #10b981; /* Success states */
+  --api-error: #ef4444; /* Error states */
+  --api-warning: #f59e0b; /* Warning states */
+
   /* Loading states */
-  --space-bg: #0f0f1e;           /* Space background */
-  --space-stars: #ffffff;        /* Star colors */
-  --astronaut-suit: #e5e7eb;     /* Astronaut suit */
+  --space-bg: #0f0f1e; /* Space background */
+  --space-stars: #ffffff; /* Star colors */
+  --astronaut-suit: #e5e7eb; /* Astronaut suit */
   --helmet-glass: rgba(0, 255, 255, 0.2); /* Helmet glass */
+
+  /* Data Table colors */
+  --table-header: #f8fafc; /* Table header background */
+  --table-border: #e2e8f0; /* Table borders */
+  --table-hover: #f1f5f9; /* Row hover state */
+
+  /* Badge colors */
+  --badge-blue: #3b82f6; /* Meeting badges */
+  --badge-green: #10b981; /* Success badges */
+  --badge-gray: #6b7280; /* Neutral badges */
 }
 ```
 
@@ -774,6 +995,8 @@ const { state, toggleSidebar, isMobile } = useSidebar();
 ✅ Indicadores LED parpadeantes
 ✅ Responsive design (ajuste automático de tamaño)
 ✅ Hardware acceleration (will-change: transform)
+✅ Loading states específicos para tablas
+✅ Skeleton loading para pagination
 ```
 
 ### Error Components
@@ -786,6 +1009,24 @@ const { state, toggleSidebar, isMobile } = useSidebar();
 ✅ Fallback UI components
 ✅ Error tracking integration ready
 ✅ User-friendly error states
+✅ Table-specific error states
+✅ Pagination error handling
+```
+
+### Data Table Components
+
+```tsx
+// Componentes de tabla implementados:
+✅ TanStack Table integration
+✅ Column sorting (name, date, meetings)
+✅ Responsive design con breakpoints
+✅ Loading skeletons para cada columna
+✅ Badge components para meeting count
+✅ Avatar integration en tabla
+✅ Empty states cuando no hay datos
+✅ Search highlighting en resultados
+✅ Pagination controls avanzados
+✅ Page size selection (10, 25, 50, 100)
 ```
 
 ### Glassmorphism Effects
@@ -798,6 +1039,8 @@ const { state, toggleSidebar, isMobile } = useSidebar();
 ✅ shadow-xl para profundidad
 ✅ rounded-2xl para esquinas suaves
 ✅ Efectos hover dinámicos
+✅ Table glassmorphism para headers
+✅ Modal glassmorphism para forms
 ```
 
 ## 🔧 Comandos Útiles
@@ -823,91 +1066,14 @@ npx shadcn-ui@latest add sidebar
 npx shadcn-ui@latest add command
 npx shadcn-ui@latest add separator
 npx shadcn-ui@latest add scroll-area
-```
+npx shadcn-ui@latest add table
+npx shadcn-ui@latest add badge
+npx shadcn-ui@latest add input
 
-## 📁 Estructura del Proyecto
-
-```
-agentesia/
-├── src/
-│   ├── app/
-│   │   ├── modules/                    # Módulos de la aplicación
-│   │   │   ├── auth/
-│   │   │   │   └── ui/views/
-│   │   │   │       ├── sign-in-view.tsx    # Vista de inicio de sesión
-│   │   │   │       └── sign-up-view.tsx    # Vista de registro
-│   │   │   ├── agents/                     # Módulo de agentes IA
-│   │   │   │   ├── ui/
-│   │   │   │   │   ├── views/
-│   │   │   │   │   │   └── agents-view.tsx     # Vista principal de agentes
-│   │   │   │   │   └── components/
-│   │   │   │   │       ├── agent-form.tsx         # Formulario de agentes
-│   │   │   │   │       ├── agent-avatar.tsx       # Avatar dinámico
-│   │   │   │   │       └── agent-avatar-generator.ts # Generador de avatares
-│   │   │   │   ├── server/
-│   │   │   │   │   └── procedures.ts           # Procedimientos tRPC
-│   │   │   │   ├── schemas/
-│   │   │   │   └── types/
-│   │   │   ├── dashboard/
-│   │   │   │   └── ui/components/
-│   │   │   │       ├── dashboard-sidebar.tsx           # Sidebar con Shadcn
-│   │   │   │       ├── dashboard-navbar.tsx            # Navbar
-│   │   │   │       ├── dashboard-user-button.tsx       # Botón usuario desktop
-│   │   │   │       └── dashboard-user-mobile-menu.tsx  # Modal móvil
-│   │   │   └── home/
-│   │   │       └── ui/view/
-│   │   │           └── home-view.tsx       # Vista de landing
-│   │   ├── (auth)/                     # Rutas de autenticación
-│   │   │   ├── sign-in/page.tsx
-│   │   │   ├── sign-up/page.tsx
-│   │   │   └── layout.tsx              # Layout auth con redirección
-│   │   ├── (dashboard)/                # Rutas protegidas del dashboard
-│   │   │   ├── layout.tsx              # Layout con SidebarProvider
-│   │   │   ├── agents/
-│   │   │   │   └── page.tsx            # Página de agentes con tRPC
-│   │   │   ├── meetings/page.tsx       # Página de reuniones
-│   │   │   └── upgrade/page.tsx        # Página de mejoras
-│   │   ├── api/                        # API Routes
-│   │   │   ├── auth/                   # Endpoints de BetterAuth
-│   │   │   └── trpc/[trpc]/route.ts    # tRPC handler
-│   │   ├── globals.css                 # Estilos globales
-│   │   ├── layout.tsx                  #Layout raíz con providers
-│   │   └── page.tsx                    # Página de inicio
-│   ├── components/
-│   │   ├── ui/                         # Componentes Shadcn/UI
-│   │   │   ├── sidebar.tsx             # Sidebar components
-│   │   │   ├── command.tsx             # Command palette
-│   │   │   ├── button.tsx
-│   │   │   ├── form.tsx
-│   │   │   └── ...
-│   │   ├── loader.tsx                  # Space loader component
-│   │   ├── loader.module.css           # Loader styles
-│   │   └── loading-state.tsx           # Loading state wrapper
-│   ├── trpc/                           # tRPC configuration
-│   │   ├── client.tsx                  # Client-side tRPC
-│   │   ├── server.ts                   # Server-side tRPC
-│   │   ├── init.ts                     # tRPC initialization
-│   │   ├── routers/                    # tRPC routers
-│   │   │   ├── _app.ts                 # Root app router
-│   │   │   └── index.ts                # Router exports
-│   │   └── providers.tsx               # React Query provider
-│   ├── db/
-│   │   ├── index.ts                    # Configuración de Drizzle
-│   │   └── schema.ts                   # Esquemas de base de datos
-│   ├── lib/
-│   │   ├── auth.ts                     # Configuración BetterAuth
-│   │   ├── auth-client.ts              # Cliente de autenticación
-│   │   └── utils.ts                    # Utilidades generales
-│   └── styles/                         # Estilos adicionales
-├── public/
-│   ├── logo.png                        # Logo principal
-│   └── logo-simple.png                 # Logo simplificado
-├── .env.local                          # Variables de entorno
-├── env.example.txt                     # Plantilla de variables
-├── drizzle.config.ts                   # Configuración Drizzle
-├── tailwind.config.ts                  # Configuración Tailwind
-├── next.config.js                      # Configuración Next.js
-└── package.json                        # Dependencias del proyecto
+# tRPC y Database
+npm run type-check       # Verificar tipos TypeScript
+npm run db:migrate       # Ejecutar migraciones
+npm run db:seed          # Poblar base de datos (si existe)
 ```
 
 ## 🔐 Configuración de Seguridad
@@ -930,6 +1096,9 @@ node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 - ✅ **Headers de seguridad** configurados
 - ✅ **Variables de entorno** para datos sensibles
 - ✅ **Sesiones seguras** con BetterAuth
+- ✅ **SQL Injection protection** con Drizzle ORM
+- ✅ **Rate limiting** en API endpoints (próximamente)
+- ✅ **CSRF protection** integrado en BetterAuth
 
 ## 🎯 Metodología de Desarrollo
 
@@ -942,40 +1111,46 @@ graph TB
         B --> C[Testing]
         C --> D[Build Process]
         D --> E[Deployment]
-        
+
         A --> F[Hot Reload]
         A --> G[tRPC Dev Mode]
         A --> H[DB Studio]
+        A --> I[Data Table Testing]
     end
-    
+
     subgraph "Quality Assurance"
-        I[TypeScript] --> J[ESLint]
-        J --> K[Prettier]
-        K --> L[Zod Validation]
-        L --> M[Error Boundaries]
+        J[TypeScript] --> K[ESLint]
+        K --> L[Prettier]
+        L --> M[Zod Validation]
+        M --> N[Error Boundaries]
+        N --> O[Pagination Testing]
     end
-    
+
     subgraph "Performance Monitoring"
-        N[React Query DevTools]
-        O[Bundle Analyzer]
-        P[Lighthouse Metrics]
-        Q[Core Web Vitals]
+        P[React Query DevTools]
+        Q[Bundle Analyzer]
+        R[Lighthouse Metrics]
+        S[Core Web Vitals]
+        T[Table Performance]
     end
-    
+
     style A fill:#059669
-    style I fill:#398CCB
-    style N fill:#ff9800
+    style J fill:#398CCB
+    style P fill:#ff9800
+    style T fill:#e91e63
 ```
 
 ### Principios de Desarrollo
 
 - **🔒 Type Safety First** - TypeScript en toda la aplicación
-- **⚡ Performance Oriented** - Optimización constante de rendimiento  
+- **⚡ Performance Oriented** - Optimización constante de rendimiento
 - **🎨 User Experience Focus** - Diseño centrado en el usuario
 - **🔄 API Type Safety** - tRPC para comunicación cliente-servidor
 - **📱 Mobile First** - Desarrollo responsive desde el inicio
 - **🧪 Testing Culture** - Pruebas como parte del desarrollo
 - **♻️ Component Reusability** - Componentes modulares y reutilizables
+- **📊 Data-Driven** - Decisiones basadas en métricas y analytics
+- **🚀 Progressive Enhancement** - Funcionalidades que mejoran gradualmente
 
 ## 🔄 Estados de la Aplicación
 
@@ -986,14 +1161,14 @@ stateDiagram-v2
     [*] --> Loading
     Loading --> Authenticated: Login Success
     Loading --> Unauthenticated: No Session
-    
+
     state Authenticated {
         [*] --> Dashboard
         Dashboard --> Agents
         Dashboard --> Meetings
         Dashboard --> Upgrade
         Dashboard --> Settings
-        
+
         state Agents {
             [*] --> AgentsLoading
             AgentsLoading --> AgentsSuccess: Data Loaded
@@ -1001,9 +1176,17 @@ stateDiagram-v2
             AgentsError --> AgentsLoading: Retry
             AgentsSuccess --> AgentCreation: Create New
             AgentCreation --> AgentsSuccess: Created
+
+            state AgentsSuccess {
+                [*] --> TableView
+                TableView --> PaginationChange: Page Navigation
+                PaginationChange --> TableView: Updated
+                TableView --> SearchFiltering: Search Input
+                SearchFiltering --> TableView: Filtered Results
+            }
         }
     }
-    
+
     state Unauthenticated {
         [*] --> Home
         Home --> SignIn
@@ -1011,18 +1194,20 @@ stateDiagram-v2
         SignIn --> Authenticated: Success
         SignUp --> Authenticated: Success
     }
-    
+
     Authenticated --> Unauthenticated: Logout
 ```
 
 ### Estados de Datos con React Query
 
 - **🔄 Loading** - Datos siendo cargados por primera vez
-- **✅ Success** - Datos cargados exitosamente  
+- **✅ Success** - Datos cargados exitosamente
 - **❌ Error** - Error en la carga de datos
 - **🔄 Refetching** - Recarga en segundo plano
 - **⏳ Stale** - Datos obsoletos pero mostrados
 - **🚫 Paused** - Query pausada (sin conexión)
+- **📄 Paginating** - Navegando entre páginas
+- **🔍 Filtering** - Aplicando filtros de búsqueda
 
 ## 🎨 Sistema de Componentes
 
@@ -1033,49 +1218,61 @@ graph TB
     subgraph "Layout Components"
         A[RootLayout] --> B[AuthLayout]
         A --> C[DashboardLayout]
-        
+
         C --> D[Sidebar]
         C --> E[Navbar]
         C --> F[Main Content]
-        
+
         D --> G[Navigation Links]
         D --> H[User Section]
-        
+
         F --> I[Page Wrapper]
         I --> J[Suspense Boundary]
         I --> K[Error Boundary]
     end
-    
+
     subgraph "Feature Components"
-        L[AgentsView] --> M[AgentCard]
-        L --> N[AgentsFilter]
-        L --> O[AgentsGrid]
-        
-        P[AgentForm] --> Q[AgentAvatar]
-        P --> R[Form Fields]
-        P --> S[Validation]
-        
-        Q --> T[Avatar Generator]
-        T --> U[Category Detection]
-        T --> V[Icon Selection]
-        T --> W[Color Assignment]
+        L[AgentsView] --> M[DataTable]
+        L --> N[SearchInput]
+        L --> O[AgentForm]
+        L --> P[Pagination]
+
+        M --> Q[Columns]
+        M --> R[AgentCard Mobile]
+        M --> S[TableHeader]
+        M --> T[TableBody]
+
+        Q --> U[AgentAvatar]
+        Q --> V[MeetingBadge]
+        Q --> W[ActionsDropdown]
+
+        U --> X[Avatar Generator]
+        X --> Y[Category Detection]
+        X --> Z[Icon Selection]
+        X --> AA[Color Assignment]
     end
-    
+
     subgraph "UI Components"
-        X[Button] --> Y[Loading State]
-        X --> Z[Variants]
-        
-        AA[Input] --> BB[Validation]
-        AA --> CC[Error States]
-        
-        DD[Modal] --> EE[Mobile Gestures]
-        DD --> FF[Desktop Dropdown]
+        BB[Button] --> CC[Loading State]
+        BB --> DD[Variants]
+
+        EE[Input] --> FF[Validation]
+        EE --> GG[Error States]
+        EE --> HH[Search Debounce]
+
+        II[Modal] --> JJ[Mobile Gestures]
+        II --> KK[Desktop Dropdown]
+
+        LL[Badge] --> MM[Meeting Counter]
+        LL --> NN[Status Indicators]
+        LL --> OO[Color Variants]
     end
-    
+
     style A fill:#059669
     style L fill:#398CCB
-    style X fill:#4caf50
-    style T fill:#ff9800
+    style BB fill:#4caf50
+    style X fill:#ff9800
+    style M fill:#e91e63
 ```
 
 ### Componentes Reutilizables
@@ -1089,6 +1286,12 @@ graph TB
 ✅ DashboardSidebar - Sidebar responsivo con Shadcn
 ✅ UserButton - Botón de usuario con dropdown/modal
 ✅ SpaceLoader - Animación de carga inmersiva
+✅ DataTable - Tabla avanzada con TanStack Table
+✅ Pagination - Controles de paginación con navegación
+✅ SearchInput - Input de búsqueda con debounce
+✅ MeetingBadge - Badge con contador de reuniones
+✅ AgentColumns - Definición de columnas para tabla
+✅ TableSkeleton - Loading state para tabla
 ```
 
 ## 🐛 Solución de Problemas
@@ -1096,6 +1299,7 @@ graph TB
 ### Problemas Comunes y Soluciones
 
 #### Error de Base de Datos
+
 ```bash
 # Verificar conexión
 npm run db:studio
@@ -1105,9 +1309,13 @@ npm run db:push
 
 # Verificar variables de entorno
 echo $DATABASE_URL
+
+# Probar query de agentes
+npm run db:seed  # Si existe script de seed
 ```
 
 #### Error de Autenticación
+
 ```bash
 # Verificar BETTER_AUTH_SECRET (mínimo 32 caracteres)
 echo $BETTER_AUTH_SECRET | wc -c
@@ -1118,6 +1326,7 @@ echo $BETTER_AUTH_SECRET | wc -c
 ```
 
 #### Error de tRPC
+
 ```bash
 # Verificar tipos
 npm run type-check
@@ -1125,9 +1334,13 @@ npm run type-check
 # Limpiar cache
 rm -rf .next/
 npm run dev
+
+# Probar endpoints tRPC
+# Visitar http://localhost:3000/api/trpc/agents.getMany
 ```
 
 #### Error de Componentes
+
 ```bash
 # Verificar instalación de Shadcn
 npx shadcn-ui@latest add --help
@@ -1135,13 +1348,26 @@ npx shadcn-ui@latest add --help
 # Reinstalar dependencias
 rm -rf node_modules package-lock.json
 npm install
+
+# Verificar componentes de tabla
+npx shadcn-ui@latest add table
+npx shadcn-ui@latest add badge
+```
+
+#### Error de Paginación
+
+```bash
+# Verificar parámetros de paginación
+# page debe ser >= 1
+# pageSize debe ser > 0 y <= 100
+# Verificar que DEFAULT_PAGE y DEFAULT_PAGE_SIZE estén definidos
 ```
 
 ### Debug Tips
 
 ```tsx
 // Activar React Query DevTools en desarrollo:
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 // Logs de tRPC en desarrollo:
 const trpc = createTRPCNext<AppRouter>({
@@ -1149,85 +1375,128 @@ const trpc = createTRPCNext<AppRouter>({
     return {
       links: [
         loggerLink({
-          enabled: (opts) => process.env.NODE_ENV === 'development',
+          enabled: (opts) => process.env.NODE_ENV === "development",
         }),
       ],
-    }
+    };
   },
-})
+});
+
+// Debug paginación:
+console.log("Pagination state:", { page, pageSize, total, totalPages });
+
+// Debug queries de base de datos:
+// Activar logs en Drizzle config para ver SQL queries
 ```
 
 ## 📈 Roadmap 2025
 
 ### Q1 2025 - Funcionalidades Principales
+
 - **🎥 Sistema de Videollamadas**
+
   - Integración con WebRTC
   - Conexión con agentes IA en tiempo real
   - Grabación de sesiones
   - Compartir pantalla
 
 - **🤖 Agentes Especializados**
+
   - Psicólogo Virtual
   - Tutor Educativo
   - Consultor Tecnológico
   - Asistente Médico
 
+- **📊 Analytics de Agentes**
+  - Métricas de uso por agente
+  - Estadísticas de reuniones
+  - Reportes de efectividad
+
 ### Q2 2025 - Comunicación Avanzada
+
 - **💬 Chat en Tiempo Real**
+
   - WebSocket integration
   - Mensajes multimedia
   - Historial de conversaciones
   - Notificaciones push
 
-- **📊 Analytics Dashboard**
-  - Métricas de uso
-  - Estadísticas de agentes
-  - Reportes de actividad
+- **📊 Dashboard Analytics Avanzado**
+
+  - Gráficos interactivos
+  - Métricas de rendimiento
+  - Exportar reportes
+  - Filtros temporales avanzados
+
+- **🔍 Búsqueda Avanzada**
+  - Filtros múltiples
+  - Búsqueda por categorías
+  - Ordenamiento avanzado
+  - Búsqueda semántica
 
 ### Q3 2025 - Integraciones
+
 - **🔗 APIs Externas**
+
   - OpenAI GPT-4 integration
   - Anthropic Claude integration
   - Google AI integration
   - Custom model support
 
 - **📱 Mobile App**
+
   - React Native application
   - Push notifications
   - Offline mode
+  - Sincronización en tiempo real
+
+- **🔌 Integraciones de Terceros**
+  - Slack integration
+  - Microsoft Teams
+  - Zoom API
+  - Calendar integrations
 
 ### Q4 2025 - Expansión
+
 - **🌐 Internacionalización**
+
   - Soporte multiidioma
   - Localización de contenido
   - Agentes especializados por región
+  - RTL support
 
 - **🏢 Enterprise Features**
   - Multi-tenant architecture
   - SSO integration
   - Advanced security
   - Custom branding
+  - Role-based permissions
+  - Audit logs
 
 ## 🤝 Contribución
 
 ### Cómo Contribuir
 
 1. **Fork el proyecto**
+
    ```bash
    git clone https://github.com/tu-usuario/agentesia.git
    ```
 
 2. **Crear rama de feature**
+
    ```bash
    git checkout -b feature/nueva-caracteristica
    ```
 
 3. **Realizar cambios**
+
    - Seguir convenciones de código
    - Añadir tests si es necesario
    - Actualizar documentación
 
 4. **Commit con formato convencional**
+
    ```bash
    git commit -m "feat: añadir nueva característica"
    ```
@@ -1244,7 +1513,6 @@ const trpc = createTRPCNext<AppRouter>({
 ✅ TypeScript estricto habilitado
 ✅ ESLint para linting automático
 ✅ Prettier para formateo consistente
-✅ Husky para pre-commit hooks
 ✅ Conventional Commits para mensajes
 ✅ tRPC para type safety
 ✅ Zod para validación de schemas
@@ -1276,7 +1544,13 @@ ui: cambios en componentes UI
 ✅ tRPC integration para data fetching
 ✅ Error boundaries para error handling
 ✅ Loading states para UX
+✅ Pagination support cuando aplique
+✅ Search functionality cuando sea relevante
+✅ Mobile-first responsive design
+✅ Performance optimization (memo, callback)
+
 ```
+
 ### Convenciones de Código
 
 ```typescript
@@ -1295,6 +1569,25 @@ export const Component = ({ name }: Props) => {
 export const useCustomHook = () => {
   // Hook logic
 };
+
+// tRPC queries con tipos explícitos
+const { data, isLoading, error } = useSuspenseQuery(
+  trpc.agents.getMany.queryOptions({
+    page: 1,
+    pageSize: 10,
+  })
+);
+
+// Data table columns con tipos
+const columns: ColumnDef<AgentGetOne>[] = [
+  {
+    accessorKey: "name",
+    header: "Agent Name",
+    cell: ({ row }) => {
+      // Cell implementation
+    },
+  },
+];
 ```
 
 ### Guidelines
@@ -1309,33 +1602,6 @@ export const useCustomHook = () => {
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-```
-MIT License
-
-Licencia MIT
-
-Copyright (c) 2025 Felipe Reyes Sánchez
-
-Por la presente se concede permiso, libre de cargos, a cualquier persona que obtenga una copia
-de este software y de los archivos de documentación asociados (el "Software"), a utilizar
-el Software sin restricción, incluyendo sin limitación los derechos a usar, copiar, modificar,
-fusionar, publicar, distribuir, sublicenciar, y/o vender copias del Software, y a permitir a las
-personas a las que se les proporcione el Software a hacer lo mismo, sujeto a las siguientes
-condiciones:
-
-El aviso de copyright anterior y este aviso de permiso se incluirán en todas las copias o
-partes sustanciales del Software.
-
-EL SOFTWARE SE PROPORCIONA "COMO ESTÁ", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O
-IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A GARANTÍAS DE COMERCIALIZACIÓN,
-IDONEIDAD PARA UN PROPÓSITO PARTICULAR E INCUMPLIMIENTO. EN NINGÚN CASO LOS
-AUTORES O PROPIETARIOS DE LOS DERECHOS DE AUTOR SERÁN RESPONSABLES DE NINGUNA
-RECLAMACIÓN, DAÑOS U OTRAS RESPONSABILIDADES, YA SEA EN UNA ACCIÓN DE CONTRATO,
-AGRAVIO O CUALQUIER OTRO MOTIVO, DERIVADAS DE, FUERA DE O EN CONEXIÓN CON EL
-SOFTWARE O SU USO U OTRO TIPO DE ACCIONES EN EL SOFTWARE.
-
-```
 
 ## 👨‍💻 Desarrollador
 
