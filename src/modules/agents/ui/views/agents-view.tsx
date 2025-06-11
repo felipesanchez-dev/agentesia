@@ -31,7 +31,7 @@ export const AgentsView = () => {
       {data.items.length === 0 && (
         <EmptyState
           title="No hay agentes"
-          description="No has creado ningún agente aún. Haz clic en el botón de abajo para crear uno nuevo."
+          description="No has creado ningún agente aún. Haz clic en el botón de crear agente."
         />
       )}
     </div>
