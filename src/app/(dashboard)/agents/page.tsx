@@ -16,13 +16,13 @@ const Page = async () => {
   const queryClient = getQueryClient();
   void queryClient.prefetchQuery(trpc.agents.getMany.queryOptions({}));
 
-   const session = await auth.api.getSession({
-      headers: await headers(),
-    });
-  
-    if (!session) {
-      redirect("/sign-in");
-    }
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!session) {
+    redirect("/sign-in");
+  }
 
   return (
     <>

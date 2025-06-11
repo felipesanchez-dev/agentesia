@@ -12,8 +12,8 @@ import { useAgentsFilters } from "../../hooks/use-agents-filters";
 export const AgentsView = () => {
   const [filters] = useAgentsFilters();
   const trpc = useTRPC();
-  const { data } = useSuspenseQuery(trpc.agents.getMany
-    .queryOptions({
+  const { data } = useSuspenseQuery(
+    trpc.agents.getMany.queryOptions({
       ...filters,
     })
   );
