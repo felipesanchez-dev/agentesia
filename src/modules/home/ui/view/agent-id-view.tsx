@@ -23,7 +23,7 @@ export const AgentIdView = ({ agentId }: Props) => {
         agentId={agentId}
         agentName={data.name}
         onEdit={() => {}}
-        onDelete={() => {}}
+        onRemove={() => {}}
       />
     </div>
   );
