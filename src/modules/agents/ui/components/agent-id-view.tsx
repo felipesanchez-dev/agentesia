@@ -16,7 +16,7 @@ import {
   ChevronRightIcon,
   TrashIcon,
   PencilIcon,
-  MoreVertical,
+  MoreVerticalIcon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -58,7 +58,7 @@ export const AgentIdViewHeader = ({
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost">
-            <MoreVertical />
+            <MoreVerticalIcon />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
