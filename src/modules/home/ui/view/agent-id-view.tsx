@@ -2,6 +2,7 @@
 
 import { ErrorState } from "@/components/error-state";
 import { LoadingState } from "@/components/loading-state";
+import { AgentIdViewHeader } from "@/modules/agents/ui/components/agent-id-view";
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
@@ -18,7 +19,12 @@ export const AgentIdView = ({ agentId }: Props) => {
 
   return (
     <div className="flex-1 py-4 px-4 md:px-8 flex flex-col gap-y-4">
-      {JSON.stringify(data, null, 2)}
+      <AgentIdViewHeader
+        agentId={agentId}
+        agentName={data.name}
+        onEdit={() => {}}
+        onDelete={() => {}}
+      />
     </div>
   );
 };
