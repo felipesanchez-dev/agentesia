@@ -9,11 +9,7 @@ import { AgentAvatar } from "@/modules/agents/ui/components/agent-avatar";
 import { AgentIdViewHeader } from "@/modules/agents/ui/components/agent-id-view";
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import {
-  VideoIcon,
-  SparklesIcon,
-  BrainIcon,
-} from "lucide-react";
+import { VideoIcon, SparklesIcon, BrainIcon } from "lucide-react";
 
 interface Props {
   agentId: string;
