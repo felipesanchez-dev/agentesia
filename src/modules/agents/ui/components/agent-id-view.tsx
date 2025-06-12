@@ -12,7 +12,12 @@ import {
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { ChevronRightIcon } from "lucide-react";
+import {
+  ChevronRightIcon,
+  TrashIcon,
+  PencilIcon,
+  MoreVertical,
+} from "lucide-react";
 import Link from "next/link";
 
 interface Props {
@@ -50,6 +55,23 @@ export const AgentIdViewHeader = ({
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      <DropdownMenu modal={false}>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost">
+            <MoreVertical />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          <DropdownMenuItem onClick={onEdit}>
+            <PencilIcon className="mr-2 size-4 text-black" />
+            Editar
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={onDelete}>
+            <TrashIcon className="mr-2 size-4 text-black" />
+            Eliminar
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 };
