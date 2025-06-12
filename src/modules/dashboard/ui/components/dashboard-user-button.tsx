@@ -163,7 +163,7 @@ export const DashboardUserButton = () => {
                   <Instagram className="h-5 w-5 group-hover:scale-110 transition-transform" />
                 </a>
                 <a
-                  href="https://wa.me/57102452542"
+                  href="https://wa.me/573102452542"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-full hover:bg-green-50 hover:text-green-600 transition-all duration-200 group"
