@@ -23,6 +23,8 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { useState } from "react";
+import { UpdateAgentDialog } from "../components/update-agent";
 
 interface Props {
   agentId: string;
@@ -32,6 +34,7 @@ export const AgentIdView = ({ agentId }: Props) => {
   const router = useRouter();
   const queryClient = useQueryClient();
   const trpc = useTRPC();
+  const [updateAgentDialogOpen, setUpdateAgentDialogOpen] = useState(false);
 
   const { data } = useSuspenseQuery(
     trpc.agents.getOne.queryOptions({ id: agentId })
@@ -130,12 +133,17 @@ export const AgentIdView = ({ agentId }: Props) => {
   return (
     <>
       <RemoveConfirmation />
+      <UpdateAgentDialog
+        open={updateAgentDialogOpen}
+        onOpenChange={setUpdateAgentDialogOpen}
+        initialValues={data}
+      />
 
       <div className="flex-1 py-6 px-4 md:px-8 flex flex-col gap-6 bg-gradient-to-br from-background via-background to-muted/20 min-h-screen">
         <AgentIdViewHeader
           agentId={agentId}
           agentName={data.name}
-          onEdit={() => {}}
+          onEdit={() => setUpdateAgentDialogOpen(true)}
           onRemove={handleRemove}
         />
 
