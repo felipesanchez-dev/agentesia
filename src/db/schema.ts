@@ -75,13 +75,12 @@ export const agents = pgTable("agents", {
 });
 
 export const meetingStatus = pgEnum("meeting_status", [
-  "Pendiente",
-  "Activo",
-  "Finalizado",
-  "En curso",
-  "Cancelado",
+  "pendiente",
+  "activo",
+  "finalizado",
+  "en curso",
+  "cancelado",
 ]);
-
 export const meetings = pgTable("meetings", {
   id: text("id")
     .primaryKey()
@@ -93,7 +92,7 @@ export const meetings = pgTable("meetings", {
   agentId: text("agent_id")
     .notNull()
     .references(() => agents.id, { onDelete: "cascade" }),
-  status: meetingStatus("status").notNull().default("Pendiente"),
+  status: meetingStatus("status").notNull().default("pendiente"),
   startedAt: timestamp("started_at").notNull().defaultNow(),
   endedAt: timestamp("ended_at").notNull().defaultNow(),
   transcriptUrl: text("transcript_url"),
