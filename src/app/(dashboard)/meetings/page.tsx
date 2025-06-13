@@ -1,8 +1,8 @@
+import { MeetingsView } from "@/modules/meetings/ui/views/meetings-view";
+
 const Page = () => {
     return (
-        <div>
-            Hola desde meetings
-        </div>
+        <MeetingsView />
     )
 }
 export default Page;
