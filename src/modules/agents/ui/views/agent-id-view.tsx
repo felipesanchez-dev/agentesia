@@ -8,18 +8,35 @@ import { Separator } from "@/components/ui/separator";
 import { AgentAvatar } from "@/modules/agents/ui/components/agent-avatar";
 import { AgentIdViewHeader } from "@/modules/agents/ui/components/agent-id-view";
 import { useTRPC } from "@/trpc/client";
-import { useSuspenseQuery } from "@tanstack/react-query";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { VideoIcon, SparklesIcon, BrainIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 interface Props {
   agentId: string;
 }
 
 export const AgentIdView = ({ agentId }: Props) => {
+  const router = useRouter();
+  const queryClient = useQueryClient();
   const trpc = useTRPC();
 
   const { data } = useSuspenseQuery(
     trpc.agents.getOne.queryOptions({ id: agentId })
+  );
+
+  const removeAgent = useMutation(
+    trpc.agents.remove.mutationOptions({
+      onSuccess: async() => {
+        await queryClient.invalidateQueries(trpc.agents.getMany.queryOptions({}));
+        router.push("/agents");
+        
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    })
   );
 
   return (
@@ -28,7 +45,7 @@ export const AgentIdView = ({ agentId }: Props) => {
         agentId={agentId}
         agentName={data.name}
         onEdit={() => {}}
-        onRemove={() => {}}
+        onRemove={() => removeAgent.mutate({ id: agentId })}
       />
 
       <div className="grid gap-6 lg:grid-cols-3">
