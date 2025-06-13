@@ -14,7 +14,13 @@ import {
   useQueryClient,
   useSuspenseQuery,
 } from "@tanstack/react-query";
-import { VideoIcon, SparklesIcon, BrainIcon } from "lucide-react";
+import {
+  VideoIcon,
+  SparklesIcon,
+  BrainIcon,
+  Loader2,
+  Trash2,
+} from "lucide-react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
@@ -34,33 +40,97 @@ export const AgentIdView = ({ agentId }: Props) => {
   const removeAgent = useMutation(
     trpc.agents.remove.mutationOptions({
       onSuccess: async () => {
+        toast.success("¡Agente eliminado correctamente!", {
+          duration: 2000,
+          action: {
+            label: "Ver agentes",
+            onClick: () => router.push("/agents"),
+          },
+        });
+
         await queryClient.invalidateQueries(
           trpc.agents.getMany.queryOptions({})
         );
-        router.push("/agents");
+
+        setTimeout(() => {
+          router.push("/agents");
+        }, 1500);
       },
       onError: (error) => {
-        toast.error(error.message);
+        toast.error("Error al eliminar agente", {
+          description:
+            error.message || "Ocurrió un error inesperado. Inténtalo de nuevo.",
+          duration: 5000,
+        });
       },
     })
   );
+
   const [RemoveConfirmation, confirmRemove] = useConfirm(
     "¿Estás seguro de eliminar este agente?",
     `Este agente tiene ${
       data.meetingCount || 0
-    } reuniones asociadas.`
+    } reuniones asociadas. Esta acción no se puede deshacer.`,
+    "destructive"
   );
+
   const handleRemove = async () => {
     const ok = await confirmRemove();
     if (!ok) return;
-    await removeAgent.mutateAsync({ id: agentId });
+
+    const loadingToast = toast.loading("Eliminando agente", {});
+
+    try {
+      await removeAgent.mutateAsync({ id: agentId });
+      toast.dismiss(loadingToast);
+    } catch {
+      toast.dismiss(loadingToast);
+    }
   };
+
+  if (removeAgent.isPending) {
+    return (
+      <div className="flex-1 bg-gradient-to-br from-background via-background to-muted/20 min-h-screen">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="flex flex-col items-center space-y-6 p-8 bg-card rounded-xl shadow-2xl border max-w-md mx-4">
+            <div className="relative">
+              <div className="w-20 h-20 rounded-full bg-red-50 border-2 border-red-200 flex items-center justify-center">
+                <Loader2 className="w-10 h-10 text-red-500 animate-spin" />
+              </div>
+              <div className="absolute -top-1 -right-1 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                <Trash2 className="w-4 h-4 text-white" />
+              </div>
+            </div>
+
+            <div className="text-center space-y-3">
+              <h3 className="text-xl font-semibold text-foreground">
+                Eliminando agente
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Estamos eliminando &quot;{data.name}&quot; y todas sus{" "}
+                {data.meetingCount || 0} reuniones asociadas. Este proceso puede
+                tardar unos segundos.
+              </p>
+            </div>
+
+            <div className="w-full space-y-2">
+              <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full animate-pulse"></div>
+              </div>
+              <p className="text-xs text-center text-muted-foreground">
+                No cierres esta ventana...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
       <RemoveConfirmation />
 
-      {/* Main content area */}
       <div className="flex-1 py-6 px-4 md:px-8 flex flex-col gap-6 bg-gradient-to-br from-background via-background to-muted/20 min-h-screen">
         <AgentIdViewHeader
           agentId={agentId}
@@ -109,15 +179,24 @@ export const AgentIdView = ({ agentId }: Props) => {
 
             <CardContent className="space-y-6">
               {/* <div className="flex flex-wrap gap-3">
-              <Button size="lg" className="flex-1 min-w-[150px] bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg">
-                <VideoIcon className="w-5 h-5 mr-2" />
-                Iniciar Videollamada
-              </Button>
-              <Button variant="outline" size="lg" className="flex-1 min-w-[150px] border-2 hover:bg-primary/5">
-                <MessageSquareIcon className="w-5 h-5 mr-2" />
-                Chat de Texto
-              </Button>
-            </div> */}
+                <Button
+                  size="lg"
+                  disabled={removeAgent.isPending}
+                  className="flex-1 min-w-[150px] bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg disabled:opacity-50"
+                >
+                  <VideoIcon className="w-5 h-5 mr-2" />
+                  Iniciar Videollamada
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  disabled={removeAgent.isPending}
+                  className="flex-1 min-w-[150px] border-2 hover:bg-primary/5 disabled:opacity-50"
+                >
+                  <MessageSquareIcon className="w-5 h-5 mr-2" />
+                  Chat de Texto
+                </Button>
+              </div> */}
 
               <Separator className="my-6" />
 
@@ -162,25 +241,36 @@ export const AgentIdView = ({ agentId }: Props) => {
             </Card>
 
             {/* <Card className="shadow-lg border-0 bg-gradient-to-br from-green-50 to-green-100/30">
-            <CardHeader className="pb-3">
-              <div className="flex items-center gap-2">
-                <CalendarIcon className="w-5 h-5 text-green-600" />
-                <h3 className="font-semibold text-green-900">Acciones Rápidas</h3>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <Button variant="ghost" size="sm" className="w-full justify-start text-green-700 hover:bg-green-100">
-                <CalendarIcon className="w-4 h-4 mr-2" />
-                Programar Reunión
-              </Button>
-              <Button variant="ghost" size="sm" className="w-full justify-start text-green-700 hover:bg-green-100">
-                <ClockIcon className="w-4 h-4 mr-2" />
-                Ver Historial
-              </Button>
-            </CardContent>
-          </Card> */}
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2">
+                  <CalendarIcon className="w-5 h-5 text-green-600" />
+                  <h3 className="font-semibold text-green-900">
+                    Acciones Rápidas
+                  </h3>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  disabled={removeAgent.isPending}
+                  className="w-full justify-start text-green-700 hover:bg-green-100 disabled:opacity-50"
+                >
+                  <CalendarIcon className="w-4 h-4 mr-2" />
+                  Programar Reunión
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  disabled={removeAgent.isPending}
+                  className="w-full justify-start text-green-700 hover:bg-green-100 disabled:opacity-50"
+                >
+                  <ClockIcon className="w-4 h-4 mr-2" />
+                  Ver Historial
+                </Button>
+              </CardContent>
+            </Card> */}
 
-            {/* Agent Status Card */}
             <Card className="shadow-lg border-0 bg-gradient-to-br from-purple-50 to-purple-100/30">
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-2">
@@ -192,8 +282,14 @@ export const AgentIdView = ({ agentId }: Props) => {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-black">En línea</span>
+                  <div
+                    className={`w-2 h-2 rounded-full ${
+                      removeAgent.isPending ? "bg-red-500" : "bg-green-500"
+                    } animate-pulse`}
+                  ></div>
+                  <span className="text-sm text-black">
+                    {removeAgent.isPending ? "Eliminando..." : "En línea"}
+                  </span>
                 </div>
               </CardContent>
             </Card>
