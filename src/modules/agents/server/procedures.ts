@@ -1,7 +1,7 @@
 import { db } from "@/db";
 import { agents } from "@/db/schema";
 import { createTRPCRouter, protectedProcedure } from "@/trpc/init";
-import { agentsInsertSchema } from "../shemas";
+import { agentsInsertSchema, agentsUpdateSchema } from "../shemas";
 import { z } from "zod";
 import { and, count, desc, eq, getTableColumns, ilike, sql } from "drizzle-orm";
 import {
@@ -13,7 +13,25 @@ import {
 import { TRPCError } from "@trpc/server";
 
 export const agentsRouter = createTRPCRouter({
-  
+  update: protectedProcedure
+    .input(agentsUpdateSchema)
+    .mutation(async ({ ctx, input }) => {
+      const [updatedAgent] = await db
+        .update(agents)
+        .set(input)
+        .where(
+          and(eq(agents.id, input.id), eq(agents.userId, ctx.auth.user.id))
+        )
+        .returning();
+      if (!updatedAgent) {
+        throw new TRPCError({
+          code: "NOT_FOUND",
+          message: "Agente no encontrado",
+        });
+      }
+      return updatedAgent;
+    }),
+
   remove: protectedProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async ({ input, ctx }) => {
@@ -56,7 +74,6 @@ export const agentsRouter = createTRPCRouter({
     }),
 
   getMany: protectedProcedure
-
     .input(
       z.object({
         page: z.number().default(DEFAULT_PAGE),
@@ -71,7 +88,6 @@ export const agentsRouter = createTRPCRouter({
 
     .query(async ({ ctx, input }) => {
       const { search, page, pageSize } = input;
-
       const data = await db
         .select({
           meetingCount: sql<number>`1`,
@@ -99,7 +115,6 @@ export const agentsRouter = createTRPCRouter({
         );
 
       const totalPages = Math.ceil(total.count / pageSize);
-
       return {
         items: data,
         total: total.count,
