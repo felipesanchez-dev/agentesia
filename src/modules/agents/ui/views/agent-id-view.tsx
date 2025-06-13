@@ -46,7 +46,7 @@ export const AgentIdView = ({ agentId }: Props) => {
   );
   const [RemoveConfirmation, confirmRemove] = useConfirm(
     "¿Estás seguro de eliminar este agente?",
-    `¿Estás seguro que quieres eliminar al agente? Este agente tiene ${
+    `Este agente tiene ${
       data.meetingCount || 0
     } reuniones asociadas.`
   );
