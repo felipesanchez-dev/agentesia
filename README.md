@@ -1,14 +1,15 @@
 # 🤖 Agentesia
 
-_Plataforma de Agentes IA Inteligentes_
+_Plataforma Avanzada de Agentes IA Inteligentes_
 
-Una aplicación web moderna construida con Next.js para la gestión, interacción y colaboración con agentes de inteligencia artificial especializados. Conecta con expertos virtuales y experimenta el futuro de la comunicación IA.
+Una aplicación web de última generación construida con Next.js 15 para la gestión, interacción y colaboración con agentes de inteligencia artificial especializados. Conecta con expertos virtuales, gestiona reuniones y experimenta el futuro de la comunicación IA.
 
-![Agentesia Banner](https://img.shields.io/badge/Agentesia-v0.2.0-green?style=for-the-badge&logo=react)
+![Agentesia Banner](https://img.shields.io/badge/Agentesia-v0.3.0-green?style=for-the-badge&logo=react)
 [![Next.js](https://img.shields.io/badge/Next.js-15.3.2-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0+-06B6D4?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
 [![tRPC](https://img.shields.io/badge/tRPC-11.0+-398CCB?style=flat&logo=trpc)](https://trpc.io/)
+[![Drizzle](https://img.shields.io/badge/Drizzle-ORM-C5F74F?style=flat&logo=drizzle)](https://orm.drizzle.team/)
 
 ## 📋 Tabla de Contenidos
 
@@ -17,13 +18,14 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
   - [🎯 Características Principales](#-características-principales)
   - [🏗️ Arquitectura del Sistema](#️-arquitectura-del-sistema)
   - [🛠️ Stack Tecnológico Completo](#️-stack-tecnológico-completo)
-  - [📱 Diagramas de Flujo](#-diagramas-de-flujo)
+  - [📱 Diagramas de Flujo Avanzados](#-diagramas-de-flujo-avanzados)
   - [🔄 Sistema tRPC y API](#-sistema-trpc-y-api)
-  - [🎨 Sistema de Loading y Estados](#-sistema-de-loading-y-estados)
+  - [🎨 Sistema de UI/UX Avanzado](#-sistema-de-uiux-avanzado)
   - [⚙️ Prerequisitos del Entorno](#️-prerequisitos-del-entorno)
   - [🚀 Configuración del Proyecto](#-configuración-del-proyecto)
   - [🎨 Sistema de Autenticación](#-sistema-de-autenticación)
   - [🖥️ Dashboard y Componentes](#️-dashboard-y-componentes)
+  - [📊 Sistema de Gestión de Reuniones](#-sistema-de-gestión-de-reuniones)
   - [📱 Sistema Responsive Avanzado](#-sistema-responsive-avanzado)
   - [🎨 Diseño y UI](#-diseño-y-ui)
   - [🔧 Comandos Útiles](#-comandos-útiles)
@@ -40,147 +42,200 @@ Una aplicación web moderna construida con Next.js para la gestión, interacció
 
 ## 🎯 Características Principales
 
-### ✅ **Sistema Completo Implementado v0.2.0**
+### ✅ **Sistema Completo Implementado v0.3.0**
 
-- **Sistema de Autenticación Completo** - Email/contraseña y OAuth (Google, GitHub)
-- **Dashboard Interactivo** - Panel de control moderno con sidebar navegacional
-- **Gestión Completa de Agentes IA** - CRUD completo con sistema de avatares dinámicos
-- **Data Table Avanzada** - Tabla de datos con paginación, filtros y ordenamiento
-- **Sistema de Paginación** - Navegación eficiente con contadores y límites
-- **Filtros y Búsqueda** - Sistema de búsqueda en tiempo real por nombre de agente
-- **Conteo de Reuniones** - Tracking dinámico de reuniones por agente
-- **Botón de Usuario Avanzado** - Dropdown y modal móvil con información detallada
-- **Detección de Proveedores** - Identificación automática del método de autenticación
-- **Diseño Responsive Completo** - Desktop y móvil con animaciones nativas
-- **Modal Móvil Avanzado** - Swipe-to-close con animaciones fluidas
-- **UI Moderna** - Componentes elegantes con Shadcn/UI y efectos glassmorphism
-- **Validación de Formularios** - Validación robusta con Zod y React Hook Form
-- **Manejo de Estados** - Estados de carga, errores y animaciones
-- **Seguridad Avanzada** - Autenticación segura con BetterAuth
-- **Base de Datos Escalable** - PostgreSQL con Drizzle ORM
-- **Redirección Inteligente** - Protección de rutas y redirección automática
-- **Componentes Modulares** - Arquitectura escalable y mantenible
+#### 🤖 **Gestión Avanzada de Agentes IA**
+- **CRUD Completo** - Crear, leer, actualizar y eliminar agentes con validación
+- **Avatares Dinámicos** - Generación automática con iconos contextuales
+- **Sistema de Categorización** - Detección inteligente de tipos de agente
+- **Estados de Carga Inmersivos** - Animaciones durante eliminación
+- **Notificaciones Toast** - Feedback completo con Sonner
+- **Confirmación de Acciones** - Modal de confirmación con variantes
+- **Conteo de Reuniones** - Tracking dinámico por agente
+- **Búsqueda en Tiempo Real** - Filtrado instant por nombre
 
-### 🆕 **Características Avanzadas v0.2.0**
+#### 📊 **Sistema de Reuniones Completo**
+- **Gestión Completa de Meetings** - CRUD con formularios avanzados
+- **Selector de Agentes** - CommandSelect con búsqueda y avatares
+- **Programación de Videollamadas** - Sistema de agendamiento
+- **Estados de Reunión** - Tracking de estados y progreso
+- **Filtros Avanzados** - Sistema de filtrado múltiple
+- **Paginación Inteligente** - Navegación eficiente con contadores
 
-- **tRPC Integration Completa** - API type-safe con React Query y paginación
-- **Sistema de Loading Avanzado** - Loader espacial con astronauta animado
-- **Error Boundaries** - Manejo robusto de errores
-- **Suspense Boundaries** - Loading states granulares
-- **Server-Side Prefetching** - Optimización de performance
+#### 🎨 **Sistema de UI/UX Avanzado**
+- **Diseño Glassmorphism** - Efectos de cristal y transparencias
+- **Paginador Moderno** - Controles intuitivos con animaciones
+- **Estados de Carga Espaciales** - Loader inmersivo con astronauta
+- **Notificaciones Toast** - Sistema completo con Sonner
+- **Modales Responsivos** - Adaptación desktop/móvil
+- **Gradientes Dinámicos** - Paleta de colores moderna
+- **Animaciones Fluidas** - Transiciones suaves en toda la app
+
+#### 🔐 **Autenticación y Seguridad**
+- **Sistema de Autenticación Completo** - Email/contraseña y OAuth
+- **Protección de Rutas** - Middleware de autenticación
+- **Gestión de Sesiones** - BetterAuth v1.2.8
+- **Validación Robusta** - Zod en formularios y API
+- **Estados de Error** - Manejo elegante de errores
+
+#### 📱 **Experiencia Responsive**
+- **Design System Completo** - Shadcn/UI components
+- **Sidebar Inteligente** - Detección automática móvil/desktop
+- **Data Tables Responsivas** - TanStack Table con adaptación
+- **Modal Móvil Avanzado** - Swipe gestures y animaciones
+- **Navegación Adaptativa** - UX optimizada por dispositivo
+
+### 🆕 **Características Avanzadas v0.3.0**
+
+#### 🚀 **Performance y Optimización**
+- **Server-Side Prefetching** - Optimización de carga inicial
 - **React Query Integration** - Cache inteligente y sincronización
-- **TypeScript Full Coverage** - 100% tipado estático
-- **Shadcn Sidebar System** - Sidebar moderno con detección móvil
-- **Avatares Dinámicos** - Generación automática de avatares para agentes
-- **Categorización Inteligente** - Detección automática de categorías de agentes
-- **Data Table con TanStack** - Tabla avanzada con sorting, filtering y paginación
-- **Sistema de Badges** - Indicadores visuales para reuniones y estados
-- **Optimización de Queries** - Queries eficientes con offset y límites
+- **Suspense Boundaries** - Loading states granulares
+- **Error Boundaries** - Manejo robusto de errores
+- **Type Safety 100%** - TypeScript full coverage
+- **Bundle Optimization** - Código optimizado para producción
+
+#### 🎯 **Funcionalidades Específicas**
+- **Confirmación con useConfirm Hook** - Sistema reutilizable
+- **Command Select Component** - Selector avanzado con búsqueda
+- **Avatar Generation System** - Generación automática contextual
+- **Meeting Counter System** - Badges dinámicos con contadores
+- **Search & Filter System** - Búsqueda instant con debounce
+- **Toast Notification System** - Notificaciones elegantes
 
 ### 🔄 **En Desarrollo - Roadmap 2025**
 
-- **Videollamadas con IA** (Q1 2025)
-- **Agentes Especializados** (Q1 2025)
-- **Chat en Tiempo Real** (Q2 2025)
-- **Integraciones Avanzadas** (Q3 2025)
+- **Videollamadas en Vivo** (Q1 2025) - Integración con WebRTC
+- **Chat en Tiempo Real** (Q1 2025) - Mensajería instantánea
+- **Agentes Especializados** (Q2 2025) - IA por categorías
+- **Integraciones API** (Q2 2025) - Conectores externos
+- **Analytics Dashboard** (Q3 2025) - Métricas y reportes
+- **Mobile App** (Q4 2025) - Aplicación nativa
 
 ## 🏗️ Arquitectura del Sistema
 
 ```mermaid
 graph TB
     subgraph "Frontend Layer"
-        A[Next.js App Router] --> B[Auth Pages]
+        A[Next.js App Router] --> B[Auth System]
         A --> C[Dashboard Layout]
-        A --> D[Home Page]
+        A --> D[Landing Page]
 
-        B --> B1[SignIn View]
-        B --> B2[SignUp View]
+        B --> B1[SignIn/SignUp Views]
+        B --> B2[OAuth Integration]
+        B --> B3[Session Management]
 
-        C --> C1[Desktop Sidebar]
-        C --> C2[Desktop User Button]
-        C --> C3[Mobile User Menu]
-        C --> C4[Protected Routes]
+        C --> C1[Responsive Sidebar]
+        C --> C2[User Management]
+        C --> C3[Protected Routes]
 
-        C4 --> C5[Agents Page]
-        C4 --> C6[Meetings Page]
-        C4 --> C7[Upgrade Page]
+        C3 --> C4[Agents Management]
+        C3 --> C5[Meetings System]
+        C3 --> C6[Settings & Upgrade]
 
-        C5 --> C8[Data Table]
-        C5 --> C9[Agent Form]
-        C5 --> C10[Pagination]
-        C5 --> C11[Search Filters]
+        C4 --> C7[Data Table + Pagination]
+        C4 --> C8[Agent CRUD Forms]
+        C4 --> C9[Avatar System]
+        C4 --> C10[Search & Filters]
+
+        C5 --> C11[Meeting CRUD]
+        C5 --> C12[Agent Selector]
+        C5 --> C13[Meeting Status]
+        C5 --> C14[Calendar Integration]
     end
 
-    subgraph "tRPC & API Layer"
+    subgraph "tRPC API Layer"
         E[tRPC Router] --> F[Agents Router]
-        E --> G[Auth Router]
+        E --> G[Meetings Router]
         E --> H[Users Router]
+        E --> I[Auth Router]
 
-        F --> F1[agents.getMany - Paginado]
+        F --> F1[agents.getMany - Paginated]
         F --> F2[agents.getOne]
         F --> F3[agents.create]
         F --> F4[agents.update]
-        F --> F5[agents.delete]
+        F --> F5[agents.remove]
 
-        I[React Query] --> J[Server State Cache]
-        I --> K[Optimistic Updates]
-        I --> L[Background Refetch]
-        I --> M[Pagination Cache]
+        G --> G1[meetings.getMany - Paginated]
+        G --> G2[meetings.create]
+        G --> G3[meetings.update]
+        G --> G4[meetings.delete]
+
+        J[React Query] --> K[Server State Cache]
+        J --> L[Optimistic Updates]
+        J --> M[Background Refetch]
+        J --> N[Pagination Cache]
+        J --> O[Search Cache]
     end
 
     subgraph "Authentication Layer"
-        N[BetterAuth v1.2.8] --> O[Email/Password]
-        N --> P[Google OAuth]
-        N --> Q[GitHub OAuth]
-        N --> R[Session Management]
+        P[BetterAuth v1.2.8] --> Q[Email/Password]
+        P --> R[Google OAuth]
+        P --> S[GitHub OAuth]
+        P --> T[Session Management]
+        P --> U[Route Protection]
     end
 
     subgraph "Database Layer"
-        S[PostgreSQL/Neon] --> T[Drizzle ORM]
-        T --> U[User Schema]
-        T --> V[Session Schema]
-        T --> W[Agents Schema]
-        T --> X[Meetings Schema]
+        V[PostgreSQL/Neon] --> W[Drizzle ORM]
+        W --> X[Users Schema]
+        W --> Y[Sessions Schema]
+        W --> Z[Agents Schema]
+        W --> AA[Meetings Schema]
 
-        W --> W1[SQL Aggregations]
-        W --> W2[Pagination Queries]
-        W --> W3[Search Filters]
+        Z --> Z1[SQL Aggregations]
+        Z --> Z2[Pagination Queries]
+        Z --> Z3[Search Filters]
+        Z --> Z4[Meeting Count Relations]
+
+        AA --> AA1[Agent Relations]
+        AA --> AA2[Status Management]
+        AA --> AA3[DateTime Handling]
     end
 
-    subgraph "UI Components"
-        Y[Shadcn/UI] --> Z[Form Components]
-        Y --> AA[Layout Components]
-        Y --> BB[Navigation Components]
-        Y --> CC[Loading Components]
-        Y --> DD[Avatar Components]
-        Y --> EE[Data Table]
-        Y --> FF[Pagination]
-        Y --> GG[Badge Components]
+    subgraph "UI Components System"
+        BB[Shadcn/UI] --> CC[Form Components]
+        BB --> DD[Layout Components]
+        BB --> EE[Navigation Components]
+        BB --> FF[Data Display]
+        BB --> GG[Feedback Components]
+
+        FF --> HH[Data Table (TanStack)]
+        FF --> II[Pagination Controls]
+        FF --> JJ[Avatar Generator]
+        FF --> KK[Badge System]
+
+        GG --> LL[Toast Notifications]
+        GG --> MM[Loading States]
+        GG --> NN[Error Boundaries]
+        GG --> OO[Confirmation Modals]
     end
 
     A --> E
-    E --> N
-    N --> S
-    A --> Y
-    E --> I
+    E --> P
+    P --> V
+    A --> BB
+    E --> J
 
     style A fill:#059669
     style E fill:#398CCB
-    style N fill:#16a34a
-    style S fill:#047857
-    style Y fill:#15803d
-    style EE fill:#ff9800
+    style P fill:#16a34a
+    style V fill:#047857
+    style BB fill:#15803d
+    style HH fill:#e91e63
+    style LL fill:#ff9800
 ```
 
 ## 🛠️ Stack Tecnológico Completo
 
 ### Frontend
 
-- **[Next.js](https://nextjs.org/)** v15.3.2 - Framework de React con App Router
+- **[Next.js](https://nextjs.org/)** v15.3.2 - Framework React con App Router y Turbopack
 - **[TypeScript](https://www.typescriptlang.org/)** v5+ - Tipado estático para JavaScript
-- **[Tailwind CSS](https://tailwindcss.com/)** v4+ - Framework de CSS utilitario
+- **[Tailwind CSS](https://tailwindcss.com/)** v4+ - Framework CSS utilitario
 - **[Shadcn/UI](https://ui.shadcn.com/)** - Biblioteca de componentes modernos
 - **[TanStack Table](https://tanstack.com/table)** - Tabla de datos avanzada
+- **[Sonner](https://sonner.emilkowal.ski/)** - Sistema de notificaciones toast
 - **[Lucide React](https://lucide.dev/)** - Iconos SVG optimizados
 - **[React Hook Form](https://react-hook-form.com/)** - Manejo avanzado de formularios
 - **[React Error Boundary](https://github.com/bvaughn/react-error-boundary)** - Manejo de errores
@@ -191,553 +246,540 @@ graph TB
 - **[React Query](https://tanstack.com/query)** v5+ - Server state management
 - **[Zod](https://zod.dev/)** - Validación de esquemas TypeScript-first
 - **[PostgreSQL](https://www.postgresql.org/)** - Base de datos relacional
-- **[Neon](https://neon.com)** - Hosting de PostgreSQL serverless
-- **[Drizzle ORM](https://orm.drizzle.team/)** - ORM TypeScript-first con SQL avanzado
+- **[Neon](https://neon.com)** - Hosting PostgreSQL serverless
+- **[Drizzle ORM](https://orm.drizzle.team/)** - ORM TypeScript-first
 
-### Autenticación
+### Autenticación & Seguridad
 
 - **[BetterAuth](https://www.better-auth.com/)** v1.2.8 - Sistema de autenticación moderno
 - **OAuth Providers** - Google y GitHub integrados
 - **Session Management** - Manejo seguro de sesiones
+- **Route Protection** - Middleware de protección
 
 ### UI/UX & Performance
 
-- **Glassmorphism** - Efectos de vidrio esmerilado
-- **Animaciones CSS Avanzadas** - Keyframes personalizados y transiciones
-- **Loading States** - Componentes de carga inmersivos con astronauta espacial
-- **Error Boundaries** - Manejo robusto de errores
-- **Responsive Design** - Desktop-first con adaptación móvil
+- **Glassmorphism Effects** - Efectos de vidrio esmerilado
+- **CSS Animations** - Animaciones fluidas y transiciones
+- **Loading States** - Estados de carga inmersivos
+- **Toast Notifications** - Sistema de notificaciones elegante
+- **Responsive Design** - Mobile-first con adaptación completa
 - **Performance Optimization** - Server-side prefetching y caching
-- **Avatar Generation** - Sistema de generación automática de avatares
-- **Data Virtualization** - Renderizado eficiente de grandes datasets
+- **Avatar Generation** - Sistema automático de avatares
+- **Command Components** - Selectores avanzados con búsqueda
 
-## 📱 Diagramas de Flujo
+## 📱 Diagramas de Flujo Avanzados
 
-### Flujo de Autenticación Completo
-
-```mermaid
-flowchart TD
-    A[Usuario accede a la app] --> B{¿Tiene sesión activa?}
-    B -->|Sí| C[Redirigir a Dashboard]
-    B -->|No| D[Mostrar Home]
-
-    D --> E[Clic en Sign In/Sign Up]
-    E --> F{¿Ya está autenticado?}
-    F -->|Sí| C
-    F -->|No| G[Mostrar formulario]
-
-    G --> H{Tipo de autenticación}
-    H -->|Email/Password| I[Validar formulario]
-    H -->|OAuth Google| J[Redirect a Google]
-    H -->|OAuth GitHub| K[Redirect a GitHub]
-
-    I --> L{¿Válido?}
-    L -->|No| M[Mostrar errores]
-    L -->|Sí| N[Crear sesión]
-
-    J --> O[Callback OAuth]
-    K --> O
-    O --> N
-
-    M --> G
-    N --> C
-
-    C --> P[Dashboard Layout]
-    P --> Q[Prefetch Data]
-    Q --> R[Render Content]
-
-    style A fill:#e1f5fe
-    style C fill:#c8e6c9
-    style N fill:#c8e6c9
-    style M fill:#ffcdd2
-    style P fill:#e8f5e8
-    style Q fill:#398CCB
-```
-
-### Flujo tRPC y Data Fetching con Paginación
-
-```mermaid
-flowchart LR
-    A[Page Component] --> B[tRPC Client Call with Pagination]
-    B --> C{Cache Hit?}
-
-    C -->|Yes| D[Return Cached Data]
-    C -->|No| E[Make Server Request]
-
-    E --> F[tRPC Server Router]
-    F --> G[Database Query with LIMIT/OFFSET]
-    G --> H[Count Query for Total]
-    H --> I[Return Typed Paginated Data]
-
-    I --> J[Update React Query Cache]
-    J --> K[Update UI with Pagination]
-
-    D --> K
-
-    subgraph "Loading States"
-        L[Suspense Fallback]
-        M[LoadingState Component]
-        N[Space Loader Animation]
-    end
-
-    subgraph "Error States"
-        O[Error Boundary]
-        P[ErrorState Component]
-        Q[Retry Mechanism]
-    end
-
-    subgraph "Pagination Controls"
-        R[Page Navigation]
-        S[Page Size Selector]
-        T[Total Count Display]
-    end
-
-    B --> L
-    L --> M
-    M --> N
-
-    F --> O
-    O --> P
-    P --> Q
-
-    K --> R
-    K --> S
-    K --> T
-
-    style A fill:#059669
-    style F fill:#398CCB
-    style G fill:#047857
-    style K fill:#16a34a
-    style N fill:#ff9800
-    style R fill:#9c27b0
-```
-
-### Flujo de Gestión de Agentes con Data Table
+### Flujo Completo de Gestión de Agentes
 
 ```mermaid
 flowchart TD
-    A[Agents Page] --> B[Server Prefetch]
-    B --> C[tRPC agents.getMany con Paginación]
-    C --> D[Database Query con LIMIT/OFFSET]
-    D --> E[Return Paginated Agents Data]
+    A[Usuario accede a /agents] --> B[Server Prefetch]
+    B --> C[tRPC agents.getMany con paginación]
+    C --> D[Database Query con LIMIT/OFFSET + COUNT]
+    D --> E[Hydrated State + Pagination Data]
 
     E --> F[Render Data Table]
     F --> G[Generate Dynamic Avatars]
     F --> H[Display Meeting Count Badges]
     F --> I[Render Pagination Controls]
 
-    G --> J[Category Detection]
-    J --> K[Icon Selection]
-    K --> L[Color Assignment]
+    G --> J[Category Detection Algorithm]
+    J --> K[Icon Selection by Name Analysis]
+    K --> L[Color Assignment by Hash]
+    L --> M[Responsive Avatar Rendering]
 
-    H --> M[SQL Count Aggregation]
-    M --> N[Badge with Meeting Counter]
+    H --> N[SQL COUNT Aggregation]
+    N --> O[Badge with Meeting Counter]
+    O --> P[Video Icon + Count Display]
 
-    I --> O[Page Navigation]
-    I --> P[Page Size Selection]
-    I --> Q[Total Records Display]
+    I --> Q[Page Navigation Controls]
+    I --> R[Page Size Selection]
+    I --> S[Total Records Display]
+    I --> T[Smart Navigation Logic]
 
-    F --> R[Search Filter]
-    R --> S[Debounced Search Input]
-    S --> T[Filter by Agent Name]
-    T --> U[Update Query with Search]
+    F --> U[Real-time Search System]
+    U --> V[Debounced Search Input]
+    V --> W[Filter by Agent Name]
+    W --> X[Update Query with Search Params]
+    X --> Y[Instant Results Update]
 
-    F --> V[Agent Form Modal]
-    V --> W[Validation with Zod]
-    W --> X{Valid?}
-    X -->|No| Y[Show Errors]
-    X -->|Yes| Z[tRPC agents.create]
+    F --> Z[Agent Management Actions]
+    Z --> AA[Create New Agent]
+    Z --> AB[Edit Existing Agent]
+    Z --> AC[Delete Agent]
 
-    Z --> AA[Database Insert]
-    AA --> BB[Invalidate Queries]
-    BB --> CC[Refresh Table Data]
+    AA --> AD[Agent Form Modal]
+    AD --> AE[Validation with Zod]
+    AE --> AF{Form Valid?}
+    AF -->|No| AG[Show Validation Errors]
+    AF -->|Yes| AH[tRPC agents.create]
 
-    Y --> V
+    AH --> AI[Database Insert]
+    AI --> AJ[Invalidate React Query Cache]
+    AJ --> AK[Auto-refresh Table Data]
+    AK --> AL[Success Toast Notification]
+
+    AC --> AM[useConfirm Hook]
+    AM --> AN[Confirmation Modal with Variants]
+    AN --> AO{User Confirms?}
+    AO -->|No| AP[Cancel Action]
+    AO -->|Yes| AQ[Loading Toast]
+
+    AQ --> AR[tRPC agents.remove]
+    AR --> AS[Database Delete]
+    AS --> AT[Success Toast + Navigation]
+    AT --> AU[Redirect to Agents List]
+
+    AG --> AD
+    AP --> F
 
     style A fill:#059669
     style C fill:#398CCB
     style G fill:#ff9800
     style H fill:#9c27b0
-    style Z fill:#4caf50
-    style AA fill:#047857
-    style F fill:#e91e63
+    style AA fill:#4caf50
+    style AC fill:#f44336
+    style AL fill:#2196f3
+    style AM fill:#e91e63
+```
+
+### Flujo de Sistema de Reuniones
+
+```mermaid
+flowchart TD
+    A[Usuario accede a /meetings] --> B[Server Prefetch Meetings]
+    B --> C[tRPC meetings.getMany + Agent Data]
+    C --> D[Populate Meeting List with Agents]
+
+    D --> E[Meetings List Header]
+    E --> F[Create Meeting Button]
+    F --> G[New Meeting Dialog]
+
+    G --> H[Meeting Form Component]
+    H --> I[Agent Selection System]
+    I --> J[Command Select Component]
+
+    J --> K[Load Available Agents]
+    K --> L[Search Agents in Real-time]
+    L --> M[Display Agent Cards with Avatars]
+    M --> N[Select Agent for Meeting]
+
+    H --> O[Meeting Details Form]
+    O --> P[Title Input]
+    O --> Q[Description Input]
+    O --> R[Date/Time Picker]
+    O --> S[Meeting Type Selection]
+
+    O --> T[Form Validation]
+    T --> U{All Fields Valid?}
+    U -->|No| V[Show Validation Errors]
+    U -->|Yes| W[Submit Meeting Creation]
+
+    W --> X[tRPC meetings.create]
+    X --> Y[Database Insert with Agent Relation]
+    Y --> Z[Update Agent Meeting Count]
+    Z --> AA[Invalidate Queries]
+    AA --> AB[Success Toast Notification]
+    AB --> AC[Close Dialog]
+    AC --> AD[Refresh Meetings List]
+
+    D --> AE[Meetings Data Table]
+    AE --> AF[Meeting Status Badges]
+    AE --> AG[Agent Information Display]
+    AE --> AH[Meeting Actions]
+
+    AH --> AI[Edit Meeting]
+    AH --> AJ[Delete Meeting]
+    AH --> AK[Start Videocall]
+
+    AI --> AL[Update Meeting Dialog]
+    AL --> AM[Pre-filled Form]
+    AM --> AN[tRPC meetings.update]
+
+    AJ --> AO[Confirmation Dialog]
+    AO --> AP[tRPC meetings.delete]
+    AP --> AQ[Update Agent Count]
+
+    AK --> AR[Redirect to Videocall]
+    AR --> AS[WebRTC Integration] 
+
+    V --> O
+
+    style A fill:#059669
+    style G fill:#398CCB
+    style J fill:#ff9800
+    style X fill:#4caf50
+    style AO fill:#f44336
+    style AS fill:#9c27b0
+```
+
+### Flujo de Notificaciones y Estados
+
+```mermaid
+flowchart LR
+    subgraph "Toast Notification System"
+        A[Action Trigger] --> B{Action Type}
+        
+        B -->|Loading| C[Loading Toast]
+        B -->|Success| D[Success Toast]
+        B -->|Error| E[Error Toast]
+        B -->|Warning| F[Warning Toast]
+
+        C --> G[Spinner + Message]
+        D --> H[Success Icon + Action Button]
+        E --> I[Error Icon + Retry Option]
+        F --> J[Warning Icon + Details]
+
+        G --> K[Auto Dismiss on Complete]
+        H --> L[Manual Dismiss or Auto]
+        I --> M[Manual Dismiss + Retry]
+        J --> L
+    end
+
+    subgraph "Confirmation System"
+        N[Destructive Action] --> O[useConfirm Hook]
+        O --> P[Confirmation Modal]
+        P --> Q[Dynamic Variant Styling]
+        
+        Q --> R{User Choice}
+        R -->|Confirm| S[Execute Action]
+        R -->|Cancel| T[Cancel Action]
+        
+        S --> U[Show Loading Toast]
+        U --> V[Action Result]
+        V --> W[Success/Error Toast]
+    end
+
+    subgraph "Loading States"
+        X[Component Mount] --> Y{Data Available?}
+        Y -->|No| Z[Suspense Boundary]
+        Y -->|Yes| AA[Render Content]
+        
+        Z --> BB[Space Loader Component]
+        BB --> CC[Astronaut Animation]
+        BB --> DD[Loading Message]
+        
+        CC --> EE[Floating Animation]
+        CC --> FF[Helmet Reflection]
+        CC --> GG[Space Environment]
+    end
+
+    style A fill:#059669
+    style O fill:#e91e63
+    style BB fill:#ff9800
+    style S fill:#4caf50
+    style E fill:#f44336
 ```
 
 ## 🔄 Sistema tRPC y API
 
-### Arquitectura tRPC Implementada
+### Arquitectura tRPC Completa
 
 ```mermaid
-graph LR
+graph TB
     subgraph "Client Side"
         A[React Component] --> B[tRPC Client]
-        B --> C[React Query Hook]
+        B --> C[React Query Hooks]
         C --> D[useSuspenseQuery]
-        C --> E[Pagination State]
+        C --> E[useMutation]
+        C --> F[Pagination State]
 
-        F[TypeScript Types] --> A
-        F --> B
+        G[TypeScript Types] --> A
+        G --> B
+        G --> H[Zod Schemas]
     end
 
     subgraph "Network Layer"
-        G[HTTP Request] --> H[Next.js API Route]
-        H --> I[tRPC Handler]
+        I[HTTP Request] --> J[Next.js API Route /api/trpc]
+        J --> K[tRPC Handler]
+        K --> L[Request Validation]
     end
 
-    subgraph "Server Side"
-        I --> J[tRPC Router]
-        J --> K[Procedure Validation]
-        K --> L[Database Query]
-        L --> M[Drizzle ORM]
-        M --> N[PostgreSQL]
+    subgraph "Server Side Routers"
+        L --> M[Root tRPC Router]
+        M --> N[Agents Router]
+        M --> O[Meetings Router]
+        M --> P[Users Router]
+        M --> Q[Auth Router]
 
-        L --> L1[Count Query]
-        L --> L2[Data Query with LIMIT]
-        L --> L3[OFFSET Calculation]
+        N --> N1[agents.getMany - Paginated]
+        N --> N2[agents.getOne]
+        N --> N3[agents.create]
+        N --> N4[agents.update]
+        N --> N5[agents.remove]
+
+        O --> O1[meetings.getMany - Paginated]
+        O --> O2[meetings.create]
+        O --> O3[meetings.update]
+        O --> O4[meetings.delete]
     end
 
-    subgraph "Type Safety"
-        O[Shared Types] --> P[Client Types]
-        O --> Q[Server Types]
-        O --> R[Database Schema]
-        O --> S[Pagination Types]
+    subgraph "Database Operations"
+        N1 --> R[Drizzle Query Builder]
+        R --> S[SELECT with LIMIT/OFFSET]
+        R --> T[COUNT for Total Records]
+        R --> U[JOIN with Meetings for Count]
+        
+        O1 --> V[Meeting Queries]
+        V --> W[JOIN with Agents Table]
+        V --> X[Status Filtering]
+        V --> Y[Date Range Queries]
     end
 
-    B --> G
-    N --> L
+    subgraph "Type Safety & Validation"
+        Z[Shared Types] --> AA[Client Types]
+        Z --> BB[Server Types]
+        Z --> CC[Database Schema Types]
+        Z --> DD[Validation Schemas]
+
+        H --> EE[Input Validation]
+        H --> FF[Output Validation]
+        H --> GG[Error Handling]
+    end
+
+    subgraph "Caching & Performance"
+        HH[React Query Cache] --> II[Per-Page Caching]
+        HH --> JJ[Background Refetch]
+        HH --> KK[Optimistic Updates]
+        HH --> LL[Stale While Revalidate]
+
+        MM[Server Prefetch] --> NN[Initial Data Hydration]
+        MM --> OO[No Loading State]
+        MM --> PP[Instant Navigation]
+    end
+
+    B --> I
+    U --> R
+    R --> L
     L --> K
     K --> J
     J --> I
-    I --> H
-    H --> G
-    G --> B
+    I --> B
 
-    O --> F
-    O --> J
+    Z --> G
+    Z --> M
+    HH --> C
+    MM --> A
 
     style B fill:#398CCB
-    style J fill:#398CCB
-    style M fill:#047857
-    style O fill:#ff9800
-    style E fill:#9c27b0
+    style M fill:#398CCB
+    style R fill:#047857
+    style Z fill:#ff9800
+    style HH fill:#9c27b0
+    style MM fill:#4caf50
 ```
 
-### Configuración tRPC Actual v0.2.0
+## 🎨 Sistema de UI/UX Avanzado
 
-```typescript
-// Router de Agentes implementado con paginación:
-export const agentsRouter = createTRPCRouter({
-  getOne: baseProcedure
-    .input(z.object({ id: z.string() }))
-    .query(async ({ input }) => {
-      const [existingAgent] = await db
-        .select()
-        .from(agents)
-        .where(eq(agents.id, input.id));
-      return existingAgent;
-    }),
-
-  getMany: baseProcedure
-    .input(z.object({
-      search: z.string().optional(),
-      page: z.number().default(DEFAULT_PAGE),
-      pageSize: z.number().default(DEFAULT_PAGE_SIZE),
-    }).optional())
-    .query(async ({ ctx, input = {} }) => {
-      const { search, page = DEFAULT_PAGE, pageSize = DEFAULT_PAGE_SIZE } = input;
-
-      // Query principal con meetingCount
-      const data = await db
-        .select({
-          meetingCount: sql<number>`1`,
-          ...getTableColumns(agents),
-        })
-        .from(agents)
-        .where(
-          and(
-            eq(agents.userId, ctx.auth.user.id),
-            search ? ilike(agents.name, `%${search}%`) : undefined
-          )
-        )
-        .orderBy(desc(agents.createdAt), desc(agents.id))
-        .limit(pageSize)
-        .offset((page - 1) * pageSize);
-
-      // Query de conteo total
-      const [total] = await db
-        .select({ count: count() })
-        .from(agents)
-        .where(
-          and(
-            eq(agents.userId, ctx.auth.user.id),
-            search ? ilike(agents.name, `%${search}%`) : undefined
-          )
-        );
-
-      const totalPages = Math.ceil(total.count / pageSize);
-
-      return {
-        items: data,
-        total: total.count,
-        totalPages,
-      };
-    }),
-
-  create: protectedProcedure
-    .input(agentsInsertSchema)
-    .mutation(async ({ input, ctx }) => {
-      const [createdAgent] = await db
-        .insert(agents)
-        .values({
-          ...input,
-          userId: ctx.auth.user.id,
-        })
-        .returning();
-      return createdAgent;
-    }),
-});
-
-// Características implementadas:
-✅ Type-safe API calls
-✅ Automatic TypeScript inference
-✅ Input validation with Zod
-✅ Server-side prefetching
-✅ React Query integration
-✅ Optimistic updates
-✅ Error handling
-✅ Loading states
-✅ Protected procedures
-✅ Pagination con LIMIT/OFFSET
-✅ Search filters con SQL ILIKE
-✅ Count aggregations
-✅ Meeting counters
-
-```
-
-### Uso en Componentes con Data Table
-
-```tsx
-// Ejemplo de uso en AgentsView con Data Table:
-export const AgentsView = () => {
-  const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
-
-  const trpc = useTRPC();
-  const { data } = useSuspenseQuery(
-    trpc.agents.getMany.queryOptions({
-      page,
-      pageSize: 10,
-      search,
-    })
-  );
-
-  return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold">Agentes IA</h1>
-        <AgentForm />
-      </div>
-
-      <SearchInput
-        value={search}
-        onChange={setSearch}
-        placeholder="Buscar agentes..."
-      />
-
-      <DataTable
-        columns={columns}
-        data={data.items}
-        pagination={{
-          page,
-          totalPages: data.totalPages,
-          total: data.total,
-          onPageChange: setPage,
-        }}
-      />
-    </div>
-  );
-};
-
-// Server-side prefetching con paginación:
-const Page = async () => {
-  const queryClient = getQueryClient();
-  void queryClient.prefetchQuery(
-    trpc.agents.getMany.queryOptions({
-      page: 1,
-      pageSize: 10,
-    })
-  );
-
-  return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <Suspense fallback={<AgentsViewLoading />}>
-        <ErrorBoundary fallback={<AgentsViewError />}>
-          <AgentsView />
-        </ErrorBoundary>
-      </Suspense>
-    </HydrationBoundary>
-  );
-};
-```
-
-## 🎨 Sistema de Loading y Estados
-
-### Componente LoadingState Avanzado
+### Componente de Paginación Mejorado
 
 ```mermaid
 graph TB
-    A[LoadingState Component] --> B[Glass Container]
-    B --> C[Space Loader]
-    B --> D[Text Content]
+    subgraph "DataPagination Component"
+        A[Pagination Props] --> B[Page Number Generation]
+        B --> C[Smart Navigation Logic]
+        C --> D[Responsive Layout]
 
-    C --> E[Astronaut Animation]
-    C --> F[Space Environment]
-    C --> G[Loading Progress]
+        B --> E[calculatePageNumbers Algorithm]
+        E --> F[Show First Page]
+        E --> G[Add Dots if Gap]
+        E --> H[Show Pages Around Current]
+        E --> I[Add Dots if Gap]
+        E --> J[Show Last Page]
 
-    E --> E1[Floating Animation]
-    E --> E2[Helmet Reflection]
-    E --> E3[Body Movements]
-    E --> E4[LED Indicators]
+        D --> K[Desktop Layout]
+        D --> L[Mobile Layout]
 
-    F --> F1[Rotating Stars]
-    F --> F2[Flying Meteors]
-    F --> F3[Floating Planets]
-    F --> F4[Space Background]
+        K --> M[Full Navigation Controls]
+        M --> N[First/Previous Buttons]
+        M --> O[Page Number Buttons]
+        M --> P[Next/Last Buttons]
+        M --> Q[Page Info Display]
 
-    G --> G1[Progress Bar]
-    G --> G2[Loading Text]
-    G --> G3[Animated Dots]
+        L --> R[Compact Controls]
+        R --> S[Previous/Next Only]
+        R --> T[Current Page Indicator]
+        R --> U[Mobile-Optimized Spacing]
 
-    D --> D1[Dynamic Title]
-    D --> D2[Context Description]
+        O --> V[Current Page Highlight]
+        V --> W[Scale Animation]
+        V --> X[Color Gradient]
+        V --> Y[Shadow Effect]
+
+        Q --> Z[Information Display]
+        Z --> AA["Page X of Y"]
+        Z --> BB[Total Records Count]
+    end
+
+    subgraph "Loading & Error States"
+        CC[Loading State] --> DD[Skeleton Pagination]
+        EE[Error State] --> FF[Error Message]
+        FF --> GG[Retry Button]
+    end
+
+    subgraph "Accessibility Features"
+        HH[ARIA Labels] --> II[Screen Reader Support]
+        JJ[Keyboard Navigation] --> KK[Tab Order]
+        LL[Focus States] --> MM[Visual Indicators]
+    end
 
     style A fill:#059669
-    style C fill:#ff9800
-    style E fill:#2196f3
-    style F fill:#9c27b0
-    style G fill:#4caf50
+    style E fill:#398CCB
+    style V fill:#ff9800
+    style Z fill:#9c27b0
+    style HH fill:#4caf50
 ```
 
-### Sistema de Data Table y Paginación
+### Sistema de Confirmación Avanzado
 
 ```mermaid
 graph TB
-    A[Data Table Component] --> B[TanStack Table]
-    B --> C[Column Definitions]
-    B --> D[Data Processing]
-    B --> E[Pagination Logic]
+    subgraph "useConfirm Hook System"
+        A[useConfirm Hook Call] --> B[Hook Parameters]
+        B --> C[Title]
+        B --> D[Description]
+        B --> E[Variant Type]
 
-    C --> C1[Agent Name Column]
-    C --> C2[Meeting Count Column]
-    C --> C3[Avatar Column]
-    C --> C4[Actions Column]
+        E --> F{Variant Selection}
+        F -->|destructive| G[Red Theme + Trash Icon]
+        F -->|warning| H[Yellow Theme + Warning Icon]
+        F -->|default| I[Blue Theme + Check Icon]
 
-    C1 --> C5[Dynamic Avatar]
-    C1 --> C6[Agent Instructions]
+        A --> J[Return Array]
+        J --> K[ConfirmationDialog Component]
+        J --> L[confirm Function]
 
-    C2 --> C7[Badge Component]
-    C7 --> C8[Meeting Counter]
-    C7 --> C9[Video Icon]
+        L --> M[Promise-based Confirmation]
+        M --> N[User Interaction]
+        N --> O{User Choice}
+        O -->|Confirm| P[Resolve true]
+        O -->|Cancel| Q[Resolve false]
 
-    D --> D1[Type-safe Data]
-    D --> D2[Sorting Logic]
-    D --> D3[Filtering Logic]
+        K --> R[Responsive Dialog]
+        R --> S[Animated Icon Circle]
+        R --> T[Dynamic Content]
+        R --> U[Action Buttons]
 
-    E --> E1[Page Navigation]
-    E --> E2[Page Size Selection]
-    E --> E3[Total Count Display]
-    E --> E4[Loading States]
+        S --> V[Icon Animation]
+        V --> W[Zoom-in Effect]
+        V --> X[Color Transition]
+        V --> Y[Gradient Background]
+
+        U --> Z[Cancel Button]
+        U --> AA[Confirm Button]
+        AA --> BB[Variant-specific Styling]
+        AA --> CC[Icon + Text]
+        AA --> DD[Hover Effects]
+    end
+
+    subgraph "Integration Examples"
+        EE[Agent Deletion] --> FF["destructive variant"]
+        FF --> GG[Red styling + Trash icon]
+        
+        HH[Unsaved Changes] --> II["warning variant"]
+        II --> JJ[Yellow styling + Alert icon]
+        
+        KK[General Action] --> LL["default variant"]
+        LL --> MM[Blue styling + Check icon]
+    end
 
     style A fill:#059669
-    style B fill:#398CCB
-    style C7 fill:#9c27b0
-    style E fill:#ff9800
+    style F fill:#398CCB
+    style G fill:#f44336
+    style H fill:#ff9800
+    style I fill:#2196f3
+    style S fill:#9c27b0
 ```
 
-### Sistema de Avatares Dinámicos Mejorado
+### Sistema de Avatares Dinámicos
 
 ```mermaid
 graph TB
-    A[Agent Creation] --> B[Avatar Generator]
-    B --> C[Name Analysis]
-    C --> D[Category Detection]
-    D --> E[Hash Generation]
+    subgraph "AgentAvatar Component"
+        A[Agent Name Input] --> B[Avatar Generation Process]
+        B --> C[Name Analysis]
+        C --> D[Category Detection]
+        C --> E[Hash Generation]
+        C --> F[Initials Extraction]
 
-    E --> F[Icon Selection]
-    E --> G[Color Assignment]
-    E --> H[Initials Generation]
+        D --> G[Pattern Matching]
+        G --> H{Name Contains Keywords?}
+        H -->|"bot", "asistente"| I[Bot Icon]
+        H -->|"team", "grupo"| J[Users Icon]
+        H -->|"chat", "conversacion"| K[MessageSquare Icon]
+        H -->|"calendar", "reunion"| L[Calendar Icon]
+        H -->|"admin", "seguridad"| M[Shield Icon]
+        H -->|"premium", "pro"| N[Star Icon]
+        H -->|"ai", "inteligencia"| O[Brain Icon]
+        H -->|No Match| P[Sparkles Icon - Default]
 
-    F --> I[Technology Icons]
-    F --> J[General Icons]
-    F --> K[Meeting Icons]
+        E --> Q[Color Selection]
+        Q --> R[Hash Algorithm]
+        R --> S[Modulo Operation]
+        S --> T[Color Array Selection]
+        T --> U[Background Color Assignment]
 
-    G --> L[Gradient Colors]
-    G --> M[Theme Colors]
+        F --> V[Initials Logic]
+        V --> W{Single Word?}
+        W -->|Yes| X[First 2 Characters]
+        W -->|No| Y[First Letter of Each Word]
+        Y --> Z[Max 2 Characters]
 
-    H --> N[Single Word Logic]
-    H --> O[Multiple Words Logic]
-    H --> P[Special Character Handling]
+        B --> AA[Size Configuration]
+        AA --> AB[Responsive Sizing]
+        AB --> AC["sm, md, lg, xl variants"]
+        AC --> AD[Icon Size Adjustment]
+        AC --> AE[Text Size Adjustment]
 
-    I --> Q[Final Avatar]
-    J --> Q
-    K --> Q
-    L --> Q
-    M --> Q
-    N --> Q
-    O --> Q
-    P --> Q
+        B --> AF[Display Logic]
+        AF --> AG{showIcon && !showInitials?}
+        AG -->|Yes| AH[Show Icon Only]
+        AG -->|No| AI{showInitials && !showIcon?}
+        AI -->|Yes| AJ[Show Initials Only]
+        AI -->|No| AK[Default to Icon]
+
+        AH --> AL[White Icon on Color Background]
+        AJ --> AM[White Text on Color Background]
+        AK --> AL
+    end
+
+    subgraph "Avatar Variations"
+        AN[Technology Agent] --> AO[Bot/Brain Icons]
+        AP[Meeting Agent] --> AQ[Calendar/Video Icons]
+        AR[Support Agent] --> AS[MessageSquare/Users Icons]
+        AT[Admin Agent] --> AU[Shield/Star Icons]
+    end
 
     style A fill:#059669
-    style B fill:#398CCB
-    style D fill:#ff9800
-    style Q fill:#4caf50
-```
-
-### Optimizaciones de Performance v0.2.0
-
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant P as Page
-    participant S as Server
-    participant D as Database
-    participant C as Cache
-
-    U->>P: Navigate to /agents
-    P->>S: Server-side prefetch (page 1)
-    S->>D: Query agents with LIMIT 10 OFFSET 0
-    S->>D: Count total agents
-    D->>S: Return paginated data
-    S->>C: Populate cache with page 1
-    S->>P: Hydrated state
-    P->>U: Instant render with pagination
-
-    Note over P,C: No loading state needed
-    Note over C: React Query cache per page
-    Note over S: tRPC type safety
-
-    U->>P: Navigate to page 2
-    P->>C: Check cache for page 2
-    C->>P: Cache miss
-    P->>S: Request page 2
-    S->>D: Query with LIMIT 10 OFFSET 10
-    D->>S: Return page 2 data
-    S->>C: Cache page 2
-    C->>P: Return page 2 data
-    P->>U: Render page 2
-
-    Note over P,C: Background refetch if stale
-    Note over C: Individual page caching
+    style D fill:#398CCB
+    style Q fill:#ff9800
+    style AF fill:#9c27b0
+    style AN fill:#4caf50
 ```
 
 ## ⚙️ Prerequisitos del Entorno
 
 Antes de comenzar, asegúrate de tener instalado:
 
-- **[Node.js](https://nodejs.org/)** >= 18.18
-- **[npm](https://www.npmjs.com/)** (incluido con Node.js)
+- **[Node.js](https://nodejs.org/)** >= 18.18 (recomendado 20+)
+- **[npm](https://www.npmjs.com/)** >= 9.0 (incluido con Node.js)
 - **[Git](https://git-scm.com/)** para control de versiones
-- **[PostgreSQL](https://www.postgresql.org/)** (o cuenta en Neon)
+- **[PostgreSQL](https://www.postgresql.org/)** 14+ (o cuenta en Neon)
+- **[VS Code](https://code.visualstudio.com/)** (recomendado)
+
+### Extensiones Recomendadas para VS Code
+
+```json
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-typescript-next",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-eslint",
+    "drizzle-team.drizzle-vscode"
+  ]
+}
+```
 
 ## 🚀 Configuración del Proyecto
 
@@ -757,25 +799,25 @@ npm run dev
 
 ### 2. Variables de Entorno
 
-Crea un archivo `.env.local` en la raíz del proyecto basado en `env.example.txt`:
+Crea un archivo `.env` en la raíz del proyecto:
 
 ```env
-# Base de Datos PostgreSQL (Neon)
-DATABASE_URL="postgresql://username:password@hostname:port/database"
+# Base de Datos PostgreSQL (Neon recomendado)
+DATABASE_URL="postgresql://username:password@hostname:port/database?sslmode=require"
 
 # BetterAuth - Clave secreta (mínimo 32 caracteres)
-BETTER_AUTH_SECRET="tu_clave_secreta_muy_larga_y_segura_de_32_caracteres_minimo"
+BETTER_AUTH_SECRET="your_very_long_and_secure_secret_key_here_minimum_32_chars"
 
 # URL de la aplicación
 BETTER_AUTH_URL="http://localhost:3000"
 
 # OAuth - Google (Opcional)
-GOOGLE_CLIENT_ID="tu_google_client_id"
-GOOGLE_CLIENT_SECRET="tu_google_client_secret"
+GOOGLE_CLIENT_ID="your_google_client_id"
+GOOGLE_CLIENT_SECRET="your_google_client_secret"
 
 # OAuth - GitHub (Opcional)
-GITHUB_CLIENT_ID="tu_github_client_id"
-GITHUB_CLIENT_SECRET="tu_github_client_secret"
+GITHUB_CLIENT_ID="your_github_client_id"
+GITHUB_CLIENT_SECRET="your_github_client_secret"
 
 # URL pública de la aplicación
 NEXT_PUBLIC_APP_URL="http://localhost:3000"
@@ -784,696 +826,687 @@ NEXT_PUBLIC_APP_URL="http://localhost:3000"
 ### 3. Configuración de Base de Datos
 
 ```bash
-# Ejecutar migraciones
+# Aplicar esquema a la base de datos
 npm run db:push
 
-# Abrir Drizzle Studio (opcional)
+# Verificar conexión con Drizzle Studio
 npm run db:studio
 ```
 
-### 4. Configuración tRPC
+### 4. Configuración OAuth (Opcional)
 
-```bash
-# tRPC está pre-configurado con:
-✅ Type-safe API routes
-✅ React Query integration
-✅ Server-side prefetching
-✅ Error boundaries
-✅ Loading states
-✅ Zod validation
-✅ Protected procedures
-✅ Pagination support
-✅ Search filtering
-✅ Count aggregations
-```
+#### Google OAuth Setup
+1. Ve a [Google Cloud Console](https://console.cloud.google.com/)
+2. Crea un nuevo proyecto o selecciona uno existente
+3. Habilita la Google+ API
+4. Crea credenciales OAuth 2.0
+5. Agrega `http://localhost:3000/api/auth/callback/google` a URIs de redirección
+
+#### GitHub OAuth Setup
+1. Ve a [GitHub Settings > Developer settings](https://github.com/settings/developers)
+2. Crea una nueva OAuth App
+3. Agrega `http://localhost:3000/api/auth/callback/github` como Authorization callback URL
 
 ## 🎨 Sistema de Autenticación
 
-### Arquitectura de Autenticación
-
-```mermaid
-graph LR
-    subgraph "Auth Components"
-        A[SignInView] --> D[AuthClient]
-        B[SignUpView] --> D
-        C[Dashboard] --> D
-    end
-
-    subgraph "BetterAuth Core"
-        D --> E[Email/Password Provider]
-        D --> F[Google OAuth Provider]
-        D --> G[GitHub OAuth Provider]
-        D --> H[Session Manager]
-    end
-
-    subgraph "Database"
-        H --> I[(Users Table)]
-        H --> J[(Sessions Table)]
-    end
-
-    subgraph "Provider Detection"
-        K[getProviderIcon] --> L{Image URL Analysis}
-        K --> M[getProviderName]
-        L -->|googleusercontent.com| N[Google Icon]
-        L -->|github| O[GitHub Icon]
-        L -->|default| P[Shield Icon]
-    end
-
-    style D fill:#16a34a
-    style H fill:#059669
-    style L fill:#047857
-```
-
-### Características Implementadas
-
-- ✅ **Registro de usuarios** (`/sign-in`)
-- ✅ **Inicio de sesión** (`/sign-up`)
-- ✅ **Autenticación OAuth** (Google, GitHub)
-- ✅ **Validación de formularios** con Zod
-- ✅ **Manejo de errores** amigable al usuario
-- ✅ **Estados de carga** con spinners animados
-- ✅ **Toggle de contraseña** para mostrar/ocultar
-- ✅ **Validación de confirmación** de contraseña
-- ✅ **Redirección inteligente** - Evita acceso a auth si ya está logueado
-- ✅ **Detección automática de proveedores** por imagen de perfil
-
-## 🖥️ Dashboard y Componentes
-
-### Arquitectura del Dashboard
+### Arquitectura de Autenticación Completa
 
 ```mermaid
 graph TB
-    subgraph "Dashboard Layout"
-        A[layout.tsx] --> B[SidebarProvider]
+    subgraph "Auth Components"
+        A[SignInView] --> E[AuthClient]
+        B[SignUpView] --> E
+        C[Dashboard] --> E
+        D[Route Protection] --> E
+    end
+
+    subgraph "BetterAuth Core"
+        E --> F[Email/Password Provider]
+        E --> G[Google OAuth Provider]
+        E --> H[GitHub OAuth Provider]
+        E --> I[Session Manager]
+        E --> J[Route Middleware]
+    end
+
+    subgraph "Database Schema"
+        I --> K[(User Table)]
+        I --> L[(Session Table)]
+        I --> M[(Account Table)]
+        I --> N[(Verification Table)]
+    end
+
+    subgraph "Provider Detection System"
+        O[getProviderIcon] --> P{Image URL Analysis}
+        O --> Q[getProviderName]
+        P -->|"googleusercontent.com"| R[Google Icon]
+        P -->|"github"| S[GitHub Icon]
+        P -->|"default"| T[Shield Icon]
+        P -->|"email"| U[Mail Icon]
+    end
+
+    subgraph "Security Features"
+        V[Input Validation] --> W[Zod Schemas]
+        X[CSRF Protection] --> Y[Built-in BetterAuth]
+        Z[Session Security] --> AA[Secure Cookies]
+        BB[Rate Limiting] --> CC[API Endpoints]
+    end
+
+    style E fill:#16a34a
+    style I fill:#059669
+    style P fill:#047857
+    style V fill:#398CCB
+```
+
+### Características de Autenticación Implementadas
+
+- ✅ **Registro completo** con validación de email único
+- ✅ **Inicio de sesión** con remember me option
+- ✅ **OAuth integrado** (Google, GitHub)
+- ✅ **Validación robusta** con Zod en tiempo real
+- ✅ **Estados de carga** con spinners elegantes
+- ✅ **Manejo de errores** contextual y amigable
+- ✅ **Toggle de contraseña** para visibilidad
+- ✅ **Confirmación de contraseña** en registro
+- ✅ **Redirección inteligente** - Previene acceso a auth si ya está logueado
+- ✅ **Detección de providers** automática por avatar
+- ✅ **Protección de rutas** con middleware
+- ✅ **Gestión de sesiones** segura
+- ✅ **Logout completo** con limpieza de estado
+
+## 🖥️ Dashboard y Componentes
+
+### Arquitectura del Dashboard Avanzada
+
+```mermaid
+graph TB
+    subgraph "Dashboard Layout System"
+        A[layout.tsx] --> B[SidebarProvider Context]
         B --> C[DashboardSidebar]
-        B --> D[Main Content]
+        B --> D[Main Content Area]
 
         D --> E[DashboardNavbar]
-        D --> F[Page Content]
+        D --> F[Page Content Wrapper]
 
         C --> G[Navigation Links]
         C --> H[User Section]
-        C --> I[Footer]
+        C --> I[Footer Section]
+        C --> J[Collapse Controls]
 
-        H --> J{Screen Size}
-        J -->|Desktop ≥768px| K[DashboardUserButton]
-        J -->|Mobile <768px| L[DashboardUserMobileMenu]
+        H --> K{Screen Detection}
+        K -->|Desktop ≥768px| L[DashboardUserButton]
+        K -->|Mobile <768px| M[DashboardUserMobileMenu]
 
-        F --> M[Suspense Boundary]
-        M --> N[Error Boundary]
-        N --> O[View Component]
+        F --> N[Suspense Boundary]
+        N --> O[Error Boundary]
+        O --> P[View Component]
 
-        F --> P[Loading States]
-        P --> Q[Space Loader]
+        F --> Q[Loading States]
+        Q --> R[Space Loader Animation]
 
-        F --> R[Error States]
-        R --> S[Error Component]
+        F --> S[Error States]
+        S --> T[Error Component with Retry]
 
-        O --> T[Data Table]
-        O --> U[Pagination]
-        O --> V[Search Filters]
+        P --> U[Data Table System]
+        P --> V[Pagination Controls]
+        P --> W[Search & Filter System]
+        P --> X[CRUD Operations]
     end
 
-    subgraph "Data Layer"
-        W[tRPC Prefetch] --> X[React Query Cache]
-        X --> O
+    subgraph "Data Management Layer"
+        Y[tRPC Server Prefetch] --> Z[React Query Cache]
+        Z --> P
 
-        Y[useSuspenseQuery] --> Z[Type-safe Data]
-        Z --> AA[UI Components]
-        Z --> BB[Paginated Results]
+        AA[useSuspenseQuery] --> BB[Type-safe Data]
+        BB --> CC[UI Components]
+        BB --> DD[Paginated Results]
+        BB --> EE[Real-time Updates]
+
+        FF[Mutations] --> GG[Optimistic Updates]
+        GG --> HH[Cache Invalidation]
+        HH --> II[Background Refetch]
+    end
+
+    subgraph "Component Interactions"
+        JJ[Agent Creation] --> KK[Form Validation]
+        KK --> LL[Success Feedback]
+        LL --> MM[Table Refresh]
+
+        NN[Agent Deletion] --> OO[Confirmation Modal]
+        OO --> PP[Loading State]
+        PP --> QQ[Success Toast]
+        QQ --> RR[Navigation]
+
+        SS[Search Input] --> TT[Debounced Query]
+        TT --> UU[Filtered Results]
+        UU --> VV[Table Update]
     end
 
     style A fill:#059669
-    style O fill:#4caf50
-    style Q fill:#ff9800
-    style W fill:#398CCB
-    style T fill:#e91e63
+    style P fill:#4caf50
+    style R fill:#ff9800
+    style Y fill:#398CCB
+    style U fill:#e91e63
+    style JJ fill:#9c27b0
 ```
+
+### Componentes del Dashboard Implementados
+
+```tsx
+// Componentes principales del dashboard:
+✅ DashboardLayout - Layout principal con providers
+✅ DashboardSidebar - Sidebar responsivo con navegación
+✅ DashboardUserButton - Dropdown de usuario (desktop)
+✅ DashboardUserMobileMenu - Modal de usuario (móvil)
+✅ SidebarProvider - Context para estado del sidebar
+✅ ProtectedRoute - Middleware de protección
+✅ LoadingBoundary - Suspense con loader espacial
+✅ ErrorBoundary - Manejo de errores con retry
+✅ ToastProvider - Sistema de notificaciones global
+```
+
+## 📊 Sistema de Gestión de Reuniones
+
+### Arquitectura de Reuniones
+
+```mermaid
+graph TB
+    subgraph "Meetings Management System"
+        A[Meetings Page] --> B[MeetingsListHeader]
+        A --> C[MeetingsView]
+        A --> D[Meeting Components]
+
+        B --> E[Create Meeting Button]
+        B --> F[Filters Section]
+        E --> G[NewMeetingDialog]
+
+        G --> H[MeetingForm Component]
+        H --> I[Agent Selection System]
+        H --> J[Meeting Details Form]
+        H --> K[Form Validation]
+
+        I --> L[CommandSelect Component]
+        L --> M[Agent Search & Filter]
+        L --> N[Agent Cards Display]
+        L --> O[Avatar Integration]
+
+        J --> P[Title Input]
+        J --> Q[Description Textarea]
+        J --> R[Date/Time Picker]
+        J --> S[Meeting Type Select]
+
+        C --> T[Meetings Data Table]
+        T --> U[Meeting Status Column]
+        T --> V[Agent Information Column]
+        T --> W[Actions Column]
+        T --> X[Date/Time Column]
+
+        W --> Y[Edit Meeting]
+        W --> Z[Delete Meeting]
+        W --> AA[Start Videocall]
+        W --> BB[View Details]
+
+        Y --> CC[UpdateMeetingDialog]
+        Z --> DD[Confirmation Modal]
+        AA --> EE[Videocall Redirect]
+    end
+
+    subgraph "Data Flow"
+        FF[tRPC meetings.getMany] --> GG[Paginated Results]
+        GG --> HH[JOIN with Agents]
+        HH --> II[Meeting Status Filter]
+        II --> JJ[Date Range Filter]
+
+        KK[Meeting Creation] --> LL[Validation]
+        LL --> MM[Agent Relation]
+        MM --> NN[Database Insert]
+        NN --> OO[Counter Update]
+        OO --> PP[Cache Invalidation]
+    end
+
+    subgraph "UI Features"
+        QQ[Status Badges] --> RR[Scheduled]
+        QQ --> SS[In Progress]
+        QQ --> TT[Completed]
+        QQ --> UU[Cancelled]
+
+        VV[Agent Display] --> WW[Avatar + Name]
+        VV --> XX[Meeting Count]
+        VV --> YY[Agent Type Badge]
+
+        ZZ[Actions Menu] --> AAA[Quick Actions]
+        ZZ --> BBB[Dropdown Menu]
+        ZZ --> CCC[Mobile Optimized]
+    end
+
+    style A fill:#059669
+    style H fill:#398CCB
+    style L fill:#ff9800
+    style T fill:#e91e63
+    style QQ fill:#9c27b0
+    style KK fill:#4caf50
+```
+
+### Características del Sistema de Reuniones
+
+- ✅ **CRUD Completo de Reuniones** - Crear, leer, actualizar, eliminar
+- ✅ **Selector de Agentes Avanzado** - CommandSelect con búsqueda
+- ✅ **Formularios Inteligentes** - Validación en tiempo real
+- ✅ **Estados de Reunión** - Scheduled, In Progress, Completed, Cancelled
+- ✅ **Filtros Avanzados** - Por estado, fecha, agente
+- ✅ **Integración con Agentes** - Relación y contadores
+- ✅ **Programación de Videollamadas** - Sistema de agendamiento
+- ✅ **Notificaciones de Estado** - Toast feedback completo
+- ✅ **Vista de Calendario** - Próximamente
+- ✅ **Recordatorios Automáticos** - En desarrollo
 
 ## 📱 Sistema Responsive Avanzado
 
-### Breakpoints y Comportamiento
+### Breakpoints y Comportamiento Detallado
 
 ```css
-/* Sistema de breakpoints implementado */
-Mobile:     < 768px   - Sidebar colapsado, modal móvil, tabla responsive
-Tablet:     768px - 1024px - Sidebar adaptativo, tabla completa
+/* Sistema de breakpoints implementado con Tailwind */
+Mobile:     < 640px   - Stack layout, sidebar colapsado, tabla cards
+Tablet:     640px - 1024px - Layout híbrido, sidebar adaptativo
 Desktop:    > 1024px  - Layout completo, todas las funciones
+Large:      > 1280px  - Layout expandido, más contenido visible
 
-/* Implementación con Tailwind y Shadcn Sidebar */
-.md:hidden        /* Oculto en desktop, visible en móvil */
-.hidden.md:block  /* Oculto en móvil, visible en desktop */
-.lg:table-cell    /* Columnas que solo se muestran en desktop */
+/* Implementación específica */
+.sm:hidden        /* Oculto en tablet+, visible en móvil */
+.hidden.md:block  /* Oculto en móvil, visible en tablet+ */
+.lg:table-cell    /* Columnas solo en desktop */
+.xl:w-full        /* Ancho completo en pantallas grandes */
 ```
 
-### Detección de Dispositivo con Shadcn
+### Sistema de Sidebar Inteligente
 
-```tsx
-// Hook useSidebar para estado del sidebar:
-const { state, toggleSidebar, isMobile } = useSidebar();
+```mermaid
+graph TB
+    subgraph "Sidebar System"
+        A[SidebarProvider] --> B[useSidebar Hook]
+        B --> C[State Management]
+        C --> D[isMobile Detection]
+        C --> E[isExpanded State]
+        C --> F[toggleSidebar Function]
 
-// Estados del sidebar:
-- "expanded" | "collapsed" - Desktop states
-- isMobile - Boolean para detección móvil
-- toggleSidebar() - Función para alternar estado
+        D --> G{Screen Size Check}
+        G -->|< 768px| H[Mobile Mode]
+        G -->|≥ 768px| I[Desktop Mode]
 
-// Renderizado condicional mejorado:
-{isMobile && <MobileNavToggle />}
-{!isMobile && <DesktopSidebar />}
+        H --> J[Overlay Sidebar]
+        H --> K[Swipe Gestures]
+        H --> L[Mobile Navigation]
 
-// Data Table responsive:
-{!isMobile && <FullDataTable />}
-{isMobile && <MobileAgentCards />}
+        I --> M[Fixed Sidebar]
+        I --> N[Collapse/Expand]
+        I --> O[Desktop Navigation]
+
+        J --> P[Backdrop Click Close]
+        J --> Q[Escape Key Close]
+        J --> R[Focus Trap]
+
+        M --> S[Persistent State]
+        M --> T[Hover Expand]
+        M --> U[Icon-only Mode]
+    end
+
+    subgraph "Responsive Features"
+        V[Mobile First Design] --> W[Touch Optimized]
+        V --> X[Gesture Support]
+        V --> Y[Compact Layout]
+
+        Z[Desktop Enhanced] --> AA[Keyboard Shortcuts]
+        Z --> BB[Mouse Interactions]
+        Z --> CC[Extended Features]
+
+        DD[Adaptive Content] --> EE[Content Reflow]
+        DD --> FF[Priority Content]
+        DD --> GG[Progressive Enhancement]
+    end
+
+    style A fill:#059669
+    style G fill:#398CCB
+    style V fill:#ff9800
+    style DD fill:#9c27b0
 ```
 
 ## 🎨 Diseño y UI
 
-### Paleta de Colores
+### Sistema de Design Tokens
 
 ```css
-/* Colores principales de la marca */
-:root {
-  --primary-green: #16a34a; /* green-600 - Color principal */
-  --primary-green-hover: #15803d; /* green-700 - Hover states */
-  --primary-green-light: #22c55e; /* green-500 - Elementos destacados */
+/* Color Palette Implementada */
+Primary: #059669 (emerald-600)
+Primary Hover: #047857 (emerald-700)
+Secondary: #6b7280 (gray-500)
+Accent: #f59e0b (amber-500)
+Success: #10b981 (emerald-500)
+Warning: #f59e0b (amber-500)
+Error: #ef4444 (red-500)
+Info: #3b82f6 (blue-500)
 
-  /* tRPC y API colors */
-  --trpc-blue: #398ccb; /* tRPC brand color */
-  --api-success: #10b981; /* Success states */
-  --api-error: #ef4444; /* Error states */
-  --api-warning: #f59e0b; /* Warning states */
+/* Typography Scale */
+Display: 3.75rem (60px) - Hero headings
+Heading 1: 2.25rem (36px) - Page titles
+Heading 2: 1.875rem (30px) - Section titles
+Heading 3: 1.5rem (24px) - Component titles
+Body Large: 1.125rem (18px) - Important text
+Body: 1rem (16px) - Default text
+Body Small: 0.875rem (14px) - Secondary text
+Caption: 0.75rem (12px) - Helper text
 
-  /* Loading states */
-  --space-bg: #0f0f1e; /* Space background */
-  --space-stars: #ffffff; /* Star colors */
-  --astronaut-suit: #e5e7eb; /* Astronaut suit */
-  --helmet-glass: rgba(0, 255, 255, 0.2); /* Helmet glass */
+/* Spacing System */
+xs: 0.25rem (4px)
+sm: 0.5rem (8px)
+md: 1rem (16px)
+lg: 1.5rem (24px)
+xl: 2rem (32px)
+2xl: 3rem (48px)
+3xl: 4rem (64px)
 
-  /* Data Table colors */
-  --table-header: #f8fafc; /* Table header background */
-  --table-border: #e2e8f0; /* Table borders */
-  --table-hover: #f1f5f9; /* Row hover state */
+/* Border Radius */
+sm: 0.125rem (2px)
+md: 0.375rem (6px)
+lg: 0.5rem (8px)
+xl: 0.75rem (12px)
+2xl: 1rem (16px)
+full: 9999px (circle)
 
-  /* Badge colors */
-  --badge-blue: #3b82f6; /* Meeting badges */
-  --badge-green: #10b981; /* Success badges */
-  --badge-gray: #6b7280; /* Neutral badges */
-}
+/* Shadows */
+sm: 0 1px 2px rgba(0, 0, 0, 0.05)
+md: 0 4px 6px rgba(0, 0, 0, 0.07)
+lg: 0 10px 15px rgba(0, 0, 0, 0.1)
+xl: 0 20px 25px rgba(0, 0, 0, 0.1)
+2xl: 0 25px 50px rgba(0, 0, 0, 0.25)
 ```
 
-### Loading Components
+### Efectos Visuales Implementados
 
-```tsx
-// Space Loader con animaciones CSS optimizadas:
-✅ Astronauta animado con movimientos realistas
-✅ Entorno espacial con estrellas rotando
-✅ Meteoros animados
-✅ Planetas flotantes
-✅ Barra de progreso animada
-✅ Texto de carga contextual
-✅ Efectos de reflexión en el casco
-✅ Indicadores LED parpadeantes
-✅ Responsive design (ajuste automático de tamaño)
-✅ Hardware acceleration (will-change: transform)
-✅ Loading states específicos para tablas
-✅ Skeleton loading para pagination
-```
+```mermaid
+graph TB
+    subgraph "Visual Effects System"
+        A[Glassmorphism] --> B[backdrop-blur-sm]
+        A --> C[backdrop-blur-md]
+        A --> D[backdrop-blur-lg]
+        A --> E[Semi-transparent Backgrounds]
 
-### Error Components
+        F[Gradient System] --> G[Linear Gradients]
+        F --> H[Radial Gradients]
+        F --> I[Conic Gradients]
+        F --> J[Animated Gradients]
 
-```tsx
-// Sistema de error mejorado:
-✅ Error boundaries con React 18
-✅ Retry mechanisms automáticos
-✅ Contextual error messages
-✅ Fallback UI components
-✅ Error tracking integration ready
-✅ User-friendly error states
-✅ Table-specific error states
-✅ Pagination error handling
-```
+        K[Animation System] --> L[CSS Keyframes]
+        K --> M[Tailwind Animations]
+        K --> N[Custom Transitions]
+        K --> O[Micro-interactions]
 
-### Data Table Components
+        P[Loading Animations] --> Q[Space Loader]
+        P --> R[Skeleton Loading]
+        P --> S[Spinner Variants]
+        P --> T[Progress Indicators]
 
-```tsx
-// Componentes de tabla implementados:
-✅ TanStack Table integration
-✅ Column sorting (name, date, meetings)
-✅ Responsive design con breakpoints
-✅ Loading skeletons para cada columna
-✅ Badge components para meeting count
-✅ Avatar integration en tabla
-✅ Empty states cuando no hay datos
-✅ Search highlighting en resultados
-✅ Pagination controls avanzados
-✅ Page size selection (10, 25, 50, 100)
-```
+        U[Interactive States] --> V[Hover Effects]
+        U --> W[Focus States]
+        U --> X[Active States]
+        U --> Y[Disabled States]
+    end
 
-### Glassmorphism Effects
+    subgraph "Component Styling"
+        Z[Buttons] --> AA[Solid Variants]
+        Z --> BB[Outline Variants]
+        Z --> CC[Ghost Variants]
+        Z --> DD[Link Variants]
 
-```tsx
-// Efectos glassmorphism implementados:
-✅ backdrop-blur-sm para loading containers
-✅ bg-background/80 para semi-transparencia
-✅ border-white/10 para bordes sutiles
-✅ shadow-xl para profundidad
-✅ rounded-2xl para esquinas suaves
-✅ Efectos hover dinámicos
-✅ Table glassmorphism para headers
-✅ Modal glassmorphism para forms
+        EE[Cards] --> FF[Elevated Cards]
+        EE --> GG[Outlined Cards]
+        EE --> HH[Glass Cards]
+        EE --> II[Gradient Cards]
+
+        JJ[Tables] --> KK[Striped Rows]
+        JJ --> LL[Hover Rows]
+        JJ --> MM[Selected States]
+        JJ --> NN[Responsive Design]
+    end
+
+    style A fill:#059669
+    style F fill:#398CCB
+    style K fill:#ff9800
+    style P fill:#9c27b0
+    style Z fill:#4caf50
 ```
 
 ## 🔧 Comandos Útiles
 
+### Comandos de Desarrollo
+
 ```bash
 # Desarrollo
-npm run dev              # Iniciar servidor de desarrollo (con Turbopack)
-npm run build            # Construir para producción
-npm run start            # Iniciar servidor de producción
-npm run lint             # Ejecutar linting
+npm run dev              # Servidor de desarrollo (Turbopack)
+npm run build            # Build de producción
+npm run start            # Servidor de producción
+npm run lint             # ESLint + Prettier
+npm run type-check       # Verificación de tipos TypeScript
 
 # Base de Datos
 npm run db:push          # Aplicar cambios de esquema
 npm run db:studio        # Abrir Drizzle Studio
+npm run db:migrate       # Ejecutar migraciones
+npm run db:generate      # Generar migraciones
+npm run db:reset         # Reset completo de DB (desarrollo)
 
-# Utilidades
-npm run format           # Formatear código con Prettier
-npm run clean            # Limpiar cache y builds
-npm run analyze          # Analizar bundle size
+# Análisis y Optimización
+npm run analyze          # Analizar tamaño del bundle
+npm run lighthouse       # Auditoría de performance
+npm run build:analyze    # Build con análisis incluido
+```
 
-# Shadcn/UI Components
+### Comandos de Shadcn/UI
+
+```bash
+# Componentes implementados
 npx shadcn-ui@latest add sidebar
 npx shadcn-ui@latest add command
-npx shadcn-ui@latest add separator
-npx shadcn-ui@latest add scroll-area
 npx shadcn-ui@latest add table
 npx shadcn-ui@latest add badge
 npx shadcn-ui@latest add input
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add dialog
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add form
+npx shadcn-ui@latest add separator
+npx shadcn-ui@latest add scroll-area
+npx shadcn-ui@latest add avatar
+npx shadcn-ui@latest add toast
 
-# tRPC y Database
-npm run type-check       # Verificar tipos TypeScript
-npm run db:migrate       # Ejecutar migraciones
-npm run db:seed          # Poblar base de datos (si existe)
+# Componentes próximos
+npx shadcn-ui@latest add calendar
+npx shadcn-ui@latest add date-picker
+npx shadcn-ui@latest add tabs
+npx shadcn-ui@latest add sheet
+npx shadcn-ui@latest add popover
+```
+
+### Comandos de Utilidad
+
+```bash
+# Linting y Formateo
+npm run format           # Prettier en todo el proyecto
+npm run lint:fix         # ESLint con auto-fix
+npm run clean            # Limpiar cache y builds
+npm run clean:all        # Limpieza completa + node_modules
+
+# Git Hooks (Husky)
+npm run prepare          # Configurar Git hooks
+npm run pre-commit       # Ejecutar pre-commit hook
+npm run pre-push         # Ejecutar pre-push hook
+
+# Testing (próximamente)
+npm run test             # Ejecutar tests
+npm run test:watch       # Tests en modo watch
+npm run test:coverage    # Coverage report
+npm run test:e2e         # Tests end-to-end
+```
+
+## 📁 Estructura del Proyecto
+
+```
+agentesia/
+├── 📁 src/
+│   ├── 📁 app/                    # App Router de Next.js
+│   │   ├── 📁 (auth)/            # Grupo de rutas de autenticación
+│   │   │   ├── 📁 sign-in/       # Página de inicio de sesión
+│   │   │   └── 📁 sign-up/       # Página de registro
+│   │   ├── 📁 (dashboard)/       # Grupo de rutas del dashboard
+│   │   │   ├── 📁 agents/        # Gestión de agentes
+│   │   │   │   └── 📁 [id]/      # Página individual de agente
+│   │   │   ├── 📁 meetings/      # Gestión de reuniones
+│   │   │   └── 📁 upgrade/       # Página de upgrade
+│   │   ├── 📁 api/               # API Routes
+│   │   │   └── 📁 trpc/          # Endpoint tRPC
+│   │   ├── 📄 globals.css        # Estilos globales
+│   │   ├── 📄 layout.tsx         # Layout raíz
+│   │   └── 📄 page.tsx           # Página de inicio
+│   ├── 📁 components/            # Componentes reutilizables
+│   │   ├── 📁 ui/                # Componentes base (Shadcn)
+│   │   ├── 📄 error-state.tsx    # Estado de error
+│   │   ├── 📄 loading-state.tsx  # Estado de carga
+│   │   ├── 📄 space-loader.tsx   # Loader espacial
+│   │   └── 📄 responsive-dialog.tsx # Dialog responsivo
+│   ├── 📁 modules/               # Módulos de funcionalidad
+│   │   ├── 📁 agents/            # Módulo de agentes
+│   │   │   ├── 📁 ui/            # Componentes UI de agentes
+│   │   │   │   ├── 📁 components/ # Componentes específicos
+│   │   │   │   └── 📁 views/     # Vistas de página
+│   │   │   └── 📁 types/         # Tipos TypeScript
+│   │   ├── 📁 meetings/          # Módulo de reuniones
+│   │   │   ├── 📁 ui/            # Componentes UI de reuniones
+│   │   │   └── 📁 types/         # Tipos TypeScript
+│   │   └── 📁 auth/              # Módulo de autenticación
+│   ├── 📁 server/                # Lógica del servidor
+│   │   ├── 📁 api/               # Definiciones de API
+│   │   │   ├── 📁 routers/       # Routers tRPC
+│   │   │   │   ├── 📄 agents.ts  # Router de agentes
+│   │   │   │   ├── 📄 meetings.ts # Router de reuniones
+│   │   │   │   └── 📄 users.ts   # Router de usuarios
+│   │   │   ├── 📄 root.ts        # Router raíz
+│   │   │   └── 📄 trpc.ts        # Configuración tRPC
+│   │   └── 📁 db/                # Configuración de base de datos
+│   │       ├── 📄 index.ts       # Conexión DB
+│   │       └── 📄 schema.ts      # Esquemas Drizzle
+│   ├── 📁 trpc/                  # Cliente tRPC
+│   │   ├── 📄 client.ts          # Cliente React
+│   │   ├── 📄 react.tsx          # Provider React
+│   │   └── 📄 server.ts          # Servidor tRPC
+│   ├── 📁 lib/                   # Utilidades y configuración
+│   │   ├── 📄 auth.ts            # Configuración BetterAuth
+│   │   ├── 📄 utils.ts           # Utilidades generales
+│   │   └── 📄 validations.ts     # Esquemas Zod
+│   ├── 📁 hooks/                 # Hooks personalizados
+│   │   ├── 📄 use-confirm.tsx    # Hook de confirmación
+│   │   └── 📄 use-sidebar.tsx    # Hook del sidebar
+│   └── 📁 types/                 # Tipos TypeScript globales
+├── 📁 public/                    # Archivos estáticos
+│   ├── 📄 favicon.ico
+│   └── 📄 logo.svg
+├── 📄 package.json               # Dependencias y scripts
+├── 📄 tsconfig.json              # Configuración TypeScript
+├── 📄 tailwind.config.ts         # Configuración Tailwind
+├── 📄 next.config.js             # Configuración Next.js
+├── 📄 drizzle.config.ts          # Configuración Drizzle
+├── 📄 .env.local                 # Variables de entorno
+└── 📄 README.md                  # Documentación
 ```
 
 ## 🔐 Configuración de Seguridad
 
-### Variables de Entorno Seguras
+### Generación de Claves Seguras
 
 ```bash
-# Generar clave secreta segura (mínimo 32 caracteres)
-BETTER_AUTH_SECRET=$(openssl rand -base64 32)
+# Generar BETTER_AUTH_SECRET (mínimo 32 caracteres)
+openssl rand -base64 32
 
-# O usar Node.js
+# O con Node.js
 node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+
+# O con Python
+python -c "import secrets; print(secrets.token_urlsafe(32))"
 ```
 
-### Buenas Prácticas Implementadas
+### Variables de Entorno de Producción
 
-- ✅ **Validación de entrada** con Zod en todas las rutas
-- ✅ **Procedimientos protegidos** en tRPC
+```env
+# Producción - Configuraciones seguras
+DATABASE_URL="postgresql://prod_user:secure_password@prod-host:5432/prod_db?sslmode=require"
+BETTER_AUTH_SECRET="production_secret_key_very_long_and_secure_minimum_32_chars"
+BETTER_AUTH_URL="https://yourdomain.com"
+NEXT_PUBLIC_APP_URL="https://yourdomain.com"
+
+# OAuth Production Credentials
+GOOGLE_CLIENT_ID="prod_google_client_id"
+GOOGLE_CLIENT_SECRET="prod_google_client_secret"
+GITHUB_CLIENT_ID="prod_github_client_id"
+GITHUB_CLIENT_SECRET="prod_github_client_secret"
+```
+
+### Buenas Prácticas de Seguridad Implementadas
+
+- ✅ **Validación de entrada** con Zod en todas las rutas tRPC
+- ✅ **Procedimientos protegidos** requieren autenticación
 - ✅ **Sanitización de datos** antes de inserción en BD
-- ✅ **Headers de seguridad** configurados
-- ✅ **Variables de entorno** para datos sensibles
-- ✅ **Sesiones seguras** con BetterAuth
-- ✅ **SQL Injection protection** con Drizzle ORM
-- ✅ **Rate limiting** en API endpoints (próximamente)
+- ✅ **SQL Injection protection** con Drizzle ORM prepared statements
+- ✅ **XSS protection** con escape automático de React
 - ✅ **CSRF protection** integrado en BetterAuth
+- ✅ **Headers de seguridad** configurados en Next.js
+- ✅ **Variables de entorno** para todos los datos sensibles
+- ✅ **Sesiones seguras** con cookies httpOnly y secure
+- ✅ **Rate limiting** en endpoints críticos (próximamente)
+- ✅ **Input validation** en cliente y servidor
+- ✅ **Error handling** sin exposición de información sensible
 
 ## 🎯 Metodología de Desarrollo
 
-### Arquitectura de Desarrollo
+### Workflow de Desarrollo
 
 ```mermaid
 graph TB
-    subgraph "Development Workflow"
-        A[Local Development] --> B[Type Checking]
-        B --> C[Testing]
-        C --> D[Build Process]
-        D --> E[Deployment]
+    subgraph "Development Flow"
+        A[Feature Planning] --> B[Component Design]
+        B --> C[Type Definition]
+        C --> D[API Design]
+        D --> E[Implementation]
+        E --> F[Testing]
+        F --> G[Code Review]
+        G --> H[Integration]
 
-        A --> F[Hot Reload]
-        A --> G[tRPC Dev Mode]
-        A --> H[DB Studio]
-        A --> I[Data Table Testing]
+        E --> I[UI Implementation]
+        E --> J[Logic Implementation]
+        E --> K[API Implementation]
+
+        I --> L[Responsive Design]
+        I --> M[Accessibility]
+        I --> N[Animation]
+
+        J --> O[State Management]
+        J --> P[Error Handling]
+        J --> Q[Performance]
+
+        K --> R[tRPC Procedures]
+        K --> S[Database Queries]
+        K --> T[Validation]
     end
 
     subgraph "Quality Assurance"
-        J[TypeScript] --> K[ESLint]
-        K --> L[Prettier]
-        L --> M[Zod Validation]
-        M --> N[Error Boundaries]
-        N --> O[Pagination Testing]
+        U[TypeScript] --> V[Compile-time Safety]
+        W[ESLint] --> X[Code Quality]
+        Y[Prettier] --> Z[Code Formatting]
+        AA[Zod] --> BB[Runtime Validation]
+        CC[React Query] --> DD[Data Consistency]
     end
 
     subgraph "Performance Monitoring"
-        P[React Query DevTools]
-        Q[Bundle Analyzer]
-        R[Lighthouse Metrics]
-        S[Core Web Vitals]
-        T[Table Performance]
-    end
+        EE[Bundle Analysis] --> FF[Size Optimization]
+        GG[Lighthouse] --> HH[Web Vitals]
 
-    style A fill:#059669
-    style J fill:#398CCB
-    style P fill:#ff9800
-    style T fill:#e91e63
-```
-
-### Principios de Desarrollo
-
-- **🔒 Type Safety First** - TypeScript en toda la aplicación
-- **⚡ Performance Oriented** - Optimización constante de rendimiento
-- **🎨 User Experience Focus** - Diseño centrado en el usuario
-- **🔄 API Type Safety** - tRPC para comunicación cliente-servidor
-- **📱 Mobile First** - Desarrollo responsive desde el inicio
-- **🧪 Testing Culture** - Pruebas como parte del desarrollo
-- **♻️ Component Reusability** - Componentes modulares y reutilizables
-- **📊 Data-Driven** - Decisiones basadas en métricas y analytics
-- **🚀 Progressive Enhancement** - Funcionalidades que mejoran gradualmente
-
-## 🔄 Estados de la Aplicación
-
-### Manejo de Estados Avanzado
-
-```mermaid
-stateDiagram-v2
-    [*] --> Loading
-    Loading --> Authenticated: Login Success
-    Loading --> Unauthenticated: No Session
-
-    state Authenticated {
-        [*] --> Dashboard
-        Dashboard --> Agents
-        Dashboard --> Meetings
-        Dashboard --> Upgrade
-        Dashboard --> Settings
-
-        state Agents {
-            [*] --> AgentsLoading
-            AgentsLoading --> AgentsSuccess: Data Loaded
-            AgentsLoading --> AgentsError: Error Occurred
-            AgentsError --> AgentsLoading: Retry
-            AgentsSuccess --> AgentCreation: Create New
-            AgentCreation --> AgentsSuccess: Created
-
-            state AgentsSuccess {
-                [*] --> TableView
-                TableView --> PaginationChange: Page Navigation
-                PaginationChange --> TableView: Updated
-                TableView --> SearchFiltering: Search Input
-                SearchFiltering --> TableView: Filtered Results
-            }
-        }
-    }
-
-    state Unauthenticated {
-        [*] --> Home
-        Home --> SignIn
-        Home --> SignUp
-        SignIn --> Authenticated: Success
-        SignUp --> Authenticated: Success
-    }
-
-    Authenticated --> Unauthenticated: Logout
-```
-
-### Estados de Datos con React Query
-
-- **🔄 Loading** - Datos siendo cargados por primera vez
-- **✅ Success** - Datos cargados exitosamente
-- **❌ Error** - Error en la carga de datos
-- **🔄 Refetching** - Recarga en segundo plano
-- **⏳ Stale** - Datos obsoletos pero mostrados
-- **🚫 Paused** - Query pausada (sin conexión)
-- **📄 Paginating** - Navegando entre páginas
-- **🔍 Filtering** - Aplicando filtros de búsqueda
-
-## 🎨 Sistema de Componentes
-
-### Jerarquía de Componentes
-
-```mermaid
-graph TB
-    subgraph "Layout Components"
-        A[RootLayout] --> B[AuthLayout]
-        A --> C[DashboardLayout]
-
-        C --> D[Sidebar]
-        C --> E[Navbar]
-        C --> F[Main Content]
-
-        D --> G[Navigation Links]
-        D --> H[User Section]
-
-        F --> I[Page Wrapper]
-        I --> J[Suspense Boundary]
-        I --> K[Error Boundary]
-    end
-
-    subgraph "Feature Components"
-        L[AgentsView] --> M[DataTable]
-        L --> N[SearchInput]
-        L --> O[AgentForm]
-        L --> P[Pagination]
-
-        M --> Q[Columns]
-        M --> R[AgentCard Mobile]
-        M --> S[TableHeader]
-        M --> T[TableBody]
-
-        Q --> U[AgentAvatar]
-        Q --> V[MeetingBadge]
-        Q --> W[ActionsDropdown]
-
-        U --> X[Avatar Generator]
-        X --> Y[Category Detection]
-        X --> Z[Icon Selection]
-        X --> AA[Color Assignment]
-    end
-
-    subgraph "UI Components"
-        BB[Button] --> CC[Loading State]
-        BB --> DD[Variants]
-
-        EE[Input] --> FF[Validation]
-        EE --> GG[Error States]
-        EE --> HH[Search Debounce]
-
-        II[Modal] --> JJ[Mobile Gestures]
-        II --> KK[Desktop Dropdown]
-
-        LL[Badge] --> MM[Meeting Counter]
-        LL --> NN[Status Indicators]
-        LL --> OO[Color Variants]
-    end
-
-    style A fill:#059669
-    style L fill:#398CCB
-    style BB fill:#4caf50
-    style X fill:#ff9800
-    style M fill:#e91e63
-```
-
-### Componentes Reutilizables
-
-```tsx
-// Componentes principales implementados:
-✅ AgentAvatar - Avatar dinámico con generación automática
-✅ LoadingState - Estado de carga con animación espacial
-✅ ErrorBoundary - Manejo de errores con retry
-✅ AgentForm - Formulario completo con validación
-✅ DashboardSidebar - Sidebar responsivo con Shadcn
-✅ UserButton - Botón de usuario con dropdown/modal
-✅ SpaceLoader - Animación de carga inmersiva
-✅ DataTable - Tabla avanzada con TanStack Table
-✅ Pagination - Controles de paginación con navegación
-✅ SearchInput - Input de búsqueda con debounce
-✅ MeetingBadge - Badge con contador de reuniones
-✅ AgentColumns - Definición de columnas para tabla
-✅ TableSkeleton - Loading state para tabla
-```
-
-## 🐛 Solución de Problemas
-
-### Problemas Comunes y Soluciones
-
-#### Error de Base de Datos
-
-```bash
-# Verificar conexión
-npm run db:studio
-
-# Regenerar esquema
-npm run db:push
-
-# Verificar variables de entorno
-echo $DATABASE_URL
-
-# Probar query de agentes
-npm run db:seed  # Si existe script de seed
-```
-
-#### Error de Autenticación
-
-```bash
-# Verificar BETTER_AUTH_SECRET (mínimo 32 caracteres)
-echo $BETTER_AUTH_SECRET | wc -c
-
-# Confirmar URLs de OAuth en proveedores
-# Google: https://console.cloud.google.com/
-# GitHub: https://github.com/settings/applications
-```
-
-#### Error de tRPC
-
-```bash
-# Verificar tipos
-npm run type-check
-
-# Limpiar cache
-rm -rf .next/
-npm run dev
-
-# Probar endpoints tRPC
-# Visitar http://localhost:3000/api/trpc/agents.getMany
-```
-
-#### Error de Componentes
-
-```bash
-# Verificar instalación de Shadcn
-npx shadcn-ui@latest add --help
-
-# Reinstalar dependencias
-rm -rf node_modules package-lock.json
-npm install
-
-# Verificar componentes de tabla
-npx shadcn-ui@latest add table
-npx shadcn-ui@latest add badge
-```
-
-#### Error de Paginación
-
-```bash
-# Verificar parámetros de paginación
-# page debe ser >= 1
-# pageSize debe ser > 0 y <= 100
-# Verificar que DEFAULT_PAGE y DEFAULT_PAGE_SIZE estén definidos
-```
-
-### Debug Tips
-
-```tsx
-// Activar React Query DevTools en desarrollo:
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
-// Logs de tRPC en desarrollo:
-const trpc = createTRPCNext<AppRouter>({
-  config() {
-    return {
-      links: [
-        loggerLink({
-          enabled: (opts) => process.env.NODE_ENV === "development",
-        }),
-      ],
-    };
-  },
-});
-
-// Debug paginación:
-console.log("Pagination state:", { page, pageSize, total, totalPages });
-
-// Debug queries de base de datos:
-// Activar logs en Drizzle config para ver SQL queries
-```
-
-## 📈 Roadmap 2025
-
-### Q1 2025 - Funcionalidades Principales
-
-- **🎥 Sistema de Videollamadas**
-
-  - Integración con WebRTC
-  - Conexión con agentes IA en tiempo real
-  - Grabación de sesiones
-  - Compartir pantalla
-
-- **🤖 Agentes Especializados**
-
-  - Psicólogo Virtual
-  - Tutor Educativo
-  - Consultor Tecnológico
-  - Asistente Médico
-
-- **📊 Analytics de Agentes**
-  - Métricas de uso por agente
-  - Estadísticas de reuniones
-  - Reportes de efectividad
-
-### Q2 2025 - Comunicación Avanzada
-
-- **💬 Chat en Tiempo Real**
-
-  - WebSocket integration
-  - Mensajes multimedia
-  - Historial de conversaciones
-  - Notificaciones push
-
-- **📊 Dashboard Analytics Avanzado**
-
-  - Gráficos interactivos
-  - Métricas de rendimiento
-  - Exportar reportes
-  - Filtros temporales avanzados
-
-- **🔍 Búsqueda Avanzada**
-  - Filtros múltiples
-  - Búsqueda por categorías
-  - Ordenamiento avanzado
-  - Búsqueda semántica
-
-### Q3 2025 - Integraciones
-
-- **🔗 APIs Externas**
-
-  - OpenAI GPT-4 integration
-  - Anthropic Claude integration
-  - Google AI integration
-  - Custom model support
-
-- **📱 Mobile App**
-
-  - React Native application
-  - Push notifications
-  - Offline mode
-  - Sincronización en tiempo real
-
-- **🔌 Integraciones de Terceros**
-  - Slack integration
-  - Microsoft Teams
-  - Zoom API
-  - Calendar integrations
-
-### Q4 2025 - Expansión
-
-- **🌐 Internacionalización**
-
-  - Soporte multiidioma
-  - Localización de contenido
-  - Agentes especializados por región
-  - RTL support
-
-- **🏢 Enterprise Features**
-  - Multi-tenant architecture
-  - SSO integration
-  - Advanced security
-  - Custom branding
-  - Role-based permissions
-  - Audit logs
-
-## 🤝 Contribución
+  ## 🤝 Contribución
 
 ### Cómo Contribuir
 
@@ -1668,3 +1701,4 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
   **⭐ Si te gusta este proyecto, dale una estrella en GitHub ⭐**
   
 </div>
+
