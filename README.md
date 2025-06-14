@@ -31,7 +31,6 @@ Una aplicación web de última generación construida con Next.js 15 para la ges
   - [🔧 Comandos Útiles](#-comandos-útiles)
   - [📁 Estructura del Proyecto](#-estructura-del-proyecto)
   - [🔐 Configuración de Seguridad](#-configuración-de-seguridad)
-  - [🎯 Metodología de Desarrollo](#-metodología-de-desarrollo)
   - [🔄 Estados de la Aplicación](#-estados-de-la-aplicación)
   - [🎨 Sistema de Componentes](#-sistema-de-componentes)
   - [🐛 Solución de Problemas](#-solución-de-problemas)
@@ -1301,50 +1300,7 @@ node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 - ✅ **Input validation** en cliente y servidor
 - ✅ **Error handling** sin exposición de información sensible
 
-## 🎯 Metodología de Desarrollo
 
-### Workflow de Desarrollo
-
-```mermaid
-graph TB
-    subgraph "Development Flow"
-        A[Feature Planning] --> B[Component Design]
-        B --> C[Type Definition]
-        C --> D[API Design]
-        D --> E[Implementation]
-        E --> F[Testing]
-        F --> G[Code Review]
-        G --> H[Integration]
-
-        E --> I[UI Implementation]
-        E --> J[Logic Implementation]
-        E --> K[API Implementation]
-
-        I --> L[Responsive Design]
-        I --> M[Accessibility]
-        I --> N[Animation]
-
-        J --> O[State Management]
-        J --> P[Error Handling]
-        J --> Q[Performance]
-
-        K --> R[tRPC Procedures]
-        K --> S[Database Queries]
-        K --> T[Validation]
-    end
-
-    subgraph "Quality Assurance"
-        U[TypeScript] --> V[Compile-time Safety]
-        W[ESLint] --> X[Code Quality]
-        Y[Prettier] --> Z[Code Formatting]
-        AA[Zod] --> BB[Runtime Validation]
-        CC[React Query] --> DD[Data Consistency]
-    end
-
-    subgraph "Performance Monitoring"
-        EE[Bundle Analysis] --> FF[Size Optimization]
-        GG[Lighthouse] --> HH[Web Vitals]
-```
 
   ## 🤝 Contribución
 
