@@ -665,71 +665,7 @@ graph TB
     style S fill:#9c27b0
 ```
 
-### Sistema de Avatares Dinámicos
 
-```mermaid
-graph TB
-    subgraph "AgentAvatar Component"
-        A[Agent Name Input] --> B[Avatar Generation Process]
-        B --> C[Name Analysis]
-        C --> D[Category Detection]
-        C --> E[Hash Generation]
-        C --> F[Initials Extraction]
-
-        D --> G[Pattern Matching]
-        G --> H{Name Contains Keywords?}
-        H -->|"bot", "asistente"| I[Bot Icon]
-        H -->|"team", "grupo"| J[Users Icon]
-        H -->|"chat", "conversacion"| K[MessageSquare Icon]
-        H -->|"calendar", "reunion"| L[Calendar Icon]
-        H -->|"admin", "seguridad"| M[Shield Icon]
-        H -->|"premium", "pro"| N[Star Icon]
-        H -->|"ai", "inteligencia"| O[Brain Icon]
-        H -->|No Match| P[Sparkles Icon - Default]
-
-        E --> Q[Color Selection]
-        Q --> R[Hash Algorithm]
-        R --> S[Modulo Operation]
-        S --> T[Color Array Selection]
-        T --> U[Background Color Assignment]
-
-        F --> V[Initials Logic]
-        V --> W{Single Word?}
-        W -->|Yes| X[First 2 Characters]
-        W -->|No| Y[First Letter of Each Word]
-        Y --> Z[Max 2 Characters]
-
-        B --> AA[Size Configuration]
-        AA --> AB[Responsive Sizing]
-        AB --> AC["sm, md, lg, xl variants"]
-        AC --> AD[Icon Size Adjustment]
-        AC --> AE[Text Size Adjustment]
-
-        B --> AF[Display Logic]
-        AF --> AG{showIcon && !showInitials?}
-        AG -->|Yes| AH[Show Icon Only]
-        AG -->|No| AI{showInitials && !showIcon?}
-        AI -->|Yes| AJ[Show Initials Only]
-        AI -->|No| AK[Default to Icon]
-
-        AH --> AL[White Icon on Color Background]
-        AJ --> AM[White Text on Color Background]
-        AK --> AL
-    end
-
-    subgraph "Avatar Variations"
-        AN[Technology Agent] --> AO[Bot/Brain Icons]
-        AP[Meeting Agent] --> AQ[Calendar/Video Icons]
-        AR[Support Agent] --> AS[MessageSquare/Users Icons]
-        AT[Admin Agent] --> AU[Shield/Star Icons]
-    end
-
-    style A fill:#059669
-    style D fill:#398CCB
-    style Q fill:#ff9800
-    style AF fill:#9c27b0
-    style AN fill:#4caf50
-```
 
 ## ⚙️ Prerequisitos del Entorno
 
@@ -1408,6 +1344,7 @@ graph TB
     subgraph "Performance Monitoring"
         EE[Bundle Analysis] --> FF[Size Optimization]
         GG[Lighthouse] --> HH[Web Vitals]
+```
 
   ## 🤝 Contribución
 
