@@ -10,9 +10,9 @@ import {
   MIN_PAGE_SIZE,
 } from "@/app/constants";
 import { TRPCError } from "@trpc/server";
+import { meetingsInsertSchema } from "../shemas";
 
 export const meetingsRouter = createTRPCRouter({
-
   getOne: protectedProcedure
     .input(z.object({ id: z.string() }))
     .query(async ({ input, ctx }) => {
@@ -22,9 +22,7 @@ export const meetingsRouter = createTRPCRouter({
         })
         .from(meetings)
         .where(
-          and(
-            eq(meetings.id, input.id),
-            eq(meetings.userId, ctx.auth.user.id))
+          and(eq(meetings.id, input.id), eq(meetings.userId, ctx.auth.user.id))
         );
       if (!existingMeeting) {
         throw new TRPCError({
@@ -80,5 +78,19 @@ export const meetingsRouter = createTRPCRouter({
         total: total.count,
         totalPages,
       };
+    }),
+
+  create: protectedProcedure
+    .input(meetingsInsertSchema)
+    .mutation(async ({ input, ctx }) => {
+      const [createdMeeting] = await db
+        .insert(meetings)
+        .values({
+          ...input,
+          userId: ctx.auth.user.id,
+        })
+        .returning();
+
+      return createdMeeting;
     }),
 });
