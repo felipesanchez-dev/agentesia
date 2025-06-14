@@ -1257,8 +1257,6 @@ graph TB
 npm run dev              # Servidor de desarrollo (Turbopack)
 npm run build            # Build de producción
 npm run start            # Servidor de producción
-npm run lint             # ESLint + Prettier
-npm run type-check       # Verificación de tipos TypeScript
 
 # Base de Datos
 npm run db:push          # Aplicar cambios de esquema
@@ -1267,57 +1265,6 @@ npm run db:migrate       # Ejecutar migraciones
 npm run db:generate      # Generar migraciones
 npm run db:reset         # Reset completo de DB (desarrollo)
 
-# Análisis y Optimización
-npm run analyze          # Analizar tamaño del bundle
-npm run lighthouse       # Auditoría de performance
-npm run build:analyze    # Build con análisis incluido
-```
-
-### Comandos de Shadcn/UI
-
-```bash
-# Componentes implementados
-npx shadcn-ui@latest add sidebar
-npx shadcn-ui@latest add command
-npx shadcn-ui@latest add table
-npx shadcn-ui@latest add badge
-npx shadcn-ui@latest add input
-npx shadcn-ui@latest add button
-npx shadcn-ui@latest add dialog
-npx shadcn-ui@latest add dropdown-menu
-npx shadcn-ui@latest add form
-npx shadcn-ui@latest add separator
-npx shadcn-ui@latest add scroll-area
-npx shadcn-ui@latest add avatar
-npx shadcn-ui@latest add toast
-
-# Componentes próximos
-npx shadcn-ui@latest add calendar
-npx shadcn-ui@latest add date-picker
-npx shadcn-ui@latest add tabs
-npx shadcn-ui@latest add sheet
-npx shadcn-ui@latest add popover
-```
-
-### Comandos de Utilidad
-
-```bash
-# Linting y Formateo
-npm run format           # Prettier en todo el proyecto
-npm run lint:fix         # ESLint con auto-fix
-npm run clean            # Limpiar cache y builds
-npm run clean:all        # Limpieza completa + node_modules
-
-# Git Hooks (Husky)
-npm run prepare          # Configurar Git hooks
-npm run pre-commit       # Ejecutar pre-commit hook
-npm run pre-push         # Ejecutar pre-push hook
-
-# Testing (próximamente)
-npm run test             # Ejecutar tests
-npm run test:watch       # Tests en modo watch
-npm run test:coverage    # Coverage report
-npm run test:e2e         # Tests end-to-end
 ```
 
 ## 📁 Estructura del Proyecto
@@ -1401,24 +1348,6 @@ openssl rand -base64 32
 # O con Node.js
 node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
 
-# O con Python
-python -c "import secrets; print(secrets.token_urlsafe(32))"
-```
-
-### Variables de Entorno de Producción
-
-```env
-# Producción - Configuraciones seguras
-DATABASE_URL="postgresql://prod_user:secure_password@prod-host:5432/prod_db?sslmode=require"
-BETTER_AUTH_SECRET="production_secret_key_very_long_and_secure_minimum_32_chars"
-BETTER_AUTH_URL="https://yourdomain.com"
-NEXT_PUBLIC_APP_URL="https://yourdomain.com"
-
-# OAuth Production Credentials
-GOOGLE_CLIENT_ID="prod_google_client_id"
-GOOGLE_CLIENT_SECRET="prod_google_client_secret"
-GITHUB_CLIENT_ID="prod_github_client_id"
-GITHUB_CLIENT_SECRET="prod_github_client_secret"
 ```
 
 ### Buenas Prácticas de Seguridad Implementadas
