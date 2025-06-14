@@ -1240,7 +1240,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 ---
 
 <div align="center">
-  <h3>🚀 COGNIMEET v1.2.0 - Conecta • Colabora • Crece</h3>
+  <h3>🚀 COGNIMEET v0.3.0  - Conecta • Colabora • Crece</h3>
   <p><strong>Desarrollado por Felipe Reyes Sanchez</strong></p>
   <p><em>"El futuro de la comunicación IA está aquí"</em></p>
   
