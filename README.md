@@ -1480,7 +1480,7 @@ console.log("Pagination state:", { page, pageSize, total, totalPages });
 1. **Fork el proyecto**
 
    ```bash
-   git clone https://github.com/tu-usuario/agentesia.git
+   git clone https://github.com/felipesanchez-dev/agentesia.git
    ```
 
 2. **Crear rama de feature**
