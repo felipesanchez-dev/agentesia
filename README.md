@@ -117,113 +117,87 @@ Una aplicación web de última generación construida con Next.js 15 para la ges
 ```mermaid
 graph TB
     subgraph "Frontend Layer"
-        A[Next.js App Router] --> B[Auth System]
+        A[Next.js App Router] --> B[Auth Pages]
         A --> C[Dashboard Layout]
-        A --> D[Landing Page]
+        A --> D[Home Page]
 
-        B --> B1[SignIn/SignUp Views]
-        B --> B2[OAuth Integration]
-        B --> B3[Session Management]
+        B --> B1[SignIn View]
+        B --> B2[SignUp View]
 
-        C --> C1[Responsive Sidebar]
-        C --> C2[User Management]
-        C --> C3[Protected Routes]
+        C --> C1[Desktop Sidebar]
+        C --> C2[Desktop User Button]
+        C --> C3[Mobile User Menu]
+        C --> C4[Protected Routes]
 
-        C3 --> C4[Agents Management]
-        C3 --> C5[Meetings System]
-        C3 --> C6[Settings & Upgrade]
+        C4 --> C5[Agents Page]
+        C4 --> C6[Meetings Page]
+        C4 --> C7[Upgrade Page]
 
-        C4 --> C7[Data Table + Pagination]
-        C4 --> C8[Agent CRUD Forms]
-        C4 --> C9[Avatar System]
-        C4 --> C10[Search & Filters]
-
-        C5 --> C11[Meeting CRUD]
-        C5 --> C12[Agent Selector]
-        C5 --> C13[Meeting Status]
-        C5 --> C14[Calendar Integration]
+        C5 --> C8[Data Table]
+        C5 --> C9[Agent Form]
+        C5 --> C10[Pagination]
+        C5 --> C11[Search Filters]
     end
 
-    subgraph "tRPC API Layer"
+    subgraph "tRPC & API Layer"
         E[tRPC Router] --> F[Agents Router]
-        E --> G[Meetings Router]
+        E --> G[Auth Router]
         E --> H[Users Router]
-        E --> I[Auth Router]
 
-        F --> F1[agents.getMany - Paginated]
+        F --> F1[agents.getMany - Paginado]
         F --> F2[agents.getOne]
         F --> F3[agents.create]
         F --> F4[agents.update]
-        F --> F5[agents.remove]
+        F --> F5[agents.delete]
 
-        G --> G1[meetings.getMany - Paginated]
-        G --> G2[meetings.create]
-        G --> G3[meetings.update]
-        G --> G4[meetings.delete]
-
-        J[React Query] --> K[Server State Cache]
-        J --> L[Optimistic Updates]
-        J --> M[Background Refetch]
-        J --> N[Pagination Cache]
-        J --> O[Search Cache]
+        I[React Query] --> J[Server State Cache]
+        I --> K[Optimistic Updates]
+        I --> L[Background Refetch]
+        I --> M[Pagination Cache]
     end
 
     subgraph "Authentication Layer"
-        P[BetterAuth v1.2.8] --> Q[Email/Password]
-        P --> R[Google OAuth]
-        P --> S[GitHub OAuth]
-        P --> T[Session Management]
-        P --> U[Route Protection]
+        N[BetterAuth v1.2.8] --> O[Email/Password]
+        N --> P[Google OAuth]
+        N --> Q[GitHub OAuth]
+        N --> R[Session Management]
     end
 
     subgraph "Database Layer"
-        V[PostgreSQL/Neon] --> W[Drizzle ORM]
-        W --> X[Users Schema]
-        W --> Y[Sessions Schema]
-        W --> Z[Agents Schema]
-        W --> AA[Meetings Schema]
+        S[PostgreSQL/Neon] --> T[Drizzle ORM]
+        T --> U[User Schema]
+        T --> V[Session Schema]
+        T --> W[Agents Schema]
+        T --> X[Meetings Schema]
 
-        Z --> Z1[SQL Aggregations]
-        Z --> Z2[Pagination Queries]
-        Z --> Z3[Search Filters]
-        Z --> Z4[Meeting Count Relations]
-
-        AA --> AA1[Agent Relations]
-        AA --> AA2[Status Management]
-        AA --> AA3[DateTime Handling]
+        W --> W1[SQL Aggregations]
+        W --> W2[Pagination Queries]
+        W --> W3[Search Filters]
     end
 
-    subgraph "UI Components System"
-        BB[Shadcn/UI] --> CC[Form Components]
-        BB --> DD[Layout Components]
-        BB --> EE[Navigation Components]
-        BB --> FF[Data Display]
-        BB --> GG[Feedback Components]
-
-        FF --> HH[Data Table (TanStack)]
-        FF --> II[Pagination Controls]
-        FF --> JJ[Avatar Generator]
-        FF --> KK[Badge System]
-
-        GG --> LL[Toast Notifications]
-        GG --> MM[Loading States]
-        GG --> NN[Error Boundaries]
-        GG --> OO[Confirmation Modals]
+    subgraph "UI Components"
+        Y[Shadcn/UI] --> Z[Form Components]
+        Y --> AA[Layout Components]
+        Y --> BB[Navigation Components]
+        Y --> CC[Loading Components]
+        Y --> DD[Avatar Components]
+        Y --> EE[Data Table]
+        Y --> FF[Pagination]
+        Y --> GG[Badge Components]
     end
 
     A --> E
-    E --> P
-    P --> V
-    A --> BB
-    E --> J
+    E --> N
+    N --> S
+    A --> Y
+    E --> I
 
     style A fill:#059669
     style E fill:#398CCB
-    style P fill:#16a34a
-    style V fill:#047857
-    style BB fill:#15803d
-    style HH fill:#e91e63
-    style LL fill:#ff9800
+    style N fill:#16a34a
+    style S fill:#047857
+    style Y fill:#15803d
+    style EE fill:#ff9800
 ```
 
 ## 🛠️ Stack Tecnológico Completo
