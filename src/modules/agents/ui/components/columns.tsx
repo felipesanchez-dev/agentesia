@@ -13,9 +13,24 @@ import {
   ClockFadingIcon,
   CornerDownRightIcon,
   LoaderIcon,
-} from "lucide-react"
+} from "lucide-react";
+import { cn } from "@/lib/utils";
 
-type Meeting = MeetingGetMany[number];
+function formatDuration(seconds: number) {
+  return humanizeDuration(seconds * 1000, {
+    largest: 1,
+    round: true,
+    units: ["h", "m", "s"],
+  });
+}
+
+const statusIconMap = {
+  upcoming: ClockArrowUpIcon,
+  active: LoaderIcon,
+  completed: CircleCheckIcon,
+  processing: ClockFadingIcon,
+  cancelled: CircleXIcon,
+};
 
 export const columns: ColumnDef<MeetingGetMany[number]>[] = [
   {
