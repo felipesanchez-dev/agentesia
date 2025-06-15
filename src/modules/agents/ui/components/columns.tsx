@@ -1,38 +1,12 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
+import { AgentGetOne } from "../../types";
 import { AgentAvatar } from "./agent-avatar";
+import { CornerDownRightIcon, VideoIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { MeetingGetMany } from "@/modules/meetings/types";
-import { format } from "date-fns";
-import humanizeDuration from "humanize-duration";
-import {
-  CircleCheckIcon,
-  CircleXIcon,
-  ClockArrowUpIcon,
-  ClockFadingIcon,
-  CornerDownRightIcon,
-  LoaderIcon,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
 
-function formatDuration(seconds: number) {
-  return humanizeDuration(seconds * 1000, {
-    largest: 1,
-    round: true,
-    units: ["h", "m", "s"],
-  });
-}
-
-const statusIconMap = {
-  pendiente: ClockArrowUpIcon,
-  activo: LoaderIcon,
-  finalizado: CircleCheckIcon,
-  encurso: ClockFadingIcon,
-  cancelado: CircleXIcon,
-};
-
-export const columns: ColumnDef<MeetingGetMany[number]>[] = [
+export const columns: ColumnDef<AgentGetOne>[] = [
   {
     accessorKey: "name",
     header: "Agent Name",
@@ -59,13 +33,9 @@ export const columns: ColumnDef<MeetingGetMany[number]>[] = [
     accessorKey: "meetingCount",
     header: "Meetings",
     cell: ({ row }) => (
-      <Badge
-        variant="outline"
-        className="flex items-center gap-x-2 [&>svg]:size-4"
-      >
+      <Badge variant="outline" className="flex items-center gap-x-2 [&>svg]:size-4">
         <VideoIcon className="text-blue-700" />
-        {row.original.meetingCount}{" "}
-        {row.original.meetingCount === 1 ? "Reunión" : "Reuniones"}
+        {row.original.meetingCount} {row.original.meetingCount === 1 ? "Reunión" : "Reuniones"}
       </Badge>
     ),
   },
