@@ -25,11 +25,11 @@ function formatDuration(seconds: number) {
 }
 
 const statusIconMap = {
-  upcoming: ClockArrowUpIcon,
-  active: LoaderIcon,
-  completed: CircleCheckIcon,
-  processing: ClockFadingIcon,
-  cancelled: CircleXIcon,
+  pendiente: ClockArrowUpIcon,
+  activo: LoaderIcon,
+  finalizado: CircleCheckIcon,
+  encurso: ClockFadingIcon,
+  cancelado: CircleXIcon,
 };
 
 export const columns: ColumnDef<MeetingGetMany[number]>[] = [
