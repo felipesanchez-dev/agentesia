@@ -2,6 +2,7 @@
 
 import { ErrorState } from "@/components/error-state";
 import { LoadingState } from "@/components/loading-state";
+import { DataTable } from "@/components/data-table";
  import { useTRPC } from "@/trpc/client";
  import { useSuspenseQuery } from "@tanstack/react-query";
 
@@ -10,8 +11,10 @@ export const MeetingsView = () => {
   const { data } = useSuspenseQuery(trpc.meetings.getMany.queryOptions({}))
 
   return (
-    <div>
-      {JSON.stringify(data)}
+    <div className="overflow-x-scroll">
+       <DataTable data={data.items}>
+
+      </DataTable> 
     </div>
   )
 };

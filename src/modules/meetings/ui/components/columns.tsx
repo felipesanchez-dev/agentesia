@@ -1,23 +1,12 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { AgentAvatar } from "./agent-avatar";
+import { CornerDownRightIcon, VideoIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { MeetingGetMany } from "@/modules/meetings/types";
-import { format } from "date-fns";
-import humanizeDuration from "humanize-duration";
-import {
-  CircleCheckIcon,
-  CircleXIcon,
-  ClockArrowUpIcon,
-  ClockFadingIcon,
-  CornerDownRightIcon,
-  LoaderIcon,
-} from "lucide-react"
+import { AgentGetOne } from "@/modules/agents/types";
+import { AgentAvatar } from "@/modules/agents/ui/components/agent-avatar";
 
-type Meeting = MeetingGetMany[number];
-
-export const columns: ColumnDef<MeetingGetMany[number]>[] = [
+export const columns: ColumnDef<AgentGetOne>[] = [
   {
     accessorKey: "name",
     header: "Agent Name",
@@ -44,13 +33,9 @@ export const columns: ColumnDef<MeetingGetMany[number]>[] = [
     accessorKey: "meetingCount",
     header: "Meetings",
     cell: ({ row }) => (
-      <Badge
-        variant="outline"
-        className="flex items-center gap-x-2 [&>svg]:size-4"
-      >
+      <Badge variant="outline" className="flex items-center gap-x-2 [&>svg]:size-4">
         <VideoIcon className="text-blue-700" />
-        {row.original.meetingCount}{" "}
-        {row.original.meetingCount === 1 ? "Reunión" : "Reuniones"}
+        {row.original.meetingCount} {row.original.meetingCount === 1 ? "Reunión" : "Reuniones"}
       </Badge>
     ),
   },
