@@ -41,7 +41,7 @@ export const useConfirm = (
           borderColor: "border-red-200",
           icon: Trash2,
           confirmButton: "destructive" as const,
-          confirmText: "Eliminar"
+          confirmText: "Eliminar",
         };
       case "warning":
         return {
@@ -50,7 +50,7 @@ export const useConfirm = (
           borderColor: "border-yellow-200",
           icon: AlertTriangle,
           confirmButton: "default" as const,
-          confirmText: "Continuar"
+          confirmText: "Continuar",
         };
       default:
         return {
@@ -59,7 +59,7 @@ export const useConfirm = (
           borderColor: "border-blue-200",
           icon: CheckCircle,
           confirmButton: "default" as const,
-          confirmText: "Confirmar"
+          confirmText: "Confirmar",
         };
     }
   };
@@ -76,29 +76,29 @@ export const useConfirm = (
         description=""
       >
         <div className="flex flex-col items-center text-center space-y-6 p-6">
-          {/* Icon with animated background */}
-          <div className={`
+          <div
+            className={`
             relative w-20 h-20 rounded-full ${styles.bgColor} ${styles.borderColor} border-2
             flex items-center justify-center shadow-lg
             animate-in zoom-in-50 duration-300
-          `}>
+          `}
+          >
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 to-transparent"></div>
-            <IconComponent className={`w-10 h-10 ${styles.iconColor} relative z-10`} />
+            <IconComponent
+              className={`w-10 h-10 ${styles.iconColor} relative z-10`}
+            />
           </div>
 
-          {/* Title */}
           <div className="space-y-2">
             <h2 className="text-xl font-semibold text-foreground leading-tight">
               {title}
             </h2>
-            
-            {/* Description */}
+
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
               {description}
             </p>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-col-reverse gap-3 w-full max-w-xs sm:flex-row sm:gap-4">
             <Button
               onClick={handleCancel}
@@ -113,7 +113,7 @@ export const useConfirm = (
               <X className="w-4 h-4 mr-2 transition-transform group-hover:scale-110" />
               Cancelar
             </Button>
-            
+
             <Button
               onClick={handleConfirm}
               variant={styles.confirmButton}
@@ -122,7 +122,11 @@ export const useConfirm = (
                 focus:ring-2 focus:ring-offset-2
                 shadow-lg hover:shadow-xl
                 group
-                ${variant === "destructive" ? "focus:ring-red-500" : "focus:ring-primary"}
+                ${
+                  variant === "destructive"
+                    ? "focus:ring-red-500"
+                    : "focus:ring-primary"
+                }
               `}
             >
               <IconComponent className="w-4 h-4 mr-2 transition-transform group-hover:scale-110" />
@@ -130,7 +134,6 @@ export const useConfirm = (
             </Button>
           </div>
 
-          {/* Subtle hint */}
           <p className="text-xs text-muted-foreground/70 mt-2">
             Esta acción requiere confirmación
           </p>

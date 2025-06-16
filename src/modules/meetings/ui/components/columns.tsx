@@ -2,15 +2,6 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { MeetingGetMany } from "@/modules/meetings/types";
 import { formatDistanceToNow } from "date-fns";
 import { es } from "date-fns/locale";
@@ -20,10 +11,6 @@ import {
   CircleXIcon,
   ClockArrowUpIcon,
   LoaderIcon,
-  MoreHorizontalIcon,
-  PlayIcon,
-  EditIcon,
-  TrashIcon,
   VideoIcon,
   SparklesIcon,
   TimerIcon,
@@ -162,64 +149,6 @@ export const columns: ColumnDef<MeetingGetMany[number]>[] = [
             </p>
           )}
         </div>
-      );
-    },
-  },
-
-  {
-    id: "actions",
-    cell: ({ row }) => {
-      const meeting = row.original;
-      const isActive =
-        meeting.status === "activo" || meeting.status === "encurso";
-      const canStart = meeting.status === "pendiente";
-      const canEdit =
-        meeting.status !== "finalizado" && meeting.status !== "cancelado";
-
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              className="h-8 w-8 p-0 hover:bg-muted rounded-lg"
-            >
-              <span className="sr-only">Abrir menú</span>
-              <MoreHorizontalIcon className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-48">
-            <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-
-            {canStart && (
-              <DropdownMenuItem className="gap-x-2">
-                <PlayIcon className="size-4 text-green-600" />
-                Iniciar reunión
-              </DropdownMenuItem>
-            )}
-
-            {isActive && (
-              <DropdownMenuItem className="gap-x-2">
-                <VideoIcon className="size-4 text-blue-600" />
-                Unirse a reunión
-              </DropdownMenuItem>
-            )}
-
-            {canEdit && (
-              <DropdownMenuItem className="gap-x-2">
-                <EditIcon className="size-4 text-blue-600" />
-                Editar reunión
-              </DropdownMenuItem>
-            )}
-
-            <DropdownMenuSeparator />
-
-            <DropdownMenuItem className="gap-x-2 text-red-600 focus:text-red-600">
-              <TrashIcon className="size-4" />
-              Eliminar reunión
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
       );
     },
   },

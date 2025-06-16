@@ -3,7 +3,14 @@
 import { ErrorState } from "@/components/error-state";
 import { LoadingState } from "@/components/loading-state";
 import { useTRPC } from "@/trpc/client";
-import { useSuspenseQuery } from "@tanstack/react-query";
+import {
+  useMutation,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
+import { MeetingIdViewHeader } from "../components/meeting-id-view-header";
+import { useRouter } from "next/navigation";
+import { useConfirm } from "@/hooks/use-confirm";
 
 interface Props {
   meetingId: string;
@@ -11,13 +18,43 @@ interface Props {
 
 export const MeetingIdView = ({ meetingId }: Props) => {
   const trpc = useTRPC();
+  const route = useRouter();
+  const queryClient = useQueryClient();
+
   const { data } = useSuspenseQuery(
     trpc.meetings.getOne.queryOptions({ id: meetingId })
   );
+
+  const [RemoveConfirmation, confirmRemove] = useConfirm(
+    "Eliminar reunión",
+    "¿Estás seguro de que deseas eliminar esta reunión?",
+  );
+
+  const removeMeeting = useMutation(
+    trpc.meetings.remove.mutationOptions({
+      onSuccess: () => {
+        queryClient.invalidateQueries(trpc.meetings.getMany.queryOptions({}));
+        route.push("/meetings");
+      },
+    })
+  );
+
+  const handleRemoveMeeting = async () => {
+    const ok = await confirmRemove();
+    if (!ok) return;
+    await removeMeeting.mutateAsync({id: meetingId});
+  }
+
   return (
     <>
+    <RemoveConfirmation />
       <div className="flex-1 py-4 px-4 md:px-8 flex flex-col gap-y-4">
-        <h1>Meeting ID: {meetingId}</h1>
+        <MeetingIdViewHeader
+          meetingId={meetingId}
+          meetingName={data?.name}
+          onEdit={() => {}}
+          onRemove={handleRemoveMeeting}
+        />
         {JSON.stringify(data, null, 2)}
       </div>
     </>
