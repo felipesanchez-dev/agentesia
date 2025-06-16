@@ -5,6 +5,7 @@ import { LoadingState } from "@/components/loading-state";
 import { DataTable } from "@/components/data-table";
  import { useTRPC } from "@/trpc/client";
  import { useSuspenseQuery } from "@tanstack/react-query";
+import { columns } from "../components/columns";
 
 export const MeetingsView = () => {
   const trpc = useTRPC();
@@ -12,9 +13,7 @@ export const MeetingsView = () => {
 
   return (
     <div className="overflow-x-scroll">
-       <DataTable data={data.items}>
-
-      </DataTable> 
+       <DataTable data={data.items} columns={columns} />
     </div>
   )
 };
