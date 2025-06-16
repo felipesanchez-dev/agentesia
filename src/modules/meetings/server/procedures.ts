@@ -138,4 +138,22 @@ export const meetingsRouter = createTRPCRouter({
       }
       return updatedMeeting;
     }),
+
+  remove: protectedProcedure
+    .input(z.object({ id: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      const [removeMeeting] = await db
+        .delete(meetings)
+        .where(
+          and(eq(meetings.id, input.id), eq(meetings.userId, ctx.auth.user.id))
+        )
+        .returning();
+      if (!removeMeeting) {
+        throw new TRPCError({
+          code: "NOT_FOUND",
+          message: "Reunión no encontrada",
+        });
+      }
+      return removeMeeting;
+    }),
 });
