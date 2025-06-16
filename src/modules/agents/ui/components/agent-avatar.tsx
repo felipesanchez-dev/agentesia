@@ -61,7 +61,7 @@ export const AgentAvatar = ({
     `}
     >
       {showIcon && !showInitials ? (
-        <Icon className={`${iconSizes[size]} drop-shadow-sm`} />
+        <Icon className={`${iconSizes[size]} drop-shadow-sm text-white`} />
       ) : (
         <span className={`${textSizes[size]} font-bold drop-shadow-sm`}>
           {initials}
