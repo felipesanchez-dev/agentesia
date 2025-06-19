@@ -97,7 +97,7 @@ export const CallLobby = ({ onJoin }: Props) => {
                 Cancelar
               </Link>
             </Button>
-            <Button onClick={onJoin} className="gap-2">
+            <Button onClick={onJoin} className="gap-2 cursor-pointer">
               <VideoIcon className="size-4" />
               Unirse a la llamada
             </Button>
