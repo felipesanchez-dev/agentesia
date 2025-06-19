@@ -109,8 +109,10 @@ export const columns: ColumnDef<AgentGetMany[number]>[] = [
                       Instrucciones
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                    {agent.instructions}
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {agent.instructions.length > 70
+                      ? `${agent.instructions.slice(0, 70)}...`
+                      : agent.instructions}
                   </p>
                 </div>
               ) : (
