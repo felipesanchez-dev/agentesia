@@ -6,31 +6,29 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
 interface Props {
-    params: Promise<{
-        meetingId: string;
-    }>;
-   
-};
+  params: Promise<{
+    meetingId: string;
+  }>;
+}
 
 const Page = async ({ params }: Props) => {
-    const session = await auth.api.getSession({
-        headers: await headers(),
-    });
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
-    if (!session) {
-        redirect("/sign-in");
-    }
-    const { meetingId } = await params;
-    const queryClient = getQueryClient();
-    void queryClient.prefetchQuery(
-        trpc.meetings.getOne.queryOptions({id: meetingId}),
-    );
+  if (!session) {
+    redirect("/sign-in");
+  }
+  const { meetingId } = await params;
+  const queryClient = getQueryClient();
+  void queryClient.prefetchQuery(
+    trpc.meetings.getOne.queryOptions({ id: meetingId })
+  );
 
-    return (
-        <HydrationBoundary state={dehydrate(queryClient)}>
-            <CallView meetingId={meetingId} />
-        </HydrationBoundary>
-    )
-
-}
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <CallView meetingId={meetingId} />
+    </HydrationBoundary>
+  );
+};
 export default Page;
